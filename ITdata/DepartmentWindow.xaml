@@ -1,0 +1,51 @@
+﻿<Window x:Class="ITdata.DepartmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITdata"
+        mc:Ignorable="d"
+        Title="DepartmentWindow" Height="400" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto">
+            </ColumnDefinition>
+            <ColumnDefinition Width="auto">
+            
+            
+            </ColumnDefinition>
+
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*">
+            </RowDefinition>
+            <RowDefinition Height="*">
+            </RowDefinition>
+            <RowDefinition Height="*">
+            </RowDefinition>
+            <RowDefinition Height="*">
+            </RowDefinition>
+            <RowDefinition Height="*">
+            </RowDefinition>
+           
+        </Grid.RowDefinitions>
+
+        <ListBox Name="departmentListBox" Grid.RowSpan="4" SelectionChanged="departmentListBox_SelectionChanged_1" Width="120" >
+
+
+
+        </ListBox>
+
+        <TextBox Name="inputbox" Grid.Column="1" Width="140" Height="30" FontSize="18" Padding="1"></TextBox>
+        <Button Content="SAVE" Name="save_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" Click="save_button_Click" VerticalAlignment="Top"></Button>
+        <Button Content="DELETE" Name="delete_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,26,0,0" Click="delete_button_Click"></Button>
+        <Button Content="ADD NEW" Name="add_new_button" Width="100" Height="30" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Click="add_new_button_Click"></Button>
+
+
+        <Button Content="BACK" Grid.Column="0" Grid.Row="4" Height="20" Width="50" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click"></Button>
+
+
+    </Grid>
+</Window>

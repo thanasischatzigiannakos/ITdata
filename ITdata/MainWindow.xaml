@@ -29,7 +29,12 @@
                 <MenuItem Header="Exit" IsEnabled="True" Click="MenuItem_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="Edit" IsEnabled="True">
-                <MenuItem  Header="Edit Connection string" Click="EditItem_Click_1"></MenuItem>
+                <MenuItem  Header="Edit Connection" Click="EditItem_Click_1"></MenuItem>
+                <MenuItem Header="Edit Company" Click="Company_Click"></MenuItem>
+                <MenuItem Header="Edit Location" Click="Location_Click"></MenuItem>
+                <MenuItem Header="Edit Department" Click="Dept_Click"></MenuItem>
+                <MenuItem Header="Edit Phones" Click="Phone_Click"></MenuItem>
+                <MenuItem Header="Edit Users" Click="MenuItem_Click_1"></MenuItem>
             </MenuItem>
         </Menu>
         

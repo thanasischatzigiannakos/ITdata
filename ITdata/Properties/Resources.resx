@@ -120,7 +120,4 @@
   <data name="adminpasswd" xml:space="preserve">
     <value>anakonta++</value>
   </data>
-  <data name="connectionstring" xml:space="preserve">
-    <value>qqq</value>
-  </data>
 </root>

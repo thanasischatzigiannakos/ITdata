@@ -46,5 +46,45 @@ namespace ITdata
             this.Close();
 
         }
+
+        private void Company_Click(object sender, RoutedEventArgs e)
+        {
+            CompanyWindow cmpwin = new CompanyWindow();
+            cmpwin.Show();
+            this.Close();
+
+        }
+
+        private void Location_Click(object sender, RoutedEventArgs e)
+        {
+
+            LocationWindow lctwin = new LocationWindow();
+            lctwin.Show();
+            this.Close();
+
+        }
+
+        private void Dept_Click(object sender, RoutedEventArgs e)
+        {
+            DepartmentWindow dptwin = new DepartmentWindow();
+            dptwin.Show();
+            this.Close();
+        }
+
+        private void Phone_Click(object sender, RoutedEventArgs e)
+        {
+            PhoneWindow pnwin = new PhoneWindow();
+            pnwin.Show();
+            this.Close();
+
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            UserWindow uswin = new UserWindow();
+            uswin.Show();
+            this.Close();
+
+        }
     }
 }

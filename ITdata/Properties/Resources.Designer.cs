@@ -68,14 +68,5 @@ namespace ITdata.Properties {
                 return ResourceManager.GetString("adminpasswd", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to qqq.
-        /// </summary>
-        public static string connectionstring {
-            get {
-                return ResourceManager.GetString("connectionstring", resourceCulture);
-            }
-        }
     }
 }

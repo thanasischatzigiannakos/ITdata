@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,6 +20,7 @@ namespace ITdata
             ShowStoredValues();
         }
 
+        Stopwatch sw;
         // --------------------------SQL CONNECTION FUNCTION--------------------------------------------
 
         private void Test(object sender, RoutedEventArgs e)     //testinf the connection to the database
@@ -31,26 +33,36 @@ namespace ITdata
             //Properties.Resources.connectionstring = connetionString;
 
             cnn = new MySqlConnection(connectionString);
+            sw = Stopwatch.StartNew();
             try
             {
                 cnn.Open();   //open the connection
-                MessageBox.Show("Connection OK ! ", "Connection Test", MessageBoxButton.OK, MessageBoxImage.Information);
+                sw.Stop();
+                
+                MessageBox.Show(("Connection OK ! \nTime required to establish the conncetion:"+sw.Elapsed.TotalSeconds), "Connection Test", MessageBoxButton.OK, MessageBoxImage.Information);
+                
+              
             }
             catch (Exception ex)   //failed exception
             {
                 MessageBox.Show(ex.Message, "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                sw.Stop();
             }
             finally
             {
                 cnn.Close();
                 cnn.Dispose();
+                Properties.dbSettings.Default.connectionString = connectionString;
+                Properties.dbSettings.Default.Save();
+
+
             }
         }
 
         //--------------------------------------ON SAVE CONNECTION DATA FUNCTION-------------------------------------
         private void Submit_Click(object sender, RoutedEventArgs e)  //function to save the data used for the connection
         {
-            Boolean ipchecked=true;
+            Boolean ipchecked = true;
             string srvAdd, dbname, user, dbpasswd, admin, dbport;
             srvAdd = ServerAddress.Text;
             dbname = DBName.Text;
@@ -62,14 +74,13 @@ namespace ITdata
             if (String.IsNullOrWhiteSpace(srvAdd) == true || String.IsNullOrWhiteSpace(dbname) == true || String.IsNullOrWhiteSpace(user) == true || String.IsNullOrWhiteSpace(dbport) == true)
             {
                 MessageBox.Show("Please fill all the required fields", "Error", MessageBoxButton.OK, MessageBoxImage.Stop);
-            } else if (!srvAdd.Equals("localhost"))//IF THE SERVER ADDRESS IS NOT THE LOCALHOST -> CHECK IF IT IS A VALID IP
+            }
+            else if (!srvAdd.Equals("localhost"))//IF THE SERVER ADDRESS IS NOT THE LOCALHOST -> CHECK IF IT IS A VALID IP
             {
                 ipchecked = CheckIPValid(srvAdd);
                 if (ipchecked == false)
                 {
                     MessageBox.Show("Please enter a valid IP", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-
-
                 }
                 else if (admin.Equals(Properties.Resources.adminpasswd.ToString()) && ipchecked == true)//CHECKING ADMINS PASSWORD
                 {
@@ -81,6 +92,7 @@ namespace ITdata
                     Properties.dbSettings.Default.Save();
                     MessageBox.Show("Changes saved successfully", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                     ShowStoredValues();
+
                     ServerAddress.Clear();
                     DBName.Clear();
                     UserID.Clear();
@@ -90,9 +102,9 @@ namespace ITdata
                 }
                 else
                     MessageBox.Show("You must enter admins password", "Error", MessageBoxButton.OK, MessageBoxImage.Stop);
-            }else if (srvAdd.Equals("localhost"))//IF THE SERVER ADDRESS IS THE LOCALHOST THEN CHECK FOR ADMINS PASSWORD
+            }
+            else if (srvAdd.Equals("localhost"))//IF THE SERVER ADDRESS IS THE LOCALHOST THEN CHECK FOR ADMINS PASSWORD
             {
-
                 if (admin.Equals(Properties.Resources.adminpasswd.ToString()))
                 {
                     Properties.dbSettings.Default.datasource = srvAdd;     //save the checkobox data into the programs settings
@@ -112,10 +124,7 @@ namespace ITdata
                 }
                 else
                     MessageBox.Show("You must enter a valid admins password", "Error", MessageBoxButton.OK, MessageBoxImage.Stop);
-
-
             }
-            
         }
 
         //------------------------------------------CREATING LABELS OF THE SAVED SETTINGS-------------------------------------
@@ -209,8 +218,6 @@ namespace ITdata
         {
             e.Handled = !OnlyNumbersAllowed(e.Text);
         }
-
-
 
         //--------------------------------------------IP VALIDATION FUNCTION------------------------------------------------
         public Boolean CheckIPValid(String strIP)
