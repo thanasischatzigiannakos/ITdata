@@ -39,7 +39,7 @@ namespace ITdata
                 cnn.Open();   //open the connection
                 sw.Stop();
                 
-                MessageBox.Show(("Connection OK ! \nTime required to establish the conncetion:"+sw.Elapsed.TotalSeconds), "Connection Test", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(("Connection OK ! \nTime required to establish the connection:"+sw.Elapsed.TotalSeconds+" sec"), "Connection Test", MessageBoxButton.OK, MessageBoxImage.Information);
                 
               
             }

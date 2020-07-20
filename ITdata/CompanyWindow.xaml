@@ -38,13 +38,13 @@
             
         </ListBox>
 
-        <TextBox Name="inputbox" Grid.Column="1" Width="140" Height="30" FontSize="18" Padding="1"></TextBox>
+        <TextBox Name="inputbox" Grid.Column="1" Width="140" Height="30" FontSize="12" Padding="1"></TextBox>
         <Button Content="SAVE" Name="save_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Click="save_button_Click"></Button>
         <Button Content="DELETE" Name="delete_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,28,0,0" Click="delete_button_Click"></Button>
         <Button Content="ADD NEW" Name="add_new_button" Width="100" Height="30" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Click="add_new_button_Click"></Button>
         
 
-        <Button Content="BACK" Grid.Column="0" Grid.Row="4" FontWeight="Bold" Height="20" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click"></Button>
+        <Button Content="BACK" Grid.Column="0" Grid.Row="4" FontWeight="Bold" Height="25" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click" Margin="3,0,0,5"></Button>
         
         
     </Grid>

@@ -239,7 +239,7 @@ namespace ITdata
         private void submit_Click(object sender, RoutedEventArgs e)
         {
             if (String.IsNullOrWhiteSpace(web_psw_txt.Text) || String.IsNullOrWhiteSpace(web_usr_txt.Text) || String.IsNullOrWhiteSpace(model_num_txt.Text) || String.IsNullOrWhiteSpace(serial_numtxt.Text) || String.IsNullOrWhiteSpace(ip_txt.Text) || String.IsNullOrWhiteSpace(mac_txt.Text) || String.IsNullOrWhiteSpace(internal_num_txt.Text) || String.IsNullOrWhiteSpace(ext_num_txt.Text))
-                MessageBox.Show("Please fill the name field", "Error", MessageBoxButton.OK, MessageBoxImage.Stop); //CHECK IF THE INPUT BOX IS EMPTY OR WHITESPACE
+                MessageBox.Show("Please fill all the required fields", "Error", MessageBoxButton.OK, MessageBoxImage.Question); //CHECK IF THE INPUT BOX IS EMPTY OR WHITESPACE
             else
             {
                 Boolean macchecked = CheckIPValid(mac_txt.Text);
@@ -506,6 +506,8 @@ namespace ITdata
                         match_phone_list();
                         phone_selected_box.Clear();
                         user_selected_box.Clear();
+                        filter_phones.Clear();
+                        filter_users.Clear();
                         
                     }
                 }

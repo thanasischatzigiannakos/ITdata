@@ -39,38 +39,38 @@
                     <ListBox Name="phone_listbox" Grid.RowSpan="5" SelectionChanged="phone_listbox_SelectionChanged" Width="100" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0"></ListBox>
 
                     <Label Content="Filter:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10"  ></Label>
-                    <TextBox Name="search" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="22" Padding="1" PreviewKeyUp="search_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Margin="0,6,18,0"></TextBox>
+                    <TextBox Name="search" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="26" Padding="1" PreviewKeyUp="search_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Margin="0,6,18,0"></TextBox>
 
-                    <Label Content="Web UI Admin" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" FontSize="15"  ></Label>
-                    <TextBox Name="web_usr_txt" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Height="25" Width="100" FontSize="15" Padding="1" ></TextBox>
+                    <Label Content="Web UI Admin" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12"  ></Label>
+                    <TextBox Name="web_usr_txt" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Height="30" Width="100" FontSize="11" Padding="1" ></TextBox>
 
-                    <Label Content="Web UI Passwd" Grid.Row="0" Grid.Column="2"  VerticalAlignment="Center" FontSize="15" ></Label>
-                    <TextBox Name="web_psw_txt" Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom"  Height="25" Width="100" FontSize="15" Padding="1" ></TextBox>
+                    <Label Content="Web UI Passwd" Grid.Row="0" Grid.Column="2"  VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12" ></Label>
+                    <TextBox Name="web_psw_txt" Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom"  Height="30" Width="100" FontSize="12" Padding="1" ></TextBox>
 
-                    <Label Content="Model Number" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="15" ></Label>
-                    <TextBox Name="model_num_txt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom"  Height="25" Width="100" FontSize="15" Padding="1" PreviewTextInput="Port_PreviewTextInput"></TextBox>
+                    <Label Content="Model Number" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12" ></Label>
+                    <TextBox Name="model_num_txt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom"  Height="30" Width="100" FontSize="12" Padding="1" PreviewTextInput="Port_PreviewTextInput"></TextBox>
 
-                    <Label Content="Serial Number" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"  FontSize="15" ></Label>
-                    <TextBox Name="serial_numtxt" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Height="25" Width="100" FontSize="15" Padding="1" PreviewTextInput="Port_PreviewTextInput" ></TextBox>
+                    <Label Content="Serial Number" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"  FontSize="15" Margin="0,0,0,12" ></Label>
+                    <TextBox Name="serial_numtxt" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Height="30" Width="100" FontSize="12" Padding="1" PreviewTextInput="Port_PreviewTextInput" ></TextBox>
 
-                    <Label Content="IP" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="15" ></Label>
-                    <TextBox Name="ip_txt" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="25" Width="100" Padding="1" FontSize="15" PreviewTextInput="ServerAddress_PreviewTextInput" ></TextBox>
+                    <Label Content="IP" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="15" Margin="0,0,0,12" ></Label>
+                    <TextBox Name="ip_txt" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="30" Width="100" Padding="1" FontSize="12" PreviewTextInput="ServerAddress_PreviewTextInput" ></TextBox>
 
-                    <Label Content="MAC Address" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" FontSize="15" ></Label>
-                    <TextBox Name="mac_txt" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" Height="25" Width="100" FontSize="15" Padding="1" PreviewTextInput="ServerAddress_PreviewTextInput"></TextBox>
+                    <Label Content="MAC Address" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12" ></Label>
+                    <TextBox Name="mac_txt" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" Height="30" Width="100" FontSize="12" Padding="1" PreviewTextInput="ServerAddress_PreviewTextInput"></TextBox>
 
-                    <Label Content="Internal Number" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"  FontSize="15" ></Label>
-                    <TextBox Name="internal_num_txt" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom"  Height="25" Width="100" Padding="1" FontSize="15" PreviewTextInput="Port_PreviewTextInput" MaxLength="4"></TextBox>
+                    <Label Content="Internal Number" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"  FontSize="15" Margin="0,0,0,12" ></Label>
+                    <TextBox Name="internal_num_txt" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom"  Height="30" Width="100" Padding="1" FontSize="12" PreviewTextInput="Port_PreviewTextInput" MaxLength="4"></TextBox>
 
-                    <Label Content="External Number" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"  FontSize="15" ></Label>
-                    <TextBox Name="ext_num_txt" Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom"  Height="25" Width="100" FontSize="15" Padding="1" PreviewTextInput="Port_PreviewTextInput" ></TextBox>
+                    <Label Content="External Number" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"  FontSize="15" Margin="0,0,0,12" ></Label>
+                    <TextBox Name="ext_num_txt" Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom"  Height="30" Width="100" FontSize="12" Padding="1" PreviewTextInput="Port_PreviewTextInput" ></TextBox>
 
-                    <Button Name="Submit" Content="ADD NEW" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Height="40" Width="100" VerticalAlignment="Bottom" Click="submit_Click"></Button>
-                    <Button Name="Update" Content="SAVE" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Height="40" Width="100" VerticalAlignment="Top" Click="update_Click" Margin="0,8,0,8" ></Button>
-                    <Button Name="Delete" Content="DELETE" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="2" Height="40" Width="100" Click="delete_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,8,0,0" ></Button>
-                    <Button Name="Clear" Content="CLEAR" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="2" Height="40" Width="100" Click="Clear_Click" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="0,8,0,0"></Button>
+                    <Button Name="Submit" Content="ADD NEW" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Bottom" Click="submit_Click" Margin="0,30,0,0"></Button>
+                    <Button Name="Update" Content="SAVE" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Top" Click="update_Click" Margin="0,8,0,8" ></Button>
+                    <Button Name="Delete" Content="DELETE" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="2" Height="40" Width="110" Click="delete_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,8,0,0" ></Button>
+                    <Button Name="Clear" Content="CLEAR" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="2" Height="40" Width="110" Click="Clear_Click" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="0,8,0,0"></Button>
 
-                    <Button Content="BACK" Grid.Row="5" Grid.Column="0" Height="20" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click" FontWeight="Bold"></Button>
+                    <Button Content="BACK" Grid.Row="5" Grid.Column="0" Height="23" Width="68" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click" FontWeight="Bold"></Button>
                 </Grid>
             </TabItem>
             <TabItem Header="Match" >
@@ -128,20 +128,20 @@
                     </ListBox>
 
                     <Label Content="Phone Selected" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
-                    <TextBox Name="phone_selected_box" Grid.Row="1" Grid.Column="2" Height="22" Width="100" Margin="0,0,0,30" IsReadOnly="True"></TextBox>
+                    <TextBox Name="phone_selected_box" Grid.Row="1" Grid.Column="2" Height="30" Width="100" Margin="0,0,0,30" IsReadOnly="True"></TextBox>
 
                     <Label Content="User Selected" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,15,0,0"></Label>
-                    <TextBox Name="user_selected_box" Grid.Row="1" Grid.Column="2" Height="22" VerticalAlignment="Center" Width="100" Margin="0,55,0,0" IsReadOnly="True"></TextBox>
+                    <TextBox Name="user_selected_box" Grid.Row="1" Grid.Column="2" Height="30" VerticalAlignment="Center" Width="100" Margin="0,65,0,0" IsReadOnly="True"></TextBox>
 
                     <Label Content="Filter:" Grid.Row="0" VerticalAlignment="Center" Margin="0,10,0,0"></Label>
-                    <TextBox Name="filter_phones" Height="20" Width="65" Margin="0,10,15,0" PreviewKeyUp="filter_phones_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput"></TextBox>
+                    <TextBox Name="filter_phones" Height="30" Width="65" Margin="0,10,15,0" PreviewKeyUp="filter_phones_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput"></TextBox>
 
                     <Label Content="Filter:" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="0,10,0,0"></Label>
-                    <TextBox Name="filter_users" Height="20" Grid.Column="1" Width="65" Margin="0,10,15,0" PreviewKeyUp="filter_users_PreviewKeyUp"></TextBox>
+                    <TextBox Name="filter_users" Height="30" Grid.Column="1" Width="65" Margin="0,10,15,0" PreviewKeyUp="filter_users_PreviewKeyUp"></TextBox>
 
-                    <Button Name="match" Content="MATCH" FontWeight="Bold" Height="20" Width="90" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Click="match_Click"></Button>
+                    <Button Name="match" Content="MATCH" FontWeight="Bold" Height="27" Width="90" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Click="match_Click" Margin="0,10,0,0"></Button>
 
-                    <Button Name="back_btn" Content="BACK" Height="20" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3"></Button>
+                    <Button Name="back_btn" Content="BACK" Height="23" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3"></Button>
                 </Grid>
             </TabItem>
             <TabItem Header="TBD">
