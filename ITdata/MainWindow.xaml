@@ -1,0 +1,38 @@
+﻿<Window x:Class="ITdata.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITdata"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto">
+            </ColumnDefinition>
+            <ColumnDefinition Width="auto">
+            </ColumnDefinition>
+            <ColumnDefinition Width="auto">
+            </ColumnDefinition>
+            
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto">
+            </RowDefinition>
+
+            <RowDefinition Height="auto">
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Application" IsEnabled="True">
+                <MenuItem Header="Exit" IsEnabled="True" Click="MenuItem_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit" IsEnabled="True">
+                <MenuItem  Header="Edit Connection string" Click="EditItem_Click_1"></MenuItem>
+            </MenuItem>
+        </Menu>
+        
+    </Grid>
+    
+</Window>
