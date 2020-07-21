@@ -85,34 +85,34 @@
                         </RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <ListBox Name="phone_listbox" Grid.RowSpan="5" SelectionChanged="phone_listbox_SelectionChanged" Width="100" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0"></ListBox>
+                    <ListBox Name="phone_listbox" Grid.RowSpan="5" SelectionChanged="phone_listbox_SelectionChanged" Width="100" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="2"></ListBox>
 
                     <Label Content="Filter:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10"  ></Label>
-                    <TextBox Name="search" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="26" Padding="1" PreviewKeyUp="search_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Margin="0,6,18,0"></TextBox>
+                    <TextBox Name="search" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="26" Padding="-6" PreviewKeyUp="search_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Margin="0,5,22,10" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
                     <Label Content="Web UI Admin" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12"  ></Label>
-                    <TextBox Name="web_usr_txt" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Height="30" Width="100" FontSize="11" Padding="1" ></TextBox>
+                    <TextBox Name="web_usr_txt" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Height="30" Width="100" FontSize="11" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
                     <Label Content="Web UI Passwd" Grid.Row="0" Grid.Column="2"  VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12" ></Label>
-                    <TextBox Name="web_psw_txt" Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom"  Height="30" Width="100" FontSize="12" Padding="1" ></TextBox>
+                    <TextBox Name="web_psw_txt" Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom"  Height="30" Width="100" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
                     <Label Content="Model Number" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12" ></Label>
-                    <TextBox Name="model_num_txt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom"  Height="30" Width="100" FontSize="12" Padding="1" PreviewTextInput="Port_PreviewTextInput"></TextBox>
+                    <TextBox Name="model_num_txt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom"  Height="30" Width="100" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"  PreviewTextInput="Port_PreviewTextInput"></TextBox>
 
                     <Label Content="Serial Number" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"  FontSize="15" Margin="0,0,0,12" ></Label>
-                    <TextBox Name="serial_numtxt" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Height="30" Width="100" FontSize="12" Padding="1" PreviewTextInput="Port_PreviewTextInput" ></TextBox>
+                    <TextBox Name="serial_numtxt" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Height="30" Width="100" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="Port_PreviewTextInput" ></TextBox>
 
                     <Label Content="IP" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="15" Margin="0,0,0,12" ></Label>
-                    <TextBox Name="ip_txt" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="30" Width="100" Padding="1" FontSize="12" PreviewTextInput="ServerAddress_PreviewTextInput" ></TextBox>
+                    <TextBox Name="ip_txt" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="30" Width="100" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontSize="12" PreviewTextInput="ServerAddress_PreviewTextInput" ></TextBox>
 
                     <Label Content="MAC Address" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12" ></Label>
-                    <TextBox Name="mac_txt" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" Height="30" Width="100" FontSize="12" Padding="1" PreviewTextInput="ServerAddress_PreviewTextInput"></TextBox>
+                    <TextBox Name="mac_txt" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" Height="30" Width="100" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="ServerAddress_PreviewTextInput"></TextBox>
 
                     <Label Content="Internal Number" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"  FontSize="15" Margin="0,0,0,12" ></Label>
-                    <TextBox Name="internal_num_txt" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom"  Height="30" Width="100" Padding="1" FontSize="12" PreviewTextInput="Port_PreviewTextInput" MaxLength="4"></TextBox>
+                    <TextBox Name="internal_num_txt" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom"  Height="30" Width="100" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontSize="12" PreviewTextInput="Port_PreviewTextInput" MaxLength="4"></TextBox>
 
                     <Label Content="External Number" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"  FontSize="15" Margin="0,0,0,12" ></Label>
-                    <TextBox Name="ext_num_txt" Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom"  Height="30" Width="100" FontSize="12" Padding="1" PreviewTextInput="Port_PreviewTextInput" ></TextBox>
+                    <TextBox Name="ext_num_txt" Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom"  Height="30" Width="100" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="Port_PreviewTextInput" ></TextBox>
 
                     <Button Name="Submit" Content="ADD NEW" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Bottom" Click="submit_Click" Margin="0,30,0,0" ToolTip="Add a new phone(You must fill all the fields in the form)" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
                     <Button Name="Update" Content="SAVE" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Top" Click="update_Click" Margin="0,8,0,8" ToolTip="Update the information of the selected phone" Style="{DynamicResource MaterialDesignRaisedButton}" ></Button>
@@ -151,8 +151,8 @@
                         </RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <ListBox Name="unmatched_phones_listbox" Grid.Column="0" Grid.RowSpan="4" SelectionChanged="unmatched_phones_listbox_SelectionChanged" Width="100" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0"></ListBox>
-                    <ListBox Name="user_listbox" Grid.RowSpan="4" Grid.Column="1" SelectionChanged="user_listbox_SelectionChanged" Width="140" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" Grid.IsSharedSizeScope="True">
+                    <ListBox Name="unmatched_phones_listbox" Grid.Column="0" Grid.RowSpan="4" SelectionChanged="unmatched_phones_listbox_SelectionChanged" Width="100" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1"></ListBox>
+                    <ListBox Name="user_listbox" Grid.RowSpan="4" Grid.Column="1" SelectionChanged="user_listbox_SelectionChanged" Width="140" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -175,17 +175,17 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
 
-                    <Label Content="Phone Selected" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
-                    <TextBox Name="phone_selected_box" Grid.Row="1" Grid.Column="2" Height="30" Width="100" Margin="0,0,0,30" IsReadOnly="True"></TextBox>
+                    
+                    <TextBox Name="phone_selected_box" materialDesign:TextFieldAssist.SuffixText="Phone Selected" Grid.Row="1" Grid.Column="2" Height="25" Width="100" Margin="0,0,0,60" IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-6"></TextBox>
 
-                    <Label Content="User Selected" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,15,0,0"></Label>
-                    <TextBox Name="user_selected_box" Grid.Row="1" Grid.Column="2" Height="30" VerticalAlignment="Center" Width="100" Margin="0,65,0,0" IsReadOnly="True"></TextBox>
 
-                    <Label Content="Filter:" Grid.Row="0" VerticalAlignment="Center" Margin="0,10,0,0"></Label>
-                    <TextBox Name="filter_phones" Height="30" Width="65" Margin="0,10,15,0" PreviewKeyUp="filter_phones_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput"></TextBox>
+                    <TextBox Name="user_selected_box" Grid.Row="1" materialDesign:TextFieldAssist.SuffixText="User Selected" Grid.Column="2" Height="25" VerticalAlignment="Center" Width="100"  IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-6"></TextBox>
 
-                    <Label Content="Filter:" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="0,10,0,0"></Label>
-                    <TextBox Name="filter_users" Height="30" Grid.Column="1" Width="65" Margin="0,10,15,0" PreviewKeyUp="filter_users_PreviewKeyUp"></TextBox>
+                    <Label Content="Filter:" Grid.Row="0" VerticalAlignment="Center" Margin="0,10,0,5"></Label>
+                    <TextBox Name="filter_phones" Height="30" Width="65" Margin="5,10,15,10" PreviewKeyUp="filter_phones_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-6"></TextBox>
+
+                    <Label Content="Filter:" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="0,10,0,5"></Label>
+                    <TextBox Name="filter_users" Height="30" Grid.Column="1" Width="65" Margin="-10,10,15,10" PreviewKeyUp="filter_users_PreviewKeyUp" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-6"></TextBox>
 
                     <Button Name="match" Content="MATCH" FontWeight="Bold" Height="27" Width="90" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Click="match_Click" Margin="0,10,0,0" ToolTip="Match a phone with it's user" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
 

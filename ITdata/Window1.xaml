@@ -7,7 +7,7 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignPaper}"
         mc:Ignorable="d"
-        Title="Window1" Height="340" Width="450">
+        Title="Window1" Height="400" Width="450">
     <Grid Name="MainGrid">
 
         <Grid.ColumnDefinitions>
@@ -47,27 +47,27 @@
         </Grid.RowDefinitions>
         
         <Label Content="Server Address" Grid.Row="1" VerticalAlignment="Center"></Label>
-        <TextBox Name="ServerAddress" HorizontalAlignment="Center" Height="30" FontSize="12" Width="120" Grid.Column="1" Grid.Row="1" Padding="1" Margin="0,0,10,0" PreviewTextInput="ServerAddress_PreviewTextInput"></TextBox>
+        <TextBox Name="ServerAddress" HorizontalAlignment="Center" Height="30" FontSize="12" Width="120" Grid.Column="1" Grid.Row="1" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="0,0,10,10" PreviewTextInput="ServerAddress_PreviewTextInput"></TextBox>
 
         <Label Content="Port" Grid.Row="2" VerticalAlignment="Center"></Label>
-        <TextBox Name="Port" HorizontalAlignment="Center" Height="30" FontSize="12" Width="120" Grid.Column="1" Grid.Row="2" Padding="1" Margin="0,0,10,0" PreviewTextInput="Port_PreviewTextInput"></TextBox>
+        <TextBox Name="Port" HorizontalAlignment="Center" Height="30" FontSize="12" Width="120" Grid.Column="1" Grid.Row="2" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="0,0,10,10" PreviewTextInput="Port_PreviewTextInput"></TextBox>
 
         <Label Content="Database Name" Grid.Row="3" VerticalAlignment="Center"></Label>
-        <TextBox Name="DBName" HorizontalAlignment="Center" Height="30" FontSize="12" Width="120" Grid.Column="1" Margin="0,0,10,0" Grid.Row="3" Padding="1"></TextBox>
+        <TextBox Name="DBName" HorizontalAlignment="Center" Height="30" FontSize="12" Width="120" Grid.Column="1" Margin="0,0,10,10" Grid.Row="3" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
         <Label Content="User ID" Grid.Row="4" VerticalAlignment="Center"></Label>
-        <TextBox Name="UserID" HorizontalAlignment="Center" Height="30" FontSize="12" Width="120" Grid.Column="1" Margin="0,0,10,0" Grid.Row="4" Padding="1"></TextBox>
+        <TextBox Name="UserID" HorizontalAlignment="Center" Height="30" FontSize="12" Width="120" Grid.Column="1" Margin="0,0,10,10" Grid.Row="4" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
         <Label Content="Password" Grid.Row="5" VerticalAlignment="Center"></Label>
-        <PasswordBox Name="UserPasswd" HorizontalAlignment="Center" InputScope="Password" Height="30" Width="120" Grid.Column="1" Grid.Row="5" Margin="0,0,10,0" Padding="2">
+        <PasswordBox Name="UserPasswd" HorizontalAlignment="Center" InputScope="Password" Height="30" Width="120" Grid.Column="1" Grid.Row="5" Margin="0,0,10,10" Padding="-8" Style="{StaticResource MaterialDesignOutlinedPasswordFieldPasswordBox}">
         </PasswordBox>
 
         <Label Content="Admins Password" Grid.Row="6" VerticalAlignment="Center"></Label>
-        <PasswordBox Name="AdminCredentials"  HorizontalAlignment="Center"  Height="30" Width="120" Grid.Column="1" Grid.Row="6" Padding="2" Margin="0,0,10,0">
+        <PasswordBox Name="AdminCredentials"  HorizontalAlignment="Center"  Height="30" Width="120" Grid.Column="1" Grid.Row="6" Padding="-8" Style="{StaticResource MaterialDesignOutlinedPasswordFieldPasswordBox}" Margin="0,0,10,0">
         </PasswordBox>
 
-        <Button Name="TestConnection" Content="Test Connection" Width="135" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Bottom" Margin="0,50,0,0" Click="Test" ToolTip="Use the saved connection info to test the connection and make this the main connection" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
-        <Button Name="Submit" Content="Save" Width="135" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Top" Click="Submit_Click" Margin="0,10,0,0" ToolTip="Save the connection information" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
+        <Button Name="TestConnection" Content="Test Connection" Width="140" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Bottom" Margin="0,50,0,0" Click="Test" ToolTip="Use the saved connection info to test the connection and make this the main connection" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
+        <Button Name="Submit" Content="Save" Width="140" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Top" Click="Submit_Click" Margin="0,10,0,0" ToolTip="Save the connection information" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
 
         <Label Content="Last Saved Settings" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" Margin="30,0,0,0" ></Label>
         <Button Name="back" Content="BACK" FontWeight="Bold" Height="25" Width="70" Grid.Row="7" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Back_Click_1" ToolTip="Close this window and head back to the Main Window"></Button>
