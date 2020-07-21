@@ -5,11 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITdata"
         mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         Title="PhoneWindow" Height="450" Width="500">
+
+    <Window.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border BorderThickness="1" BorderBrush="Black">
+                            <Grid Name="TabPanel">
+                                <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="TabPanel" Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="TabPanel" Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
 
-        <TabControl>
-            <TabItem Header="Insert New">
+        <TabControl xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+            <TabItem Header="Insert New" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto">
@@ -18,7 +68,6 @@
                         </ColumnDefinition>
                         <ColumnDefinition Width="auto">
                         </ColumnDefinition>
-                       
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
@@ -65,15 +114,22 @@
                     <Label Content="External Number" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"  FontSize="15" Margin="0,0,0,12" ></Label>
                     <TextBox Name="ext_num_txt" Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom"  Height="30" Width="100" FontSize="12" Padding="1" PreviewTextInput="Port_PreviewTextInput" ></TextBox>
 
-                    <Button Name="Submit" Content="ADD NEW" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Bottom" Click="submit_Click" Margin="0,30,0,0"></Button>
-                    <Button Name="Update" Content="SAVE" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Top" Click="update_Click" Margin="0,8,0,8" ></Button>
-                    <Button Name="Delete" Content="DELETE" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="2" Height="40" Width="110" Click="delete_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,8,0,0" ></Button>
-                    <Button Name="Clear" Content="CLEAR" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="2" Height="40" Width="110" Click="Clear_Click" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="0,8,0,0"></Button>
+                    <Button Name="Submit" Content="ADD NEW" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Bottom" Click="submit_Click" Margin="0,30,0,0" ToolTip="Add a new phone(You must fill all the fields in the form)" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
+                    <Button Name="Update" Content="SAVE" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Top" Click="update_Click" Margin="0,8,0,8" ToolTip="Update the information of the selected phone" Style="{DynamicResource MaterialDesignRaisedButton}" ></Button>
+                    <Button Name="Delete" Content="DELETE" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="2" Height="40" Width="110" Click="delete_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,8,0,0" ToolTip="Delete the selected phone" Style="{DynamicResource MaterialDesignRaisedButton}" ></Button>
+                    <Button Name="Clear" Content="CLEAR" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="2" Height="40" Width="110" Click="Clear_Click" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="0,8,0,0" ToolTip="Clear all the fields of the form" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
 
-                    <Button Content="BACK" Grid.Row="5" Grid.Column="0" Height="23" Width="68" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click" FontWeight="Bold"></Button>
+                    <Button Content="BACK" Grid.Row="5" Grid.Column="0" Height="23" Width="68" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click" FontWeight="Bold" ToolTip="Close this window and head back to the main window"></Button>
                 </Grid>
             </TabItem>
-            <TabItem Header="Match" >
+            <TabItem Header="Match" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto">
@@ -82,7 +138,6 @@
                         </ColumnDefinition>
                         <ColumnDefinition Width="auto">
                         </ColumnDefinition>
-                      
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
@@ -94,7 +149,6 @@
                         </RowDefinition>
                         <RowDefinition Height="*">
                         </RowDefinition>
-                       
                     </Grid.RowDefinitions>
 
                     <ListBox Name="unmatched_phones_listbox" Grid.Column="0" Grid.RowSpan="4" SelectionChanged="unmatched_phones_listbox_SelectionChanged" Width="100" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0"></ListBox>
@@ -103,26 +157,20 @@
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" SharedSizeGroup="Column1"/>
-                                        <ColumnDefinition Width="Auto" SharedSizeGroup="Column2"/>
-                                        <ColumnDefinition Width="Auto" SharedSizeGroup="Column3"/>
-
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="Column1" />
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="Column2" />
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="Column3" />
                                     </Grid.ColumnDefinitions>
-                                    
 
                                     <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                                        
+
                                         <TextBlock Text="First Name:" FontWeight="Bold"></TextBlock>
-                                         <TextBlock   Text="{Binding first_name}" Grid.Column="0"  ></TextBlock>
+                                        <TextBlock   Text="{Binding first_name}" Grid.Column="0"  ></TextBlock>
                                         <TextBlock Text="Last Name:" FontWeight="Bold"></TextBlock>
                                         <TextBlock   Text="{Binding last_name}" Grid.Column="1" ></TextBlock>
                                         <TextBlock Text="_________________"></TextBlock>
-
                                     </StackPanel>
-
-                               
-                                
-                                    </Grid>
+                                </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
@@ -139,12 +187,19 @@
                     <Label Content="Filter:" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="0,10,0,0"></Label>
                     <TextBox Name="filter_users" Height="30" Grid.Column="1" Width="65" Margin="0,10,15,0" PreviewKeyUp="filter_users_PreviewKeyUp"></TextBox>
 
-                    <Button Name="match" Content="MATCH" FontWeight="Bold" Height="27" Width="90" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Click="match_Click" Margin="0,10,0,0"></Button>
+                    <Button Name="match" Content="MATCH" FontWeight="Bold" Height="27" Width="90" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Click="match_Click" Margin="0,10,0,0" ToolTip="Match a phone with it's user" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
 
-                    <Button Name="back_btn" Content="BACK" Height="23" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3"></Button>
+                    <Button Name="back_btn" Content="BACK" Height="23" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3" Click="Button_Click" ToolTip="Close this window and head back to the main menu"></Button>
                 </Grid>
             </TabItem>
-            <TabItem Header="TBD">
+            <TabItem Header="TBD" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*">

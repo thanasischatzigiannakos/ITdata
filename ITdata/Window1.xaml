@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITdata"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
         mc:Ignorable="d"
-        Title="Window1" Height="320" Width="450">
+        Title="Window1" Height="340" Width="450">
     <Grid Name="MainGrid">
 
         <Grid.ColumnDefinitions>
@@ -64,11 +66,11 @@
         <PasswordBox Name="AdminCredentials"  HorizontalAlignment="Center"  Height="30" Width="120" Grid.Column="1" Grid.Row="6" Padding="2" Margin="0,0,10,0">
         </PasswordBox>
 
-        <Button Name="TestConnection" Content="Test Connection" Width="135" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Bottom" Margin="0,50,0,0" Click="Test"></Button>
-        <Button Name="Submit" Content="Save" Width="135" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Top" Click="Submit_Click" Margin="0,10,0,0"></Button>
+        <Button Name="TestConnection" Content="Test Connection" Width="135" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Bottom" Margin="0,50,0,0" Click="Test" ToolTip="Use the saved connection info to test the connection and make this the main connection" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
+        <Button Name="Submit" Content="Save" Width="135" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Top" Click="Submit_Click" Margin="0,10,0,0" ToolTip="Save the connection information" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
 
         <Label Content="Last Saved Settings" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" Margin="30,0,0,0" ></Label>
-        <Button Name="back" Content="BACK" FontWeight="Bold" Height="25" Width="70" Grid.Row="7" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Back_Click_1"></Button>
+        <Button Name="back" Content="BACK" FontWeight="Bold" Height="25" Width="70" Grid.Row="7" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Back_Click_1" ToolTip="Close this window and head back to the Main Window"></Button>
      
     </Grid>
 </Window>

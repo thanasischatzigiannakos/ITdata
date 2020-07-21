@@ -5,6 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITdata"
         mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         Title="LocationWindow" Height="400" Width="300">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -36,12 +44,12 @@
         </ListBox>
 
         <TextBox Name="inputbox" Grid.Column="1" Width="140" Height="30" FontSize="12" Padding="1"></TextBox>
-        <Button Content="SAVE" Name="save_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" Click="save_button_Click" VerticalAlignment="Top" ></Button>
-        <Button Content="DELETE" Name="delete_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,28,0,0" Click="delete_button_Click"></Button>
-        <Button Content="ADD NEW" Name="add_new_button" Width="100" Height="30" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Click="add_new_button_Click"></Button>
+        <Button Content="SAVE" Name="save_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" Click="save_button_Click" VerticalAlignment="Top" ToolTip="Update the name of the selected location" Style="{DynamicResource MaterialDesignRaisedButton}" ></Button>
+        <Button Content="DELETE" Name="delete_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,28,0,0" Click="delete_button_Click" ToolTip="Delete the selected location" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
+        <Button Content="ADD NEW" Name="add_new_button" Width="100" Height="30" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Click="add_new_button_Click" ToolTip="Add a new location" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
 
 
-        <Button Content="BACK" Grid.Column="0" Grid.Row="4" Height="25" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click"></Button>
+        <Button Content="BACK" Grid.Column="0" Grid.Row="4" Height="25" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click" ToolTip="Close this window and head back to the main window"></Button>
 
 
     </Grid>

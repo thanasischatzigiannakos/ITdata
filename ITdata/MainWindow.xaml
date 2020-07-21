@@ -9,11 +9,40 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
-        TextOptions.TextFormattingMode="Ideal" 
-        TextOptions.TextRenderingMode="Auto"        
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="MainWindow" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border BorderThickness="1" BorderBrush="Black">
+                            <Grid Name="TabPanel">
+                                <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="TabPanel" Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="TabPanel" Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto">
@@ -44,11 +73,48 @@
             </MenuItem>
         </Menu>
 
-        <TabControl Grid.Row="1" Grid.ColumnSpan="2">
-            <TabItem Header="USERS" Background="AliceBlue">
-                <TabControl>
-                    <TabItem Header="Add New User">
-                        <Grid Background="AliceBlue">
+        <TabControl Grid.Row="1" Grid.ColumnSpan="2" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+            <TabItem Header="USERS"
+
+                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+                      TextElement.FontWeight="Regular"
+                      TextElement.FontSize="13"
+                      TextOptions.TextFormattingMode="Ideal"
+                      TextOptions.TextRenderingMode="Auto"
+                      Background="{DynamicResource MaterialDesignPaper}"
+                      FontFamily="{DynamicResource MaterialDesignFont}"
+>
+
+                <TabControl xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+                    <TabItem Header="Add New User"
+                             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}">
+                        <Grid xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto">
                                 </ColumnDefinition>
@@ -78,58 +144,76 @@
                             </Grid.RowDefinitions>
 
                             <Label Content="FIRST NAME" FontSize="10"></Label>
-                            <TextBox Name="f_name" Grid.Row="0" Width="100" Height="30" FontSize="12" Margin="0,20,0,0" Padding="1" Background="WhiteSmoke"></TextBox>
+                            <TextBox Name="f_name" Grid.Row="0" Width="100" Height="30" FontSize="12" Margin="0,20,0,0" Padding="1" Style="{StaticResource MaterialDesignTextBox}"></TextBox>
 
                             <Label Content="LAST NAME" FontSize="10" Grid.Column="1" Margin="10,0,0,0"></Label>
-                            <TextBox Name="l_name"  Grid.Row="0" Grid.Column="1" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" Background="WhiteSmoke"></TextBox>
+                            <TextBox Name="l_name"  Grid.Row="0" Grid.Column="1" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" Style="{StaticResource MaterialDesignTextBox}"></TextBox>
 
                             <Label Content="FIRST NAME GREEK" FontSize="10" Grid.Column="2"></Label>
-                            <TextBox Name="f_name_g" Grid.Row="0" Grid.Column="2" Width="100" Height="30" FontSize="12" Padding="1" Margin="0,20,0,0" Background="WhiteSmoke" ></TextBox>
+                            <TextBox Name="f_name_g" Grid.Row="0" Grid.Column="2" Width="100" Height="30" FontSize="12" Padding="1" Margin="0,20,0,0" Style="{StaticResource MaterialDesignTextBox}" ></TextBox>
 
                             <Label Content="LAST NAME GREEK" FontSize="10" Grid.Column="3" Margin="15,0,0,0"></Label>
-                            <TextBox Name="l_name_g"  Grid.Row="0" Grid.Column="3" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" Background="WhiteSmoke"></TextBox>
+                            <TextBox Name="l_name_g"  Grid.Row="0" Grid.Column="3" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" Style="{StaticResource MaterialDesignTextBox}"></TextBox>
 
                             <Label Content="COMPANY" FontSize="10" Grid.Column="0" Grid.Row="1" Margin="0,0,0,0" ></Label>
-                            <ComboBox Name="company_combo" Text="Select a Company" Grid.Row="1" Height="30" FontSize="12" Width="100" Margin="0,20,0,0" SelectionChanged="company_combo_SelectionChanged" Background="WhiteSmoke"></ComboBox>
+                            <ComboBox Name="company_combo" Text="Select a Company" Grid.Row="1" Height="30" FontSize="12" Width="100" Margin="0,20,0,0" SelectionChanged="company_combo_SelectionChanged" ></ComboBox>
 
                             <Label Content="LOCATION" FontSize="10" Grid.Column="1" Grid.Row="1" Margin="10,0,0,0" ></Label>
-                            <ComboBox Name="location_combo" Text="Select a Location" Grid.Row="1" Grid.Column="1" Height="30" FontSize="12" Width="100" Margin="10,20,0,0" SelectionChanged="location_combo_SelectionChanged" Background="WhiteSmoke"></ComboBox>
+                            <ComboBox Name="location_combo" Text="Select a Location" Grid.Row="1" Grid.Column="1" Height="30" FontSize="12" Width="100" Margin="10,20,0,0" SelectionChanged="location_combo_SelectionChanged"></ComboBox>
 
                             <Label Content="DEPARTMENT" FontSize="10" Grid.Column="2" Grid.Row="1" Margin="10,0,0,0" ></Label>
-                            <ComboBox Name="department_combo" Text="Select a Department" Grid.Row="1" Grid.Column="2" Height="30" FontSize="12" Width="100" Margin="10,20,0,0" SelectionChanged="department_combo_SelectionChanged" Background="WhiteSmoke"></ComboBox>
+                            <ComboBox Name="department_combo" Text="Select a Department" Grid.Row="1" Grid.Column="2" Height="30" FontSize="12" Width="100" Margin="10,20,0,0" SelectionChanged="department_combo_SelectionChanged" ></ComboBox>
 
                             <Label Content="JOB DESCRIPTION" FontSize="10" Grid.Column="3" Grid.Row="1" Margin="15,0,0,0"></Label>
-                            <TextBox Name="j_desc" Grid.Row="1" Grid.Column="3" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" Background="WhiteSmoke"></TextBox>
+                            <TextBox Name="j_desc" Grid.Row="1" Grid.Column="3" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" Style="{StaticResource MaterialDesignTextBox}" ></TextBox>
 
                             <Label Content="HOST NAME" FontSize="10" Grid.Column="0" Grid.Row="2" Margin="0,0,0,0"></Label>
-                            <TextBox Name="h_name"  Grid.Row="2" Grid.Column="0" Width="100" Height="30" FontSize="12" Padding="1" Margin="0,20,0,0" Background="WhiteSmoke" ></TextBox>
+                            <TextBox Name="h_name"  Grid.Row="2" Grid.Column="0" Width="100" Height="30" FontSize="12" Padding="1" Margin="0,20,0,0" Style="{StaticResource MaterialDesignTextBox}" ></TextBox>
 
                             <Label Content="USERNAME" FontSize="10" Grid.Column="1" Grid.Row="2" Margin="10,0,0,0"></Label>
-                            <TextBox Name="username" Grid.Row="2" Grid.Column="1" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" Background="WhiteSmoke"></TextBox>
+                            <TextBox Name="username" Grid.Row="2" Grid.Column="1" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" Style="{StaticResource MaterialDesignTextBox}" ></TextBox>
 
                             <Label Content="PASSWORD" FontSize="10" Grid.Column="2" Grid.Row="2" Margin="10,0,0,0"></Label>
-                            <TextBox Name="passwd"  Grid.Row="2" Grid.Column="2" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" Background="WhiteSmoke"></TextBox>
+                            <TextBox Name="passwd"  Grid.Row="2" Grid.Column="2" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" Style="{StaticResource MaterialDesignTextBox}" ></TextBox>
 
                             <Label Content="ADMIN PASSWORD" FontSize="10" Grid.Column="3" Grid.Row="2" Margin="15,0,0,0"></Label>
-                            <TextBox Name="admin_passwd"  Grid.Row="2" Grid.Column="3" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" Background="WhiteSmoke"></TextBox>
+                            <TextBox Name="admin_passwd"  Grid.Row="2" Grid.Column="3" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" Style="{StaticResource MaterialDesignTextBox}" ></TextBox>
 
                             <CheckBox Name="status" Content="STATUS" Grid.Row="3" FontSize="10" Margin="0,20,0,0"></CheckBox>
 
                             <Label Content="RADMIN PORT" FontSize="10" Grid.Column="1" Grid.Row="3" Margin="10,0,0,0"></Label>
-                            <TextBox Name="radmin_port"  Grid.Row="3" Grid.Column="1" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" PreviewTextInput="Port_PreviewTextInput" Background="WhiteSmoke" ></TextBox>
+                            <TextBox Name="radmin_port"  Grid.Row="3" Grid.Column="1" Width="100" Height="30" FontSize="12" Padding="1" Margin="10,20,0,0" PreviewTextInput="Port_PreviewTextInput" Style="{StaticResource MaterialDesignTextBox}"  ></TextBox>
 
                             <Label Content="NOTES" FontSize="10" Grid.Column="4" Grid.Row="0" Margin="10,0,0,0"></Label>
-                            <TextBox Name="notes" FontSize="12" Grid.Row="0" Grid.Column="4" Grid.RowSpan="4" AcceptsReturn="True" Width="200" Height="200" Margin="10,20,0,0" Background="WhiteSmoke"></TextBox>
+                            <TextBox Name="notes" FontSize="12" Grid.Row="0" Grid.Column="4" Grid.RowSpan="4" AcceptsReturn="True" Width="200" Height="200" Margin="10,20,0,0" Style="{StaticResource MaterialDesignTextBox}" ></TextBox>
 
-                            <Button Name="submit" Content="ADD NEW" FontWeight="Bold" FontSize="10" Grid.Row="4" Grid.Column="2" Height="25" Width="80" Margin="0,20,0,0" Click="submit_Click"></Button>
+                            <Button Name="submit" Content="ADD NEW" FontWeight="Bold" FontSize="10" Grid.Row="4" Grid.Column="2" Height="25" Width="80" Margin="0,20,0,0" Click="submit_Click" ToolTip="Add a new user"></Button>
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Search"></TabItem>
-                    <TabItem Header="Delete"></TabItem>
+                    <TabItem Header="Search"
+                             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"></TabItem>
                     
+                    <TabItem Header="Delete" TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+                              TextElement.FontWeight="Regular"
+                              TextElement.FontSize="13"
+                              TextOptions.TextFormattingMode="Ideal"
+                              TextOptions.TextRenderingMode="Auto"
+                              Background="{DynamicResource MaterialDesignPaper}">></TabItem>
                 </TabControl>
             </TabItem>
-            <TabItem Header="Printers"></TabItem>
+            <TabItem Header="Printers" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"></TabItem>
         </TabControl>
     </Grid>
 </Window>

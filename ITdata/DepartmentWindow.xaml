@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITdata"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
         mc:Ignorable="d"
         Title="DepartmentWindow" Height="400" Width="300">
     <Grid>
@@ -39,12 +41,12 @@
         </ListBox>
 
         <TextBox Name="inputbox" Grid.Column="1" Width="140" Height="30" FontSize="12" Padding="1"></TextBox>
-        <Button Content="SAVE" Name="save_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" Click="save_button_Click" VerticalAlignment="Top"></Button>
-        <Button Content="DELETE" Name="delete_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,26,0,0" Click="delete_button_Click"></Button>
-        <Button Content="ADD NEW" Name="add_new_button" Width="100" Height="30" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Click="add_new_button_Click"></Button>
+        <Button Content="SAVE" Name="save_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" Click="save_button_Click" VerticalAlignment="Top" ToolTip="Update the name of the selected department" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
+        <Button Content="DELETE" Name="delete_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,26,0,0" Click="delete_button_Click" ToolTip="Delete the selected department" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
+        <Button Content="ADD NEW" Name="add_new_button" Width="100" Height="30" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Click="add_new_button_Click" ToolTip="Add a new department" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
 
 
-        <Button Content="BACK" Grid.Column="0" Grid.Row="4" Height="25" Width="70" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click"></Button>
+        <Button Content="BACK" Grid.Column="0" Grid.Row="4" Height="25" Width="70" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click" ToolTip="Close this window and head back to the main window"></Button>
 
 
     </Grid>
