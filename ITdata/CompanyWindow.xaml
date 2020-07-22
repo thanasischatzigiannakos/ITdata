@@ -52,7 +52,7 @@
         <Button Content="ADD NEW" Name="add_new_button" Width="100" Height="30" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Click="add_new_button_Click" ToolTip="Add a new company" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
 
 
-        <Button Content="BACK" Grid.Column="0" Grid.Row="4" FontWeight="Bold" Height="25" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click" Margin="3,0,0,5" ToolTip="Close this window and head back to the main window"></Button>
+        <Button Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Grid.Column="0" Grid.Row="4" FontWeight="Bold" Height="22" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click" Margin="3,0,0,5" ToolTip="Close this window and head back to the main window"></Button>
         
         
     </Grid>
