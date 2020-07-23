@@ -25,8 +25,8 @@ At the moment the database contains 7 tables which are:
 + location
 + department
 
-*users*
-The users table contains: 
+
+*The users table contains:* 
 
       1.first name
       2.last name
@@ -44,23 +44,22 @@ The users table contains:
       13.radmin port
       14.notes
       
-*mails*
-The mails table contains:
+*The mails table contains:*
 
      1.id
      2.email
      3.password
       
 
-*user_mail*
+user_mail
 The user_mail table contains:
 
     1.user_id(primary key,foreign key)
     2.mail_id(primary key, foreign key)
     
 
-*phones*
-The phones table contains:
+
+*The phones table contains:*
 
 
     1.id
@@ -75,21 +74,18 @@ The phones table contains:
     10.User ID(foreign key)
     
     
-*companies*
-The companies table contains:
+*The companies table contains:*
 
     1.id
     2.company(the companys name)
     
 
-*location*
-The location table contains:
+*The location table contains:*
 
     1.id
     2.location(name of the location) 
     
-*department*
-The department table contains:
+*The department table contains:*
     
     
     1.id
