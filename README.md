@@ -1,17 +1,17 @@
 # ITdata
 
-##A user and resources management program developed during my internship at the IT department of a factory.##
+## A user and resources management program developed during my internship at the IT department of a factory.
 
 
 
-___Main uses___ 
-
+___ Main uses ___ 
+ 
 The applications purpose is to allow the IT department of the company to manage efficiently the data from employees(e-mails,company phones,personal information)
 ,hardware used in the factory(switches,printers, phones) and test the status of various servers in the network.
 
 Specifically the applications user(IT admin) can add,edit or delete an employee,a phone,or a printer from the database. Furthermore since the IT department, the application is developed for, might need to manage resources from different companies(*at the moment there are 3 seperate companies they are managing in the factory*) the admins are able to add edit or delete companies,locations and departments from the database.(_The databased used was created specifically for this application and does not change the data the rest of the factory have access to _)
 
-___Entities and interconnections___
+___ Entities and interconnections ___
 
 At the moment the database contains 7 tables which are: 
 
