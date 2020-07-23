@@ -1,16 +1,17 @@
 # ITdata
-##A user and resources management program developed during my internship at the IT department of a factory.
+
+##A user and resources management program developed during my internship at the IT department of a factory.##
 
 
 
-___*Main uses* 
+___Main uses___ 
 
 The applications purpose is to allow the IT department of the company to manage efficiently the data from employees(e-mails,company phones,personal information)
 ,hardware used in the factory(switches,printers, phones) and test the status of various servers in the network.
 
 Specifically the applications user(IT admin) can add,edit or delete an employee,a phone,or a printer from the database. Furthermore since the IT department, the application is developed for, might need to manage resources from different companies(*at the moment there are 3 seperate companies they are managing in the factory*) the admins are able to add edit or delete companies,locations and departments from the database.(_The databased used was created specifically for this application and does not change the data the rest of the factory have access to _)
 
-___*Entities and interconnections*
+___Entities and interconnections___
 
 At the moment the database contains 7 tables which are: 
 
@@ -22,7 +23,7 @@ At the moment the database contains 7 tables which are:
 +location
 +department
 
-_*users*_
+*users*
 The users table contains: 
 
       1.first name
@@ -41,7 +42,7 @@ The users table contains:
       13.radmin port
       14.notes
       
-_*mails*_
+*mails*
 The mails table contains:
 
      1.id
@@ -49,14 +50,14 @@ The mails table contains:
      3.password
       
 
-_*user_mail*_
+*user_mail*
 The user_mail table contains:
 
     1.user_id(primary key,foreign key)
     2.mail_id(primary key, foreign key)
     
 
-_*phones*_
+*phones*
 The phones table contains:
 
 
@@ -72,20 +73,20 @@ The phones table contains:
     10.User ID(foreign key)
     
     
-_*companies*_
+*companies*
 The companies table contains:
 
     1.id
     2.company(the companys name)
     
 
-_*location*_
+*location*
 The location table contains:
 
     1.id
     2.location(name of the location) 
     
-_*department*_
+*department*
 The department table contains:
     
     
