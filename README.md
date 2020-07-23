@@ -4,7 +4,7 @@
 
 
 
-Main uses
+## Main uses
 ___ 
  
 The applications purpose is to allow the IT department of the company to manage efficiently the data from employees(e-mails,company phones,personal information)
