@@ -10,7 +10,9 @@ ___
 The applications purpose is to allow the IT department of the company to manage efficiently the data from employees(e-mails,company phones,personal information)
 ,hardware used in the factory(switches,printers, phones) and test the status of various servers in the network.
 
-Specifically the applications user(IT admin) can add,edit or delete an employee,a phone,or a printer from the database. Furthermore since the IT department, the application is developed for, might need to manage resources from different companies(*at the moment there are 3 seperate companies they are managing in the factory*) the admins are able to add edit or delete companies,locations and departments from the database.(_ The databased used was created specifically for this application and does not change the data the rest of the factory have access to)
+Specifically the applications user(IT admin) can add,edit or delete an employee,a phone,or a printer from the database. Furthermore since the IT department, the application is developed for, might need to manage resources from different companies(*at the moment there are 3 seperate companies they are managing in the factory*) the admins are able to add edit or delete companies,locations and departments from the database.(_The database used was created specifically for this application and does not change the data the rest of the factory have access to).
+
+
 
 Entities and interconnections
 ___
@@ -25,8 +27,10 @@ At the moment the database contains 7 tables which are:
 + location
 + department
 
-_Database Tables rundown_
-***
+
+
+_*Database Tables rundown*_
+
 
 *The users table contains:* 
 
