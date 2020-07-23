@@ -17,13 +17,13 @@ ___
 
 At the moment the database contains 7 tables which are: 
 
-+users
-+mails
-+user_mail
-+phones
-+companies
-+location
-+department
++ users
++ mails
++ user_mail
++ phones
++ companies
++ location
++ department
 
 *users*
 The users table contains: 
