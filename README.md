@@ -14,8 +14,8 @@ Specifically the applications user(IT admin) can add,edit or delete an employee,
 
 
 
-Entities and interconnections
-___
+### Entities and interconnections
+
 
 At the moment the database contains 7 tables which are: 
 
@@ -29,7 +29,7 @@ At the moment the database contains 7 tables which are:
 
 
 
-_*Database Tables rundown*_
+#### _*Database Tables rundown*_
 
 
 *The users table contains:* 
