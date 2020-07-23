@@ -25,6 +25,8 @@ At the moment the database contains 7 tables which are:
 + location
 + department
 
+_Database Tables rundown_
+***
 
 *The users table contains:* 
 
@@ -51,8 +53,8 @@ At the moment the database contains 7 tables which are:
      3.password
       
 
-user_mail
-The user_mail table contains:
+
+*The user_mail table contains:*
 
     1.user_id(primary key,foreign key)
     2.mail_id(primary key, foreign key)
@@ -60,7 +62,6 @@ The user_mail table contains:
 
 
 *The phones table contains:*
-
 
     1.id
     2.model
@@ -74,20 +75,23 @@ The user_mail table contains:
     10.User ID(foreign key)
     
     
+    
 *The companies table contains:*
 
     1.id
     2.company(the companys name)
     
 
+
 *The location table contains:*
 
     1.id
     2.location(name of the location) 
     
+    
+    
 *The department table contains:*
-    
-    
+
     1.id
     2.department(the departments name)
 
