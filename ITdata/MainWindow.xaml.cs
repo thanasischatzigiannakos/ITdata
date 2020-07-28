@@ -20,6 +20,9 @@ namespace ITdata
             s_locationlist();
             s_departmentlist();
             user_list();
+            company_combo.SelectedIndex = 0;
+            location_combo.SelectedIndex = 0;
+            department_combo.SelectedIndex = 0;
         }
 
         private int cmpID = 0, locID = 0, depID = 0, statusInt = 0, s_cmpID = 0, s_locID = 0, s_depID = 0, s_statusInt = 0, userID = 0;
@@ -63,6 +66,12 @@ namespace ITdata
         {
             PhoneWindow pnwin = new PhoneWindow();
             pnwin.Show();
+            this.Close();
+        }
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            EmailsWindow emwind = new EmailsWindow();
+            emwind.Show();
             this.Close();
         }
 
@@ -202,6 +211,9 @@ namespace ITdata
                 radmin_port.Clear();
                 notes.Clear();
                 user_list();
+                company_combo.SelectedIndex = 0;
+                location_combo.SelectedIndex = 0;
+                department_combo.SelectedIndex = 0;
             }
         }
 
@@ -397,6 +409,8 @@ namespace ITdata
             }
 
         }
+
+        
 
         private void filter_users_PreviewKeyUp(object sender, KeyEventArgs e)
         {

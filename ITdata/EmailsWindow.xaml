@@ -1,0 +1,196 @@
+﻿<Window x:Class="ITdata.EmailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITdata"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="EmailsWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border BorderThickness="1" BorderBrush="Black">
+                            <Grid Name="TabPanel">
+                                <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="TabPanel" Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="TabPanel" Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <TabControl xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+            <TabItem Header="Emails" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                        
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*">
+                        </RowDefinition>
+                        <RowDefinition Height="*">
+                        </RowDefinition>
+                        <RowDefinition Height="*">
+                        </RowDefinition>
+                        <RowDefinition Height="*">
+                        </RowDefinition>
+                        <RowDefinition Height="*">
+                        </RowDefinition>
+                        <RowDefinition Height="*">
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <ListBox Name="email_listbox" Grid.RowSpan="5" Grid.Row="1" Grid.ColumnSpan="2" SelectionChanged="email_listbox_SelectionChanged" Width="200" Height="270" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="2" Margin="0,0,0,30"></ListBox>
+                    <Label Content="Filter:" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="10" Margin="40,0,0,0" ></Label>
+                    <TextBox Name="search" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="90" Height="22" Padding="-6" PreviewKeyUp="search_PreviewKeyUp"   Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="0,0,10,0"></TextBox>
+
+                    <Label Content="Email:" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" ></Label>
+                    <TextBox Name="email_tb" Height="22" Width="140" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8" FontSize="12"></TextBox>
+
+                    <Label Content="Password:" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" ></Label>
+                    <TextBox Name="passwd_tb" Height="22" Width="140" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,5,0,0"  Padding="-8" FontSize="12" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
+
+                    <Button Name="add_new_btn" Content="Add New" Width="100" Height="30" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Click="add_new_btn_Click"></Button>
+                    <Button Name="update_btn" Content="Update" Width="100" Height="30" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" Click="update_btn_Click"></Button>
+                    <Button Name="delete_btn" Content="Delete" Width="100" Height="30" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin=" 0,5,0,0" Click="delete_btn_Click"></Button>
+                    <Button Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Grid.Row="5" Grid.Column="0" Height="22" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click" FontWeight="Bold" ToolTip="Close this window and head back to the main window" Margin="0,20,0,0" Style="{StaticResource MaterialDesignFlatDarkBgButton}"></Button>
+                    
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Match Emails" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="auto">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="auto">
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*">
+                        </RowDefinition>
+                        <RowDefinition Height="*">
+                        </RowDefinition>
+                        <RowDefinition Height="*">
+                        </RowDefinition>
+                        <RowDefinition Height="*">
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <ListBox Name="unmatched_emails_listbox" Grid.Column="0" Grid.RowSpan="4" SelectionChanged="unmatched_emails_listbox_SelectionChanged" Width="140" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1"></ListBox>
+                    <ListBox Name="user_listbox" Grid.RowSpan="4" Grid.Column="1" SelectionChanged="user_listbox_SelectionChanged" Width="140" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="Column1" />
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="Column2" />
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="Column3" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+
+                                        <TextBlock Text="First Name:" FontWeight="Bold"></TextBlock>
+                                        <TextBlock   Text="{Binding first_name}" Grid.Column="0"  ></TextBlock>
+                                        <TextBlock Text="Last Name:" FontWeight="Bold"></TextBlock>
+                                        <TextBlock   Text="{Binding last_name}" Grid.Column="1" ></TextBlock>
+                                        <TextBlock Text="_________________"></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+
+
+
+
+                    <Label Content="Selected User" Grid.Column="2" VerticalAlignment="Center" FontSize="15" Margin="0,10,0,0"></Label>
+                    <TextBox Name="user_selected_box" Grid.Row="0" Grid.Column="2" Height="25" VerticalAlignment="Bottom" Width="200"  IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
+
+                    <Label Content="Selected Email" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" FontSize="15" Margin="0,10,0,0"></Label>
+                    <TextBox Name="email_selected_box"  Grid.Row="1" Grid.Column="2" Height="25" Width="200" Margin="0,0,0,0" IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
+
+                    <Label Content="Filter:" Grid.Row="0" VerticalAlignment="Center" Margin="0,10,0,5"></Label>
+                    <TextBox Name="filter_emails" Height="25" Width="65" Margin="5,10,15,10" PreviewKeyUp="filter_emails_PreviewKeyUp"  Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
+
+                    <Label Content="Filter:" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="0,10,0,5"></Label>
+                    <TextBox Name="filter_users" Height="25" Grid.Column="1" Width="65" Margin="-10,10,15,10" PreviewKeyUp="filter_users_PreviewKeyUp" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
+
+                    <Button Name="match" Content="MATCH" FontWeight="Bold" Height="27" Width="90" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Click="match_Click" Margin="0,0,0,0" ToolTip="Match a phone with it's user" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
+
+                    <Button Name="back_btn" Content="BACK" Height="23" Width="70" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3" Click="Button_Click" ToolTip="Close this window and head back to the main menu"></Button>
+                </Grid>
+
+
+            </TabItem>
+            
+            
+        </TabControl>
+        
+    </Grid>
+    
+</Window>

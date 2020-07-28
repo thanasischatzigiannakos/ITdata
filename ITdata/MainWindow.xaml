@@ -70,6 +70,7 @@
                 <MenuItem Header="Edit Location" Click="Location_Click"></MenuItem>
                 <MenuItem Header="Edit Department" Click="Dept_Click"></MenuItem>
                 <MenuItem Header="Edit Phones" Click="Phone_Click"></MenuItem>
+                <MenuItem Header="Edit Emails" Click="MenuItem_Click_1"></MenuItem>
             </MenuItem>
         </Menu>
 
