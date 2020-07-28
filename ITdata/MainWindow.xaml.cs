@@ -13,19 +13,16 @@ namespace ITdata
         public MainWindow()
         {
             InitializeComponent();
-            company_list();
-            locationlist();
-            departmentlist();
+          
             s_company_list();
             s_locationlist();
             s_departmentlist();
             user_list();
-            company_combo.SelectedIndex = 0;
-            location_combo.SelectedIndex = 0;
-            department_combo.SelectedIndex = 0;
+            user_email();
+         
         }
 
-        private int cmpID = 0, locID = 0, depID = 0, statusInt = 0, s_cmpID = 0, s_locID = 0, s_depID = 0, s_statusInt = 0, userID = 0;
+        private int cmpID = 0, locID = 0, depID = 0, s_cmpID = 0, s_locID = 0, s_depID = 0, s_statusInt = 0, userID = 0;
 
         //-------------------------ON CLICK OPEN WINDOW1 AND CLOSE THIS ONE-------------------------------------
         private void EditItem_Click_1(object sender, RoutedEventArgs e)
@@ -75,123 +72,14 @@ namespace ITdata
             this.Close();
         }
 
-        private void company_list()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
-        {
-            String conString = Properties.dbSettings.Default.connectionString;
+       
+       
 
-            using (MySqlConnection con = new MySqlConnection(conString))
-            {
-                try
-                {
-                    con.Open();
-                    DataSet ds1 = new DataSet();
-
-                    MySqlDataAdapter adp1 = new MySqlDataAdapter("SELECT * FROM companies", con);  //-----PASS ALL THE DATA IN A DATASET
-                    DataTable dt1 = new DataTable();
-                    adp1.Fill(dt1);
-                    company_combo.ItemsSource = dt1.DefaultView;
-                    //DATABINDING -------SETTING VALUE MEMBER AND DISPLAY MEMBER--------------
-                    company_combo.SelectedValuePath = "id";
-                    company_combo.DisplayMemberPath = "company";
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                finally
-                {
-                    con.Close();
-                    con.Dispose();
-                }
-            }
-        }
-
-        private void locationlist()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
-        {
-            String conString = Properties.dbSettings.Default.connectionString;
-
-            using (MySqlConnection con = new MySqlConnection(conString))
-            {
-                try
-                {
-                    con.Open();
-                    DataSet ds2 = new DataSet();
-
-                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM location", con);  //-----PASS ALL THE DATA IN A DATASET
-                    DataTable dt2 = new DataTable();
-                    adp2.Fill(dt2);
-                    location_combo.ItemsSource = dt2.DefaultView;
-                    //DATABINDING -------SETTING VALUE MEMBER AND DISPLAY MEMBER--------------
-                    location_combo.SelectedValuePath = "id";
-                    location_combo.DisplayMemberPath = "location";
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                finally
-                {
-                    con.Close();
-                    con.Dispose();
-                }
-            }
-        }
-
-        private void departmentlist()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
-        {
-            String conString = Properties.dbSettings.Default.connectionString;
-
-            using (MySqlConnection con = new MySqlConnection(conString))
-            {
-                try
-                {
-                    con.Open();
-                    DataSet ds3 = new DataSet();
-
-                    MySqlDataAdapter adp3 = new MySqlDataAdapter("SELECT * FROM department", con);  //-----PASS ALL THE DATA IN A DATASET
-                    DataTable dt3 = new DataTable();
-                    adp3.Fill(dt3);
-                    department_combo.ItemsSource = dt3.DefaultView;
-                    //DATABINDING -------SETTING VALUE MEMBER AND DISPLAY MEMBER--------------
-                    department_combo.SelectedValuePath = "id";
-                    department_combo.DisplayMemberPath = "dept";
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                finally
-                {
-                    con.Close();
-                    con.Dispose();
-                }
-            }
-        }
-
-        private void company_combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (company_combo.SelectedItem != null)
-            {
-                DataRowView d1 = company_combo.SelectedItem as DataRowView;
-                cmpID = (int)d1["id"];
-            }
-        }
-
-        private void location_combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            DataRowView d1 = location_combo.SelectedItem as DataRowView;
-            locID = (int)d1["id"];
-        }
-
-        private void department_combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            DataRowView d1 = department_combo.SelectedItem as DataRowView;
-            depID = (int)d1["id"];
-        }
+        
 
         private void submit_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(l_name.Text) || String.IsNullOrWhiteSpace(f_name.Text) || String.IsNullOrWhiteSpace(l_name_g.Text) || String.IsNullOrWhiteSpace(f_name_g.Text) || cmpID == 0 || locID == 0 || depID == 0 || String.IsNullOrWhiteSpace(username.Text) || String.IsNullOrWhiteSpace(passwd.Text))
+            if (String.IsNullOrWhiteSpace(s_l_name.Text) || String.IsNullOrWhiteSpace(s_f_name.Text) || String.IsNullOrWhiteSpace(s_l_name_g.Text) || String.IsNullOrWhiteSpace(s_f_name_g.Text) || s_cmpID == 0 || s_locID == 0 || s_depID == 0 || String.IsNullOrWhiteSpace(s_username.Text) || String.IsNullOrWhiteSpace(s_passwd.Text))
             {
                 MessageBox.Show("Please fill all the required fields", "Error", MessageBoxButton.OK, MessageBoxImage.Question);
             }
@@ -199,21 +87,21 @@ namespace ITdata
             {
                 MessageBox.Show("New User Created", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
                 insertNew();
-                l_name.Clear();
-                f_name.Clear();
-                l_name_g.Clear();
-                f_name_g.Clear();
-                j_desc.Clear();
-                h_name.Clear();
-                username.Clear();
-                passwd.Clear();
-                admin_passwd.Clear();
-                radmin_port.Clear();
-                notes.Clear();
+                s_l_name.Clear();
+                s_f_name.Clear();
+                s_l_name_g.Clear();
+                s_f_name_g.Clear();
+                s_j_desc.Clear();
+                s_h_name.Clear();
+                s_username.Clear();
+                s_passwd.Clear();
+                s_admin_passwd.Clear();
+                s_radmin_port.Clear();
+                s_notes.Clear();
                 user_list();
-                company_combo.SelectedIndex = 0;
-                location_combo.SelectedIndex = 0;
-                department_combo.SelectedIndex = 0;
+                s_company_combo.SelectedIndex = 0;
+                s_location_combo.SelectedIndex = 0;
+                s_department_combo.SelectedIndex = 0;
             }
         }
 
@@ -222,16 +110,16 @@ namespace ITdata
             String CmdString;
             String conString = Properties.dbSettings.Default.connectionString;
 
-            if (status.IsChecked == true)
-                statusInt = 1;
+            if (s_status.IsChecked == true)
+                s_statusInt = 1;
             else
-                statusInt = 0;
+                s_statusInt = 0;
 
             using (MySqlConnection con = new MySqlConnection(conString))  //CONNECT TO THE DATABASE AND INSERT NEW VALUE IN THE TABLE
             {
                 try
                 {
-                    CmdString = "INSERT INTO users(first_name,last_name,gr_first_name,gr_last_name,company_id,location_id,department_id,job_desc,hostname,username,passwd,admin_passwd,status,radmin_port,notes) VALUES ('" + f_name.Text + "','" + l_name.Text + "','" + f_name_g.Text + "','" + l_name_g.Text + "','" + cmpID + "','" + locID + "','" + depID + "','" + j_desc.Text + "','" + h_name.Text + "','" + username.Text + "','" + passwd.Text + "','" + admin_passwd.Text + "','" + statusInt + "','" + radmin_port.Text + "','" + notes.Text
+                    CmdString = "INSERT INTO users(first_name,last_name,gr_first_name,gr_last_name,company_id,location_id,department_id,job_desc,hostname,username,passwd,admin_passwd,status,radmin_port,notes) VALUES ('" + s_f_name.Text + "','" + s_l_name.Text + "','" + s_f_name_g.Text + "','" + s_l_name_g.Text + "','" + s_cmpID + "','" + s_locID + "','" + s_depID + "','" + s_j_desc.Text + "','" + s_h_name.Text + "','" + s_username.Text + "','" + s_passwd.Text + "','" + s_admin_passwd.Text + "','" + s_statusInt + "','" + s_radmin_port.Text + "','" + s_notes.Text
                         + "')";
                     con.Open();
 
@@ -247,6 +135,7 @@ namespace ITdata
                     con.Close();
                     con.Dispose();
                     user_list();
+                    user_email();
                     //---------------AFTER TASK IS FINISHED CLOSE AND DISPOSE THE CONNECTION----------------------
                 }
             }
@@ -299,6 +188,41 @@ namespace ITdata
             user_listbox.SelectedIndex = 0;
         }
 
+        private void user_email()
+        {
+            String conString = Properties.dbSettings.Default.connectionString;
+
+            using (MySqlConnection con = new MySqlConnection(conString))
+            {
+                try
+                {
+                    con.Open();
+                    DataSet ds2 = new DataSet();
+
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM mail a JOIN user_mail b ON a.id=b.mail_id JOIN users c ON b.user_id=c.id WHERE c.id ='"+userID+"'", con);  //-----PASS ALL THE DATA IN A DATASET
+                    DataTable dt2 = new DataTable();
+                    adp2.Fill(dt2);
+                    user_mails_lb.ItemsSource = dt2.DefaultView;
+                    //DATABINDING -------SETTING VALUE MEMBER AND DISPLAY MEMBER--------------
+                    user_mails_lb.DisplayMemberPath = "email";
+                    user_mails_lb.SelectedValuePath = "id";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                finally
+                {
+                    con.Close();
+                    con.Dispose();
+                   
+                }
+            }
+            
+
+
+        }
+
         private void user_listbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (user_listbox.SelectedItem != null)
@@ -330,6 +254,7 @@ namespace ITdata
 
                 s_radmin_port.Text = d2["radmin_port"].ToString();
                 s_notes.Text = d2["notes"].ToString();
+                user_email();
             }
         }
 
@@ -448,6 +373,24 @@ namespace ITdata
                     }
                 }
             }
+        }
+
+        private void clear_Click(object sender, RoutedEventArgs e)
+        {
+            s_l_name.Clear();
+            s_f_name.Clear();
+            s_l_name_g.Clear();
+            s_f_name_g.Clear();
+            s_j_desc.Clear();
+            s_h_name.Clear();
+            s_username.Clear();
+            s_passwd.Clear();
+            s_admin_passwd.Clear();
+            s_radmin_port.Clear();
+            s_notes.Clear();
+            s_status.IsChecked = false;
+            userID = 0;
+            user_mails_lb.Items.Clear();
         }
 
         //*********************************UPDATE USER*******************************************************************
@@ -591,7 +534,7 @@ namespace ITdata
 
         private void s_company_combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (company_combo.SelectedItem != null)
+            if (s_company_combo.SelectedItem != null)
             {
                 DataRowView d1 = s_company_combo.SelectedItem as DataRowView;
                 s_cmpID = (int)d1["id"];
