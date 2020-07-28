@@ -22,7 +22,7 @@ namespace ITdata
          
         }
 
-        private int cmpID = 0, locID = 0, depID = 0, s_cmpID = 0, s_locID = 0, s_depID = 0, s_statusInt = 0, userID = 0;
+        private int  s_cmpID = 0, s_locID = 0, s_depID = 0, s_statusInt = 0, userID = 0;
 
         //-------------------------ON CLICK OPEN WINDOW1 AND CLOSE THIS ONE-------------------------------------
         private void EditItem_Click_1(object sender, RoutedEventArgs e)
@@ -204,7 +204,6 @@ namespace ITdata
                     adp2.Fill(dt2);
                     user_mails_lb.ItemsSource = dt2.DefaultView;
                     //DATABINDING -------SETTING VALUE MEMBER AND DISPLAY MEMBER--------------
-                    user_mails_lb.DisplayMemberPath = "email";
                     user_mails_lb.SelectedValuePath = "id";
                 }
                 catch (Exception ex)

@@ -13,7 +13,7 @@ namespace ITdata
     public partial class CompanyWindow : Window
     {
         private int idValue = 0;
-        private static System.Timers.Timer aTimer;
+        
 
         public CompanyWindow()
         {

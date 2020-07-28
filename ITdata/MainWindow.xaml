@@ -196,7 +196,29 @@
                     <TextBox Name="s_notes" FontSize="12" Grid.Row="0" Grid.Column="5" Grid.RowSpan="4" AcceptsReturn="True" Width="200" Height="200" Margin="10,0,0,20" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
                     <Label Content="Emails associated with user" Grid.Row="0" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"></Label>
-                    <ListBox Name="user_mails_lb" Grid.Column="6" Grid.RowSpan="4" VerticalAlignment="Center" Height="200" Width="200" BorderThickness="2" BorderBrush="{StaticResource PrimaryHueDarkBrush}" Margin="10,0,0,20"></ListBox>
+                    <ListBox Name="user_mails_lb" Grid.Column="6" Grid.RowSpan="4" VerticalAlignment="Center" Height="200" Width="200" BorderThickness="2" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" Margin="10,0,0,20">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="Column1" />
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="Column2" />
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="Column3" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+
+                                        <TextBlock Text="Email:" FontWeight="Bold"></TextBlock>
+                                        <TextBlock   Text="{Binding email}" Grid.Column="0"  ></TextBlock>
+                                        <TextBlock Text="Password:" FontWeight="Bold"></TextBlock>
+                                        <TextBlock   Text="{Binding passwd}" Grid.Column="1" ></TextBlock>
+                                        <TextBlock Text="_________________"></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        
+                    </ListBox>
 
                     <Button Name="submit" Content="ADD NEW"   Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" Height="25" Width="100" Margin="0,0,0,0" Click="submit_Click" ToolTip="Add a new user" HorizontalAlignment="Left" VerticalAlignment="Center"></Button>
                     <Button Name="search_save_btn" Content="SAVE" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Height="25" Width="100" Padding="-4" HorizontalAlignment="Center" Click="search_save_btn_Click" VerticalAlignment="Center" Margin="0,0,10,0"></Button>
