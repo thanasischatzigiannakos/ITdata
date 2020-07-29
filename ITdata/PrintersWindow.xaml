@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="PrintersWindow" Height="350" Width="450">
+        Title="PrintersWindow" Height="500" Width="550">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -35,30 +35,30 @@
 
         <Label Content="Filter:" Margin="0,10,0,0"></Label>
         <TextBox Name="filter_tb" Grid.Column="0" HorizontalAlignment="Center" Height="25" Width="100" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8" Margin="30,10,0,10" PreviewKeyUp="filter_tb_PreviewKeyUp"></TextBox>
-        <ListBox Name="printer_lb" Grid.RowSpan="6" Grid.Row="1" Height="200" Width="150" Margin="0,0,10,0" VerticalAlignment="Center" BorderThickness="2" BorderBrush="{StaticResource PrimaryHueDarkBrush}" SelectionChanged="printer_lb_SelectionChanged"></ListBox>
+        <ListBox Name="printer_lb" Grid.RowSpan="6" Grid.Row="1" Height="350" Width="150" Margin="0,0,10,0" VerticalAlignment="Center" BorderThickness="2" BorderBrush="{StaticResource PrimaryHueDarkBrush}" SelectionChanged="printer_lb_SelectionChanged"></ListBox>
 
         <Label Content="Name/Network ID" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" ></Label>
-        <TextBox Name="net_id_tb" Grid.Row="1" Grid.Column="1" Width="100" Height="25" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="0,2,0,2"></TextBox>
+        <TextBox Name="net_id_tb" Grid.Row="1" Grid.Column="1" Width="150" Height="25" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="0,2,0,2"></TextBox>
 
         <Label Content="IP Address" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="2"></Label>
-        <TextBox Name="ip_tb" Grid.Row="1" Grid.Column="2" Width="100" Height="25" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="ServerAddress_PreviewTextInput"></TextBox>
+        <TextBox Name="ip_tb" Grid.Row="1" Grid.Column="2" Width="150" Height="25" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="ServerAddress_PreviewTextInput"></TextBox>
 
-        <Label Content="Model" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="2"></Label>
-        <TextBox Name="model_tb" Grid.Row="3" Grid.Column="1" Width="100" Height="25" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
+        <Label Content="Model" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom"></Label>
+        <TextBox Name="model_tb" Grid.Row="3" Grid.Column="1" Width="150" Height="25" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
-        <Label Content="LOCATION" FontSize="10" Grid.Column="2" Grid.Row="2" Margin="10,0,0,0" ></Label>
-        <ComboBox Name="s_location_combo" Text="Select a Location" Grid.Row="3" Grid.Column="2" Height="25" FontSize="12" Width="100" Margin="10,0,0,0" SelectionChanged="s_location_combo_SelectionChanged" Style="{StaticResource MaterialDesignComboBox}"></ComboBox>
+        <Label Content="LOCATION" FontSize="10" Grid.Column="2" Grid.Row="2" Margin="10,0,0,0" VerticalAlignment="Bottom" ></Label>
+        <ComboBox Name="s_location_combo" Text="Select a Location" Grid.Row="3" Grid.Column="2" Height="25" FontSize="12" Width="150" Margin="10,0,0,0" SelectionChanged="s_location_combo_SelectionChanged" Style="{StaticResource MaterialDesignComboBox}"></ComboBox>
 
-        <Label Content="Admin Name" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="4"></Label>
-        <TextBox Name="admin_name_tb" Grid.Row="5" Grid.Column="1" Width="100" Height="25" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
+        <Label Content="Admin Name" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="4" VerticalAlignment="Bottom"></Label>
+        <TextBox Name="admin_name_tb" Grid.Row="5" Grid.Column="1" Width="150" Height="25" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
-        <Label Content="Admin Password" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="4"></Label>
-        <TextBox Name="admin_passwd_tb" Grid.Row="5" Grid.Column="2" Width="100" Height="25" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
+        <Label Content="Admin Password" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="4" VerticalAlignment="Bottom"></Label>
+        <TextBox Name="admin_passwd_tb" Grid.Row="5" Grid.Column="2" Width="150" Height="25" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
         <Button Name="add_new_btn" Content="Add new " Grid.Column="1" Grid.Row="6" Height="30" Width="90" Margin="10,10,0,0" Click="add_new_btn_Click" ToolTip="Add a new printer to the database"></Button>
         <Button Name="update_btn" Content="Save " Grid.Column="2" Grid.Row="6" Height="30" Width="90" Margin="10,10,0,0" Click="update_btn_Click" ToolTip="Update the slected printers information"></Button>
-        <Button Name="delete_btn" Content="Delete " Grid.Column="1" Grid.Row="7" Height="30" Width="90" Margin="10,0,0,30" Click="delete_btn_Click" ToolTip="Delete the selected printer from the database"></Button>
-        <Button Name="clear_btn" Content="Clear" Grid.Column="2" Grid.Row="7"  Height="30" Width="90" Margin="10,0,0,30" Click="clear_btn_Click" ToolTip="Clear all of the fields"></Button>
+        <Button Name="delete_btn" Content="Delete " Grid.Column="1" Grid.Row="7" Height="30" Width="90" Margin="10,0,0,30" Click="delete_btn_Click" ToolTip="Delete the selected printer from the database" VerticalAlignment="Top"></Button>
+        <Button Name="clear_btn" Content="Clear" Grid.Column="2" Grid.Row="7"  Height="30" Width="90" Margin="10,0,0,30" Click="clear_btn_Click" ToolTip="Clear all of the fields" VerticalAlignment="Top"></Button>
         <Button Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Grid.Row="7" Grid.Column="0" Height="22" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click" FontWeight="Bold" ToolTip="Close this window and head back to the main window" Margin="0,20,0,0" Style="{StaticResource MaterialDesignFlatDarkBgButton}"></Button>
     </Grid>
 </Window>

@@ -47,23 +47,23 @@
         </Grid.RowDefinitions>
         
         <Label Content="Server Address" Grid.Row="1" VerticalAlignment="Center"></Label>
-        <TextBox Name="ServerAddress" HorizontalAlignment="Center" Height="25" FontSize="12" Width="120" Grid.Column="1" Grid.Row="1" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="0,0,10,10" PreviewTextInput="ServerAddress_PreviewTextInput"></TextBox>
+        <TextBox Name="ServerAddress" HorizontalAlignment="Center" Height="25" FontSize="12" Width="150" Grid.Column="1" Grid.Row="1" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="0,0,10,10" PreviewTextInput="ServerAddress_PreviewTextInput"></TextBox>
 
         <Label Content="Port" Grid.Row="2" VerticalAlignment="Center"></Label>
-        <TextBox Name="Port" HorizontalAlignment="Center" Height="25" FontSize="12" Width="120" Grid.Column="1" Grid.Row="2" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="0,0,10,10" PreviewTextInput="Port_PreviewTextInput"></TextBox>
+        <TextBox Name="Port" HorizontalAlignment="Center" Height="25" FontSize="12" Width="150" Grid.Column="1" Grid.Row="2" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="0,0,10,10" PreviewTextInput="Port_PreviewTextInput"></TextBox>
 
         <Label Content="Database Name" Grid.Row="3" VerticalAlignment="Center"></Label>
-        <TextBox Name="DBName" HorizontalAlignment="Center" Height="25" FontSize="12" Width="120" Grid.Column="1" Margin="0,0,10,10" Grid.Row="3" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
+        <TextBox Name="DBName" HorizontalAlignment="Center" Height="25" FontSize="12" Width="150" Grid.Column="1" Margin="0,0,10,10" Grid.Row="3" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
         <Label Content="User ID" Grid.Row="4" VerticalAlignment="Center"></Label>
-        <TextBox Name="UserID" HorizontalAlignment="Center" Height="25" FontSize="12" Width="120" Grid.Column="1" Margin="0,0,10,10" Grid.Row="4" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
+        <TextBox Name="UserID" HorizontalAlignment="Center" Height="25" FontSize="12" Width="150" Grid.Column="1" Margin="0,0,10,10" Grid.Row="4" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
         <Label Content="Password" Grid.Row="5" VerticalAlignment="Center"></Label>
-        <PasswordBox Name="UserPasswd" HorizontalAlignment="Center" InputScope="Password" Height="25" Width="120" Grid.Column="1" Grid.Row="5" Margin="0,0,10,10" Padding="-8" Style="{StaticResource MaterialDesignOutlinedPasswordFieldPasswordBox}">
+        <PasswordBox Name="UserPasswd" HorizontalAlignment="Center" InputScope="Password" Height="25" Width="150" Grid.Column="1" Grid.Row="5" Margin="0,0,10,10" Padding="-8" Style="{StaticResource MaterialDesignOutlinedPasswordFieldPasswordBox}">
         </PasswordBox>
 
         <Label Content="Admins Password" Grid.Row="6" VerticalAlignment="Center"></Label>
-        <PasswordBox Name="AdminCredentials"  HorizontalAlignment="Center"  Height="25" Width="120" Grid.Column="1" Grid.Row="6" Padding="-8" Style="{StaticResource MaterialDesignOutlinedPasswordFieldPasswordBox}" Margin="0,0,10,0">
+        <PasswordBox Name="AdminCredentials"  HorizontalAlignment="Center"  Height="25" Width="150" Grid.Column="1" Grid.Row="6" Padding="-8" Style="{StaticResource MaterialDesignOutlinedPasswordFieldPasswordBox}" Margin="0,5,10,10">
         </PasswordBox>
 
         <Button Name="TestConnection" Content="Test Connection" Width="140" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Bottom" Margin="0,50,0,0" Click="Test" ToolTip="Use the saved connection info to test the connection and make this the main connection" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>

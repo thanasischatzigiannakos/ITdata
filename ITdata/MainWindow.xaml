@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowState="Maximized"
-        Title="MainWindow" Height="500" Width="1280">
+        Title="MainWindow" Height="700" Width="1280">
 
     <Window.Resources>
         <Style TargetType="TabItem">
@@ -61,17 +61,19 @@
             <RowDefinition Height="auto">
             </RowDefinition>
         </Grid.RowDefinitions>
-        <Menu Grid.Row="0">
+        <Menu Grid.Row="0" Style="{StaticResource MaterialDesignMenu}">
             <MenuItem Header="Application" IsEnabled="True">
                 <MenuItem Header="Exit" IsEnabled="True" Click="MenuItem_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="Edit" IsEnabled="True">
-                <MenuItem  Header="Edit Connection" Click="EditItem_Click_1"></MenuItem>
+                <MenuItem  Header="Edit Connection"  Click="EditItem_Click_1"></MenuItem>
+                <Separator BorderBrush="{StaticResource PrimaryHueDarkBrush}"></Separator>
                 <MenuItem Header="Edit Company" Click="Company_Click"></MenuItem>
                 <MenuItem Header="Edit Location" Click="Location_Click"></MenuItem>
                 <MenuItem Header="Edit Department" Click="Dept_Click"></MenuItem>
-                <MenuItem Header="Edit Phones" Click="Phone_Click"></MenuItem>
                 <MenuItem Header="Edit Emails" Click="MenuItem_Click_1"></MenuItem>
+                <Separator BorderBrush="{StaticResource PrimaryHueDarkBrush}"></Separator>
+                <MenuItem Header="Edit Phones" Click="Phone_Click"></MenuItem>
                 <MenuItem Header="Edit Printers" Click="MenuItem_Click_2"></MenuItem>
             </MenuItem>
         </Menu>
@@ -124,7 +126,9 @@
                         </RowDefinition>
                         <RowDefinition Height="auto">
                         </RowDefinition>
-                        <RowDefinition Height="auto">
+                        <RowDefinition Height="*">
+                        </RowDefinition>
+                        <RowDefinition Height="*">
                         </RowDefinition>
                         <RowDefinition Height="*">
                         </RowDefinition>
@@ -156,51 +160,51 @@
                     </ListBox>
 
                     <Label Content="FIRST NAME" FontSize="10" Grid.Column="1" Margin="0,20,0,0"></Label>
-                    <TextBox Name="s_f_name" Grid.Row="0" Grid.Column="1" Width="100" Height="25" FontSize="12" Margin="0,0,0,0" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
+                    <TextBox Name="s_f_name" Grid.Row="0" Grid.Column="1" Width="150" Height="25" FontSize="12" Margin="0,0,0,0" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
                     <Label Content="LAST NAME" FontSize="10" Grid.Column="2" Margin="10,20,0,0"></Label>
-                    <TextBox Name="s_l_name"  Grid.Row="0" Grid.Column="2" Width="100" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
+                    <TextBox Name="s_l_name"  Grid.Row="0" Grid.Column="2" Width="150" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
                     <Label Content="FIRST NAME GREEK" FontSize="10" Grid.Column="3" Margin="0,20,0,0"></Label>
-                    <TextBox Name="s_f_name_g" Grid.Row="0" Grid.Column="3" Width="100" Height="25" FontSize="12" Padding="-8" Margin="0,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
+                    <TextBox Name="s_f_name_g" Grid.Row="0" Grid.Column="3" Width="150" Height="25" FontSize="12" Padding="-8" Margin="0,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
                     <Label Content="LAST NAME GREEK" FontSize="10" Grid.Column="4" Margin="10,20,0,0"></Label>
-                    <TextBox Name="s_l_name_g"  Grid.Row="0" Grid.Column="4" Width="100" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
+                    <TextBox Name="s_l_name_g"  Grid.Row="0" Grid.Column="4" Width="150" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
                     <Label Content="COMPANY" FontSize="10" Grid.Column="1" Grid.Row="1" Margin="0,0,0,0" ></Label>
-                    <ComboBox Name="s_company_combo" Text="Select a Company" Grid.Column="1" Grid.Row="1" Height="25" FontSize="12" Width="100" Margin="0,0,0,0" SelectionChanged="s_company_combo_SelectionChanged" Style="{StaticResource MaterialDesignComboBox}" ></ComboBox>
+                    <ComboBox Name="s_company_combo" Text="Select a Company" Grid.Column="1" Grid.Row="1" Height="25" FontSize="12" Width="150" Margin="0,0,0,0" SelectionChanged="s_company_combo_SelectionChanged" Style="{StaticResource MaterialDesignComboBox}" ></ComboBox>
 
                     <Label Content="LOCATION" FontSize="10" Grid.Column="2" Grid.Row="1" Margin="10,0,0,0" ></Label>
-                    <ComboBox Name="s_location_combo" Text="Select a Location" Grid.Row="1" Grid.Column="2" Height="25" FontSize="12" Width="100" Margin="10,0,0,0" SelectionChanged="s_location_combo_SelectionChanged" Style="{StaticResource MaterialDesignComboBox}"></ComboBox>
+                    <ComboBox Name="s_location_combo" Text="Select a Location" Grid.Row="1" Grid.Column="2" Height="25" FontSize="12" Width="150" Margin="10,0,0,0" SelectionChanged="s_location_combo_SelectionChanged" Style="{StaticResource MaterialDesignComboBox}"></ComboBox>
 
                     <Label Content="DEPARTMENT" FontSize="10" Grid.Column="3" Grid.Row="1" Margin="10,0,0,0" ></Label>
-                    <ComboBox Name="s_department_combo" Text="Select a Department" Grid.Row="1" Grid.Column="3" Height="25" FontSize="12" Width="100" Margin="10,0,0,0" SelectionChanged="s_department_combo_SelectionChanged" Style="{StaticResource MaterialDesignComboBox}"  ></ComboBox>
+                    <ComboBox Name="s_department_combo" Text="Select a Department" Grid.Row="1" Grid.Column="3" Height="25" FontSize="12" Width="150" Margin="10,0,0,0" SelectionChanged="s_department_combo_SelectionChanged" Style="{StaticResource MaterialDesignComboBox}"  ></ComboBox>
 
                     <Label Content="JOB DESCRIPTION" FontSize="10" Grid.Column="4" Grid.Row="1" Margin="10,0,0,0"></Label>
-                    <TextBox Name="s_j_desc" Grid.Row="1" Grid.Column="4" Width="100" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
+                    <TextBox Name="s_j_desc" Grid.Row="1" Grid.Column="4" Width="150" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
                     <Label Content="HOST NAME" FontSize="10" Grid.Column="1" Grid.Row="2" Margin="0,0,0,0"></Label>
-                    <TextBox Name="s_h_name"  Grid.Row="2" Grid.Column="1" Width="100" Height="25" FontSize="12" Padding="-8" Margin="0,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
+                    <TextBox Name="s_h_name"  Grid.Row="2" Grid.Column="1" Width="150" Height="25" FontSize="12" Padding="-8" Margin="0,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
                     <Label Content="USERNAME" FontSize="10" Grid.Column="2" Grid.Row="2" Margin="10,0,0,0"></Label>
-                    <TextBox Name="s_username" Grid.Row="2" Grid.Column="2" Width="100" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
+                    <TextBox Name="s_username" Grid.Row="2" Grid.Column="2" Width="150" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
                     <Label Content="PASSWORD" FontSize="10" Grid.Column="3" Grid.Row="2" Margin="10,0,0,0"></Label>
-                    <TextBox Name="s_passwd"  Grid.Row="2" Grid.Column="3" Width="100" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
+                    <TextBox Name="s_passwd"  Grid.Row="2" Grid.Column="3" Width="150" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
                     <Label Content="ADMIN PASSWORD" FontSize="10" Grid.Column="4" Grid.Row="2" Margin="10,0,0,0"></Label>
-                    <TextBox Name="s_admin_passwd"  Grid.Row="2" Grid.Column="4" Width="100" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
+                    <TextBox Name="s_admin_passwd"  Grid.Row="2" Grid.Column="4" Width="150" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
                     <CheckBox Name="s_status" Content="STATUS" Grid.Row="3" Grid.Column="1"  FontSize="12" Width="70" Margin="0,0,0,20" ></CheckBox>
 
                     <Label Content="RADMIN PORT" FontSize="10" Grid.Column="2" Grid.Row="3" Margin="10,0,0,0"></Label>
-                    <TextBox Name="s_radmin_port"  Grid.Row="3" Grid.Column="2" Width="100" Height="25" FontSize="12" Padding="-8" Margin="0,0,0,20" PreviewTextInput="Port_PreviewTextInput" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
+                    <TextBox Name="s_radmin_port"  Grid.Row="3" Grid.Column="2" Width="150" Height="25" FontSize="12" Padding="-8" Margin="0,0,0,20" PreviewTextInput="Port_PreviewTextInput" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
-                    <Label Content="NOTES" FontSize="10" Grid.Column="5" Grid.Row="0" Margin="20,0,0,0" VerticalAlignment="Center"></Label>
-                    <TextBox Name="s_notes" FontSize="12" Grid.Row="0" Grid.Column="5" Grid.RowSpan="4" AcceptsReturn="True" Width="200" Height="200" Margin="10,0,0,20" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
+                    <Label Content="NOTES" FontSize="10" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="3" Margin="20,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+                    <TextBox Name="s_notes" FontSize="12" Grid.Row="3" Grid.Column="3" Grid.RowSpan="2" Grid.ColumnSpan="2" AcceptsReturn="True" Width="300" Height="100" Margin="10,0,0,20" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
-                    <Label Content="Emails associated with user" Grid.Row="0" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"></Label>
-                    <ListBox Name="user_mails_lb" Grid.Column="6" Grid.RowSpan="4" VerticalAlignment="Center" Height="200" Width="200" BorderThickness="2" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" Margin="10,0,0,20">
+                    <Label Content="Emails associated with user" Grid.Row="0" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"></Label>
+                    <ListBox Name="user_mails_lb" Grid.Column="5" Grid.RowSpan="4" VerticalAlignment="Center" Height="200" Width="200" BorderThickness="2" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" Margin="10,0,0,20">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -224,14 +228,14 @@
                         
                     </ListBox>
 
-                    <Label Content="Phones associated with user" Grid.Row="0" Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"></Label>
-                    <ListBox Name="user_phones_lb" Grid.Column="7" Grid.RowSpan="4" VerticalAlignment="Center" Height="200" Width="200" BorderThickness="2" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" Margin="10,0,0,20">
+                    <Label Content="Phones associated with user" Grid.Row="0" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"></Label>
+                    <ListBox Name="user_phones_lb" Grid.Column="6" Grid.RowSpan="4" VerticalAlignment="Center" Height="200" Width="100" BorderThickness="2" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" Margin="10,0,0,20">
                     </ListBox>
 
-                    <Button Name="submit" Content="ADD NEW"   Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" Height="25" Width="100" Margin="0,0,0,0" Click="submit_Click" ToolTip="Add a new user" HorizontalAlignment="Left" VerticalAlignment="Center"></Button>
-                    <Button Name="search_save_btn" Content="SAVE" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Height="25" Width="100" Padding="-4" HorizontalAlignment="Center" Click="search_save_btn_Click" VerticalAlignment="Center" Margin="0,0,10,0"></Button>
-                    <Button Name="search_delete_btn" Content="DELETE" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Height="25" Width="100" Padding="-4" HorizontalAlignment="Right" Click="search_delete_btn_Click" VerticalAlignment="Center"  Margin="0,0,10,0"></Button>
-                    <Button Name="clear" Content="CLEAR" Grid.Column="5" Grid.Row="5" Height="25" Width="100" HorizontalAlignment="Left" Click="clear_Click" ></Button>
+                    <Button Name="submit" Content="ADD NEW"   Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="4" Height="25" Width="100" Margin="0,0,0,0" Click="submit_Click" ToolTip="Add a new user" HorizontalAlignment="Left" VerticalAlignment="Center"></Button>
+                    <Button Name="search_save_btn" Content="SAVE" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="4" Height="25" Width="100" Padding="-4" HorizontalAlignment="Center" Click="search_save_btn_Click" VerticalAlignment="Center" Margin="0,0,350,0"></Button>
+                    <Button Name="search_delete_btn" Content="DELETE" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="4" Height="25" Width="100" Padding="-4" HorizontalAlignment="Right" Click="search_delete_btn_Click" VerticalAlignment="Center"  Margin="0,0,350,0"></Button>
+                    <Button Name="clear" Content="CLEAR" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="4" Height="25" Width="100" HorizontalAlignment="Right" Click="clear_Click" Margin="0,0,230,0"></Button>
 
                 </Grid>
 
