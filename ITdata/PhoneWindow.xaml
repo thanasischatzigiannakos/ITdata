@@ -98,7 +98,7 @@
                     <TextBox Name="web_psw_txt" Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom"  Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="5,0,0,0" ></TextBox>
 
                     <Label Content="Model Number" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12" ></Label>
-                    <TextBox Name="model_num_txt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom"  Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"  PreviewTextInput="Port_PreviewTextInput"></TextBox>
+                    <TextBox Name="model_num_txt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom"  Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
                     <Label Content="Serial Number" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"  FontSize="15" Margin="5,0,0,12" ></Label>
                     <TextBox Name="serial_numtxt" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="Port_PreviewTextInput" Margin="5,0,0,0" ></TextBox>
