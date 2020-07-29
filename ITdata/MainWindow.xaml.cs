@@ -19,7 +19,9 @@ namespace ITdata
             s_departmentlist();
             user_list();
             user_email();
-         
+            phone_list();
+
+
         }
 
         private int  s_cmpID = 0, s_locID = 0, s_depID = 0, s_statusInt = 0, userID = 0;
@@ -72,10 +74,18 @@ namespace ITdata
             this.Close();
         }
 
-       
-       
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            PrintersWindow prwin = new PrintersWindow();
+            prwin.Show();
+            this.Close();
 
-        
+        }
+
+
+
+
+
 
         private void submit_Click(object sender, RoutedEventArgs e)
         {
@@ -221,6 +231,38 @@ namespace ITdata
 
 
         }
+        private void phone_list()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
+        {
+            String conString = Properties.dbSettings.Default.connectionString;
+
+            using (MySqlConnection con = new MySqlConnection(conString))
+            {
+                try
+                {
+                    con.Open();
+                    DataSet ds2 = new DataSet();
+
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM phones WHERE user_id ='"+ userID+"'", con);  //-----PASS ALL THE DATA IN A DATASET
+                    DataTable dt2 = new DataTable();
+                    adp2.Fill(dt2);
+                    user_phones_lb.ItemsSource = dt2.DefaultView;
+                    //DATABINDING -------SETTING VALUE MEMBER AND DISPLAY MEMBER--------------
+                    user_phones_lb.SelectedValuePath = "id";
+                    user_phones_lb.DisplayMemberPath = "internal_num";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                finally
+                {
+                    con.Close();
+                    con.Dispose();
+                    
+                }
+            }
+            
+        }
 
         private void user_listbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -254,6 +296,7 @@ namespace ITdata
                 s_radmin_port.Text = d2["radmin_port"].ToString();
                 s_notes.Text = d2["notes"].ToString();
                 user_email();
+                phone_list();
             }
         }
 
@@ -389,7 +432,14 @@ namespace ITdata
             s_notes.Clear();
             s_status.IsChecked = false;
             userID = 0;
+            user_mails_lb.ItemsSource = null;
             user_mails_lb.Items.Clear();
+            user_phones_lb.ItemsSource = null;
+            user_phones_lb.Items.Clear();
+            s_company_combo.SelectedIndex = 0;
+            s_location_combo.SelectedIndex = 0;
+            s_department_combo.SelectedIndex = 0;
+
         }
 
         //*********************************UPDATE USER*******************************************************************
@@ -499,6 +549,8 @@ namespace ITdata
                 }
             }
         }
+
+       
 
         private void s_departmentlist()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
         {
