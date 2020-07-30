@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
        
-        Title="PhoneWindow" Height="480" Width="500">
+        Title="PhoneWindow" Height="540" Width="500">
 
     <Window.Resources>
         <Style TargetType="TabItem">
@@ -98,12 +98,12 @@
                     <TextBox Name="web_psw_txt" Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom"  Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="5,0,0,0" ></TextBox>
 
                     <Label Content="Model Number" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12" ></Label>
-                    <TextBox Name="model_num_txt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom"  Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"  PreviewTextInput="Port_PreviewTextInput"></TextBox>
+                    <TextBox Name="model_num_txt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom"  Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"  ></TextBox>
 
                     <Label Content="Serial Number" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"  FontSize="15" Margin="5,0,0,12" ></Label>
                     <TextBox Name="serial_numtxt" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="Port_PreviewTextInput" Margin="5,0,0,0" ></TextBox>
 
-                    <Label Content="IP" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="15" Margin="0,0,0,12" ></Label>
+                    <Label Content="IP" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"  FontSize="15" Margin="0,0,0,12" ></Label>
                     <TextBox Name="ip_txt" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="25" Width="150" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontSize="12" PreviewTextInput="ServerAddress_PreviewTextInput" ></TextBox>
 
                     <Label Content="MAC Address" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" FontSize="15" Margin="5,0,0,12" ></Label>
@@ -115,10 +115,13 @@
                     <Label Content="External Number" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"  FontSize="15" Margin="5,0,0,12" ></Label>
                     <TextBox Name="ext_num_txt" Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom"  Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="Port_PreviewTextInput" Margin="5,0,0,0" ></TextBox>
 
-                    <Button Name="Submit" Content="ADD NEW" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Bottom" Click="submit_Click" Margin="0,30,0,0" ToolTip="Add a new phone(You must fill all the fields in the form)" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
-                    <Button Name="Update" Content="SAVE" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Top" Click="update_Click" Margin="0,8,0,8" ToolTip="Update the information of the selected phone" Style="{DynamicResource MaterialDesignRaisedButton}" ></Button>
-                    <Button Name="Delete" Content="DELETE" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="2" Height="40" Width="110" Click="delete_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,8,0,0" ToolTip="Delete the selected phone" Style="{DynamicResource MaterialDesignRaisedButton}" ></Button>
-                    <Button Name="Clear" Content="CLEAR" FontSize="15" FontWeight="Bold" Grid.Row="4" Grid.Column="2" Height="40" Width="110" Click="Clear_Click" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="0,8,0,0" ToolTip="Clear all the fields of the form" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
+                    <Label Content="Port" Grid.Column="1" Grid.Row="4" FontSize="15" VerticalAlignment="Top" Margin="0,5,0,12"  ></Label>
+                    <TextBox Name="port_tb" Grid.Row="4" Grid.Column="1"  Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="Port_PreviewTextInput" Margin="0,10,0,0" ></TextBox>
+
+                    <Button Name="Submit" Content="ADD NEW" FontSize="15" FontWeight="Bold" Grid.Row="5" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Top" Click="submit_Click" Margin="0,25,0,0" ToolTip="Add a new phone(You must fill all the fields in the form)" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
+                    <Button Name="Update" Content="SAVE" FontSize="15" FontWeight="Bold" Grid.Row="5" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Bottom" Click="update_Click" Margin="0,8,0,0" ToolTip="Update the information of the selected phone" Style="{DynamicResource MaterialDesignRaisedButton}" ></Button>
+                    <Button Name="Delete" Content="DELETE" FontSize="15" FontWeight="Bold" Grid.Row="5" Grid.Column="2" Height="40" Width="110" Click="delete_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,25,0,0" ToolTip="Delete the selected phone" Style="{DynamicResource MaterialDesignRaisedButton}" ></Button>
+                    <Button Name="Clear" Content="CLEAR" FontSize="15" FontWeight="Bold" Grid.Row="5" Grid.Column="2" Height="40" Width="110" Click="Clear_Click" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="0,8,0,0" ToolTip="Clear all the fields of the form" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
 
                     <Button Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Grid.Row="5" Grid.Column="0" Height="22" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click" FontWeight="Bold" ToolTip="Close this window and head back to the main window" Margin="0,20,0,0" Style="{StaticResource MaterialDesignFlatDarkBgButton}"></Button>
                 </Grid>

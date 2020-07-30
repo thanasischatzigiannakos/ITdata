@@ -40,6 +40,7 @@ namespace ITdata
                 internal_num_txt.Text = d1["internal_num"].ToString();
                 ext_num_txt.Text = d1["external_num"].ToString();
                 web_psw_txt.Text = d1["web_passwd"].ToString();
+                port_tb.Text = d1["port"].ToString();
                 idValue = (int)d1["id"];
             }
         }
@@ -158,7 +159,7 @@ namespace ITdata
             {
                 try
                 {
-                    CmdString = "INSERT INTO phones (web_user,web_passwd,model,serial_num,ip,mac_address,internal_num,external_num) VALUES ('" + wb_user + "','" + wb_passwd + "','" + model + "','" + serial + "','" + ip + "','" + mac + "','" + int_num + "','" + ext_num + "')";
+                    CmdString = "INSERT INTO phones (web_user,web_passwd,model,serial_num,ip,mac_address,internal_num,external_num,port) VALUES ('" + wb_user + "','" + wb_passwd + "','" + model + "','" + serial + "','" + ip + "','" + mac + "','" + int_num + "','" + ext_num + "','"+port_tb.Text+"')";
                     con.Open();
 
                     MySqlCommand cmd = new MySqlCommand(CmdString, con);
@@ -186,7 +187,7 @@ namespace ITdata
             {
                 try
                 {
-                    CmdString = "UPDATE phones SET web_user='" + wb_user + "',web_passwd ='" + wb_passwd + "' ,model = '" + model + "' ,serial_num ='" + serial + "' ,ip ='" + ip + "',mac_address='" + mac + "',internal_num ='" + int_num + "',external_num ='" + ext_num + "' WHERE id ='" + idValue + "'"; //UPDATE VALUE OF TABLE PROPERTY WITH ID = idValue
+                    CmdString = "UPDATE phones SET web_user='" + wb_user + "',web_passwd ='" + wb_passwd + "' ,model = '" + model + "' ,serial_num ='" + serial + "' ,ip ='" + ip + "',mac_address='" + mac + "',internal_num ='" + int_num + "',external_num ='" + ext_num +"',port='"+port_tb.Text+"' WHERE id ='" + idValue + "'"; //UPDATE VALUE OF TABLE PROPERTY WITH ID = idValue
                     con.Open();
                     MySqlCommand cmd = new MySqlCommand(CmdString, con);
                     cmd.ExecuteNonQuery();
@@ -238,7 +239,7 @@ namespace ITdata
 
         private void submit_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(web_psw_txt.Text) || String.IsNullOrWhiteSpace(web_usr_txt.Text) || String.IsNullOrWhiteSpace(model_num_txt.Text) || String.IsNullOrWhiteSpace(serial_numtxt.Text) || String.IsNullOrWhiteSpace(ip_txt.Text) || String.IsNullOrWhiteSpace(mac_txt.Text) || String.IsNullOrWhiteSpace(internal_num_txt.Text) || String.IsNullOrWhiteSpace(ext_num_txt.Text))
+            if (String.IsNullOrWhiteSpace(web_psw_txt.Text) || String.IsNullOrWhiteSpace(web_usr_txt.Text) || String.IsNullOrWhiteSpace(model_num_txt.Text) || String.IsNullOrWhiteSpace(serial_numtxt.Text) || String.IsNullOrWhiteSpace(ip_txt.Text) || String.IsNullOrWhiteSpace(mac_txt.Text) || String.IsNullOrWhiteSpace(internal_num_txt.Text) || String.IsNullOrWhiteSpace(ext_num_txt.Text)|| String.IsNullOrWhiteSpace(port_tb.Text))
                 MessageBox.Show("Please fill all the required fields", "Error", MessageBoxButton.OK, MessageBoxImage.Question); //CHECK IF THE INPUT BOX IS EMPTY OR WHITESPACE
             else
             {
@@ -265,6 +266,7 @@ namespace ITdata
                     mac_txt.Clear();
                     internal_num_txt.Clear();
                     ext_num_txt.Clear();
+                    port_tb.Clear();
                     match_phone_list();
                 }
             }
@@ -272,7 +274,7 @@ namespace ITdata
 
         private void update_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(web_psw_txt.Text) || String.IsNullOrWhiteSpace(web_usr_txt.Text) || String.IsNullOrWhiteSpace(model_num_txt.Text) || String.IsNullOrWhiteSpace(serial_numtxt.Text) || String.IsNullOrWhiteSpace(ip_txt.Text) || String.IsNullOrWhiteSpace(mac_txt.Text) || String.IsNullOrWhiteSpace(internal_num_txt.Text) || String.IsNullOrWhiteSpace(ext_num_txt.Text))
+            if (String.IsNullOrWhiteSpace(web_psw_txt.Text) || String.IsNullOrWhiteSpace(web_usr_txt.Text) || String.IsNullOrWhiteSpace(model_num_txt.Text) || String.IsNullOrWhiteSpace(serial_numtxt.Text) || String.IsNullOrWhiteSpace(ip_txt.Text) || String.IsNullOrWhiteSpace(mac_txt.Text) || String.IsNullOrWhiteSpace(internal_num_txt.Text) || String.IsNullOrWhiteSpace(ext_num_txt.Text)|| String.IsNullOrWhiteSpace(port_tb.Text))
                 MessageBox.Show("Please fill all the necessary fields", "Error", MessageBoxButton.OK, MessageBoxImage.Stop); //CHECK IF THE INPUT BOX IS EMPTY OR WHITESPACE
             else
             {
@@ -299,6 +301,7 @@ namespace ITdata
                     mac_txt.Clear();
                     internal_num_txt.Clear();
                     ext_num_txt.Clear();
+                    port_tb.Clear();
                     idValue = 0;
                 }
             }
@@ -443,6 +446,7 @@ namespace ITdata
             mac_txt.Clear();
             internal_num_txt.Clear();
             ext_num_txt.Clear();
+            port_tb.Clear();
             idValue = 0;
 
         }
