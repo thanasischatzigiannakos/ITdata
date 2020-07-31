@@ -188,7 +188,7 @@
 
                     <Label Content="Selected Phone" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" FontSize="15" Margin="0,10,0,0"></Label>
                     <TextBox Name="phone_selected_box"  Grid.Row="1" Grid.Column="2" Height="25" Width="100" Margin="0,0,0,0" IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-6"></TextBox>
-                    
+
                     <Label Content="Filter:" Grid.Row="0" VerticalAlignment="Center" Margin="0,10,0,5"></Label>
                     <TextBox Name="filter_phones" Height="25" Width="65" Margin="5,10,15,10" PreviewKeyUp="filter_phones_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
 
@@ -198,42 +198,6 @@
                     <Button Name="match" Content="MATCH" FontWeight="Bold" Height="27" Width="90" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Click="match_Click" Margin="0,0,0,0" ToolTip="Match a phone with it's user" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
 
                     <Button Name="back_btn" Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Height="22" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3" Click="Button_Click" ToolTip="Close this window and head back to the main menu" Style="{StaticResource MaterialDesignFlatDarkBgButton}"></Button>
-                </Grid>
-            </TabItem>
-            <TabItem Header="TBD" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        TextElement.FontWeight="Regular"
-        TextElement.FontSize="13"
-        TextOptions.TextFormattingMode="Ideal"
-        TextOptions.TextRenderingMode="Auto"
-        Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*">
-                        </ColumnDefinition>
-                        <ColumnDefinition Width="*">
-                        </ColumnDefinition>
-                        <ColumnDefinition Width="*">
-                        </ColumnDefinition>
-                        <ColumnDefinition Width="*">
-                        </ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*">
-                        </RowDefinition>
-                        <RowDefinition Height="*">
-                        </RowDefinition>
-                        <RowDefinition Height="*">
-                        </RowDefinition>
-                        <RowDefinition Height="*">
-                        </RowDefinition>
-                        <RowDefinition Height="*">
-                        </RowDefinition>
-                        <RowDefinition Height="*">
-                        </RowDefinition>
-                    </Grid.RowDefinitions>
                 </Grid>
             </TabItem>
         </TabControl>

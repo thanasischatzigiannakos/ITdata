@@ -17,7 +17,7 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto">
+            <ColumnDefinition Width="*">
             </ColumnDefinition>
             <ColumnDefinition Width="auto">
             </ColumnDefinition>
@@ -40,13 +40,13 @@
             </RowDefinition>
         </Grid.RowDefinitions>
 
-        <ListBox Name="companyListBox" Grid.RowSpan="4" Width="120" SelectionChanged="companyListBox_SelectionChanged_1" Style="{StaticResource MaterialDesignListBox}" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="2" >
+        <ListBox Name="companyListBox" Grid.RowSpan="4" Width="120" SelectionChanged="companyListBox_SelectionChanged_1" Style="{StaticResource MaterialDesignListBox}" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="2" Margin="5,5,0,5" >
             
            
             
         </ListBox>
 
-        <TextBox Name="inputbox" Grid.Column="1" Width="150" Height="30" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="10,0,0,0"></TextBox>
+        <TextBox Name="inputbox" Grid.Column="1" Width="150" Height="30" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="5,0,5,0"></TextBox>
         <Button Content="SAVE" Name="save_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Click="save_button_Click" ToolTip="Update the name of the selected company" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
         <Button Content="DELETE" Name="delete_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,28,0,0" Click="delete_button_Click" ToolTip="Delete the selected company" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
         <Button Content="ADD NEW" Name="add_new_button" Width="100" Height="30" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Click="add_new_button_Click" ToolTip="Add a new company" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>

@@ -42,7 +42,7 @@
             <RowDefinition Height="auto">
             </RowDefinition>
 
-            <RowDefinition Height="auto">
+            <RowDefinition Height="*">
             </RowDefinition>
         </Grid.RowDefinitions>
         
@@ -65,9 +65,9 @@
         <Label Content="Admins Password" Grid.Row="6" VerticalAlignment="Center"></Label>
         <PasswordBox Name="AdminCredentials"  HorizontalAlignment="Center"  Height="25" Width="150" Grid.Column="1" Grid.Row="6" Padding="-8" Style="{StaticResource MaterialDesignOutlinedPasswordFieldPasswordBox}" Margin="0,5,10,10">
         </PasswordBox>
-
-        <Button Name="TestConnection" Content="Test Connection" Width="140" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Bottom" Margin="0,50,0,0" Click="Test" ToolTip="Use the saved connection info to test the connection and make this the main connection" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
         <Button Name="Submit" Content="Save" Width="140" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Top" Click="Submit_Click" Margin="0,10,0,0" ToolTip="Save the connection information" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
+        <Button Name="TestConnection" Content="Test Connection" Width="140" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Margin="0,0,0,15" Click="Test" ToolTip="Use the saved connection info to test the connection and make this the main connection" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
+        
 
         <Label Content="Last Saved Settings" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" Margin="30,0,0,0" ></Label>
         <Button Name="back" Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Height="22" Width="30" Grid.Row="7" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Back_Click_1" ToolTip="Close this window and head back to the Main Window"></Button>
