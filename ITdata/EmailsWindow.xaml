@@ -12,6 +12,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStartupLocation="CenterScreen"
         Title="EmailsWindow" Height="500" Width="700">
     <Window.Resources>
         <Style TargetType="TabItem">
