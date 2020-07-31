@@ -13,15 +13,13 @@ namespace ITdata
         public MainWindow()
         {
             InitializeComponent();
-          
-            s_company_list();
-            s_locationlist();
-            s_departmentlist();
-            user_list();
-            user_email();
-            phone_list();
 
-
+                s_company_list();
+                s_locationlist();
+                s_departmentlist();
+                user_list();
+                user_email();
+                phone_list();
         }
 
         private int  s_cmpID = 0, s_locID = 0, s_depID = 0, s_statusInt = 0, userID = 0;
