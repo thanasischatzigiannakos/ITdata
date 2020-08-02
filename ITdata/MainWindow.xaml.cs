@@ -14,15 +14,15 @@ namespace ITdata
         {
             InitializeComponent();
 
-                s_company_list();
-                s_locationlist();
-                s_departmentlist();
-                user_list();
-                user_email();
-                phone_list();
+            s_company_list();
+            s_locationlist();
+            s_departmentlist();
+            user_list();
+            user_email();
+            phone_list();
         }
 
-        private int  s_cmpID = 0, s_locID = 0, s_depID = 0, s_statusInt = 0, userID = 0;
+        private int s_cmpID = 0, s_locID = 0, s_depID = 0, s_statusInt = 0, userID = 0;
 
         //-------------------------ON CLICK OPEN WINDOW1 AND CLOSE THIS ONE-------------------------------------
         private void EditItem_Click_1(object sender, RoutedEventArgs e)
@@ -65,6 +65,7 @@ namespace ITdata
             pnwin.Show();
             this.Close();
         }
+
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             EmailsWindow emwind = new EmailsWindow();
@@ -77,13 +78,7 @@ namespace ITdata
             PrintersWindow prwin = new PrintersWindow();
             prwin.Show();
             this.Close();
-
         }
-
-
-
-
-
 
         private void submit_Click(object sender, RoutedEventArgs e)
         {
@@ -207,7 +202,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds2 = new DataSet();
 
-                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM mail a JOIN user_mail b ON a.id=b.mail_id JOIN users c ON b.user_id=c.id WHERE c.id ='"+userID+"'", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM mail a JOIN user_mail b ON a.id=b.mail_id JOIN users c ON b.user_id=c.id WHERE c.id ='" + userID + "'", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt2 = new DataTable();
                     adp2.Fill(dt2);
                     user_mails_lb.ItemsSource = dt2.DefaultView;
@@ -222,13 +217,10 @@ namespace ITdata
                 {
                     con.Close();
                     con.Dispose();
-                   
                 }
             }
-            
-
-
         }
+
         private void phone_list()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
         {
             String conString = Properties.dbSettings.Default.connectionString;
@@ -240,7 +232,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds2 = new DataSet();
 
-                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM phones WHERE user_id ='"+ userID+"'", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM phones WHERE user_id ='" + userID + "'", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt2 = new DataTable();
                     adp2.Fill(dt2);
                     user_phones_lb.ItemsSource = dt2.DefaultView;
@@ -256,10 +248,8 @@ namespace ITdata
                 {
                     con.Close();
                     con.Dispose();
-                    
                 }
             }
-            
         }
 
         private void user_listbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -300,22 +290,16 @@ namespace ITdata
 
         private void search_save_btn_Click(object sender, RoutedEventArgs e)
         {
-
             if (String.IsNullOrWhiteSpace(s_l_name.Text) || String.IsNullOrWhiteSpace(s_f_name.Text) || String.IsNullOrWhiteSpace(s_l_name_g.Text) || String.IsNullOrWhiteSpace(s_f_name_g.Text) || s_cmpID == 0 || s_locID == 0 || s_depID == 0 || String.IsNullOrWhiteSpace(s_username.Text) || String.IsNullOrWhiteSpace(s_passwd.Text))
             {
                 MessageBox.Show("Please fill all the required fields", "Error", MessageBoxButton.OK, MessageBoxImage.Question);
             }
             else
             {
-                
                 updateUser();
                 MessageBox.Show("Users info updated", "Success", MessageBoxButton.OK, MessageBoxImage.Question);
-
             }
-
-
-
-            }
+        }
 
         public void delete()
         {
@@ -343,13 +327,10 @@ namespace ITdata
                     userID = 0;
                 }
             }
-
-
         }
 
         private void search_delete_btn_Click(object sender, RoutedEventArgs e)
         {
-
             if (userID == 0)
             {
                 MessageBox.Show("Please select the user you wish to delete", "Error", MessageBoxButton.OK, MessageBoxImage.Stop);
@@ -369,13 +350,8 @@ namespace ITdata
                 s_radmin_port.Clear();
                 s_notes.Clear();
                 user_list();
-                
-               
             }
-
         }
-
-        
 
         private void filter_users_PreviewKeyUp(object sender, KeyEventArgs e)
         {
@@ -437,7 +413,6 @@ namespace ITdata
             s_company_combo.SelectedIndex = 0;
             s_location_combo.SelectedIndex = 0;
             s_department_combo.SelectedIndex = 0;
-
         }
 
         //*********************************UPDATE USER*******************************************************************
@@ -445,7 +420,7 @@ namespace ITdata
         {
             String CmdString;
             String conString = Properties.dbSettings.Default.connectionString;
-            if (s_status.IsChecked==true)
+            if (s_status.IsChecked == true)
             {
                 s_statusInt = 1;
             }
@@ -454,7 +429,7 @@ namespace ITdata
             {
                 try
                 {
-                    CmdString = "UPDATE users SET first_name ='"+ s_f_name.Text.ToString()+"', last_name='"+s_l_name.Text.ToString() + "', gr_first_name='"+ s_f_name_g.Text.ToString() + "',gr_last_name='"+s_l_name_g.Text.ToString() + "',company_id='"+s_cmpID+"', location_id='"+s_locID+"', department_id='"+s_depID+"',job_desc='"+s_j_desc.Text.ToString() + "', hostname='"+ s_h_name.Text.ToString() + "', username='"+s_username.Text.ToString() + "', passwd='"+s_passwd.Text.ToString() + "', admin_passwd='"+s_admin_passwd.Text.ToString() + "', status='"+s_statusInt+"', radmin_port='"+s_radmin_port.Text.ToString() + "', notes='"+s_notes.Text.ToString() + "' WHERE id="+userID+";";
+                    CmdString = "UPDATE users SET first_name ='" + s_f_name.Text.ToString() + "', last_name='" + s_l_name.Text.ToString() + "', gr_first_name='" + s_f_name_g.Text.ToString() + "',gr_last_name='" + s_l_name_g.Text.ToString() + "',company_id='" + s_cmpID + "', location_id='" + s_locID + "', department_id='" + s_depID + "',job_desc='" + s_j_desc.Text.ToString() + "', hostname='" + s_h_name.Text.ToString() + "', username='" + s_username.Text.ToString() + "', passwd='" + s_passwd.Text.ToString() + "', admin_passwd='" + s_admin_passwd.Text.ToString() + "', status='" + s_statusInt + "', radmin_port='" + s_radmin_port.Text.ToString() + "', notes='" + s_notes.Text.ToString() + "' WHERE id=" + userID + ";";
                     con.Open();
 
                     MySqlCommand cmd = new MySqlCommand(CmdString, con);
@@ -547,8 +522,6 @@ namespace ITdata
                 }
             }
         }
-
-       
 
         private void s_departmentlist()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
         {

@@ -14,11 +14,7 @@
             <ColumnDefinition Width="*">
             </ColumnDefinition>
             <ColumnDefinition Width="auto">
-            
-            
             </ColumnDefinition>
-
-
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -32,7 +28,6 @@
             </RowDefinition>
             <RowDefinition Height="*">
             </RowDefinition>
-           
         </Grid.RowDefinitions>
 
         <ListBox Name="departmentListBox" Grid.RowSpan="4" SelectionChanged="departmentListBox_SelectionChanged_1" Width="120" Style="{StaticResource MaterialDesignListBox}" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="2" Margin="5,5,0,5" ></ListBox>
@@ -42,9 +37,6 @@
         <Button Content="DELETE" Name="delete_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,26,0,0" Click="delete_button_Click" ToolTip="Delete the selected department" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
         <Button Content="ADD NEW" Name="add_new_button" Width="100" Height="30" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Click="add_new_button_Click" ToolTip="Add a new department" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
 
-
         <Button Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Grid.Column="0" Grid.Row="4" Height="22" Width="30"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Button_Click" ToolTip="Close this window and head back to the main window"></Button>
-
-
     </Grid>
 </Window>

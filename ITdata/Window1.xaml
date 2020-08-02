@@ -18,7 +18,6 @@
             </ColumnDefinition>
             <ColumnDefinition Width="auto">
             </ColumnDefinition>
-            
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -46,7 +45,7 @@
             <RowDefinition Height="*">
             </RowDefinition>
         </Grid.RowDefinitions>
-        
+
         <Label Content="Server Address" Grid.Row="1" VerticalAlignment="Center"></Label>
         <TextBox Name="ServerAddress" HorizontalAlignment="Center" Height="25" FontSize="12" Width="150" Grid.Column="1" Grid.Row="1" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="0,0,10,10" PreviewTextInput="ServerAddress_PreviewTextInput"></TextBox>
 
@@ -68,10 +67,8 @@
         </PasswordBox>
         <Button Name="Submit" Content="Save" Width="140" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Top" Click="Submit_Click" Margin="0,10,0,0" ToolTip="Save the connection information" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
         <Button Name="TestConnection" Content="Test Connection" Width="140" Height="30" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Margin="0,0,0,0" Click="Test" ToolTip="Use the saved connection info to test the connection and make this the main connection" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
-        
 
         <Label Content="Last Saved Settings" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" Margin="30,0,0,0" ></Label>
         <Button Name="back" Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Height="22" Width="30" Grid.Row="7" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Back_Click_1" ToolTip="Close this window and head back to the Main Window"></Button>
-     
     </Grid>
 </Window>

@@ -20,7 +20,7 @@ namespace ITdata
             ShowStoredValues();
         }
 
-        Stopwatch sw;
+        private Stopwatch sw;
         // --------------------------SQL CONNECTION FUNCTION--------------------------------------------
 
         private void Test(object sender, RoutedEventArgs e)     //testinf the connection to the database
@@ -38,10 +38,8 @@ namespace ITdata
             {
                 cnn.Open();   //open the connection
                 sw.Stop();
-                
-                MessageBox.Show(("Connection OK ! \nTime required to establish the connection:"+sw.Elapsed.TotalSeconds+" sec"), "Connection Test", MessageBoxButton.OK, MessageBoxImage.Information);
-                
-              
+
+                MessageBox.Show(("Connection OK ! \nTime required to establish the connection:" + sw.Elapsed.TotalSeconds + " sec"), "Connection Test", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)   //failed exception
             {
@@ -54,8 +52,6 @@ namespace ITdata
                 cnn.Dispose();
                 Properties.dbSettings.Default.connectionString = connectionString;
                 Properties.dbSettings.Default.Save();
-
-
             }
         }
 

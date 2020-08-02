@@ -164,7 +164,6 @@ namespace ITdata
                 fillList();
                 inputbox.Clear();
                 inputbox.Focus();
-
             }
         }
 

@@ -19,7 +19,8 @@ namespace ITdata
     /// </summary>
     public partial class EmailsWindow : Window
     {
-        int idValue=0,unmatched_email_int=0,userID=0;
+        private int idValue = 0, unmatched_email_int = 0, userID = 0;
+
         public EmailsWindow()
         {
             InitializeComponent();
@@ -37,7 +38,6 @@ namespace ITdata
                 passwd_tb.Text = d1["passwd"].ToString();
                 idValue = (int)d1["id"];
             }
-
         }
 
         private void fillList()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
@@ -69,7 +69,6 @@ namespace ITdata
                 }
             }
         }
-
 
         private void insert_new()
         {
@@ -156,11 +155,9 @@ namespace ITdata
 
         private void add_new_btn_Click(object sender, RoutedEventArgs e)
         {
-
-            if(String.IsNullOrWhiteSpace(email_tb.Text)|| String.IsNullOrWhiteSpace(passwd_tb.Text))
+            if (String.IsNullOrWhiteSpace(email_tb.Text) || String.IsNullOrWhiteSpace(passwd_tb.Text))
             {
                 MessageBox.Show("Please fill the required fields", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-
             }
             else
             {
@@ -171,17 +168,14 @@ namespace ITdata
                 email_tb.Clear();
                 passwd_tb.Clear();
                 idValue = 0;
-
             }
-
         }
 
         private void update_btn_Click(object sender, RoutedEventArgs e)
         {
-            if(idValue==0||String.IsNullOrWhiteSpace(email_tb.Text)|| String.IsNullOrWhiteSpace(passwd_tb.Text))
+            if (idValue == 0 || String.IsNullOrWhiteSpace(email_tb.Text) || String.IsNullOrWhiteSpace(passwd_tb.Text))
             {
                 MessageBox.Show("Please fill the required fields", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-
             }
             else
             {
@@ -192,9 +186,7 @@ namespace ITdata
                 idValue = 0;
                 email_tb.Clear();
                 passwd_tb.Clear();
-
             }
-
         }
 
         private void delete_btn_Click(object sender, RoutedEventArgs e)
@@ -202,7 +194,6 @@ namespace ITdata
             if (idValue == 0)
             {
                 MessageBox.Show("Please select the item you wish to delete", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-
             }
             else
             {
@@ -213,7 +204,6 @@ namespace ITdata
                 idValue = 0;
                 email_tb.Clear();
                 passwd_tb.Clear();
-
             }
         }
 
@@ -293,14 +283,12 @@ namespace ITdata
 
         private void unmatched_emails_listbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             if (unmatched_emails_listbox.SelectedItem != null)
             {
                 DataRowView d3 = unmatched_emails_listbox.SelectedItem as DataRowView;
                 email_selected_box.Text = d3["email"].ToString();
                 unmatched_email_int = (int)d3["id"];
             }
-
         }
 
         private void user_listbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -311,21 +299,16 @@ namespace ITdata
                 user_selected_box.Text = d2["first_name"].ToString() + " " + d2["last_name"].ToString();
                 userID = (int)d2["id"];
             }
-
         }
 
         private void match_Click(object sender, RoutedEventArgs e)
         {
-
             if (String.IsNullOrWhiteSpace(email_selected_box.Text) || String.IsNullOrWhiteSpace(user_selected_box.Text))
             {
-
                 MessageBox.Show("Please select an email AND a user", "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-
             }
             else
             {
-
                 String CmdString;
                 String conString = Properties.dbSettings.Default.connectionString;
 
@@ -337,7 +320,6 @@ namespace ITdata
                         con.Open();
                         MySqlCommand cmd = new MySqlCommand(CmdString, con);
                         cmd.ExecuteNonQuery();
-
                     }
                     catch (Exception ex)
                     {
@@ -353,14 +335,9 @@ namespace ITdata
                         user_selected_box.Clear();
                         filter_emails.Clear();
                         filter_users.Clear();
-
                     }
                 }
-
-
-
             }
-
         }
 
         private void filter_emails_PreviewKeyUp(object sender, KeyEventArgs e)
@@ -398,7 +375,6 @@ namespace ITdata
                     }
                 }
             }
-
         }
 
         private void user_list()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
@@ -418,7 +394,6 @@ namespace ITdata
                     user_listbox.ItemsSource = dt2.DefaultView;
                     //DATABINDING -------SETTING VALUE MEMBER AND DISPLAY MEMBER--------------
                     user_listbox.SelectedValuePath = "id";
-
                 }
                 catch (Exception ex)
                 {
@@ -467,7 +442,6 @@ namespace ITdata
                     }
                 }
             }
-
         }
     }
 }

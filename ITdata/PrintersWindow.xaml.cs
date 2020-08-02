@@ -20,7 +20,8 @@ namespace ITdata
     /// </summary>
     public partial class PrintersWindow : Window
     {
-        int s_locID=0,idValue=0;
+        private int s_locID = 0, idValue = 0;
+
         public PrintersWindow()
         {
             InitializeComponent();
@@ -95,7 +96,8 @@ namespace ITdata
             }
         }
 
-        private void add_new_printer() {
+        private void add_new_printer()
+        {
             String CmdString;
             String conString = Properties.dbSettings.Default.connectionString;
 
@@ -119,12 +121,10 @@ namespace ITdata
                     con.Dispose();  //---------------AFTER TASK IS FINISHED CLOSE AND DISPOSE THE CONNECTION----------------------
                 }
             }
-
         }
 
         private void update_printer()
         {
-
             String CmdString;
             String conString = Properties.dbSettings.Default.connectionString;
 
@@ -153,7 +153,6 @@ namespace ITdata
 
         private void delete_printer()
         {
-
             String CmdString;
             String conString = Properties.dbSettings.Default.connectionString;
 
@@ -182,14 +181,13 @@ namespace ITdata
 
         private void add_new_btn_Click(object sender, RoutedEventArgs e)
         {
-
-            if (String.IsNullOrEmpty(net_id_tb.Text)|| String.IsNullOrEmpty(ip_tb.Text)|| String.IsNullOrEmpty(model_tb.Text)||s_locID==0|| String.IsNullOrEmpty(admin_name_tb.Text)|| String.IsNullOrEmpty(admin_passwd_tb.Text))
+            if (String.IsNullOrEmpty(net_id_tb.Text) || String.IsNullOrEmpty(ip_tb.Text) || String.IsNullOrEmpty(model_tb.Text) || s_locID == 0 || String.IsNullOrEmpty(admin_name_tb.Text) || String.IsNullOrEmpty(admin_passwd_tb.Text))
             {
                 MessageBox.Show("Make sure all the fields are filled", "Failed", MessageBoxButton.OK, MessageBoxImage.Question);
-
-            }else if (CheckIPValid(ip_tb.Text) != true)
-            {    
-                    MessageBox.Show("Invalid ip at IP Address field", "Failed", MessageBoxButton.OK, MessageBoxImage.Question);
+            }
+            else if (CheckIPValid(ip_tb.Text) != true)
+            {
+                MessageBox.Show("Invalid ip at IP Address field", "Failed", MessageBoxButton.OK, MessageBoxImage.Question);
             }
             else
             {
@@ -204,7 +202,8 @@ namespace ITdata
             if (idValue == 0)
             {
                 MessageBox.Show("You must first select the printer you wish to update", "Failed", MessageBoxButton.OK, MessageBoxImage.Question);
-            }else if (String.IsNullOrEmpty(net_id_tb.Text) || String.IsNullOrEmpty(ip_tb.Text) || String.IsNullOrEmpty(model_tb.Text) || s_locID == 0 || String.IsNullOrEmpty(admin_name_tb.Text) || String.IsNullOrEmpty(admin_passwd_tb.Text))
+            }
+            else if (String.IsNullOrEmpty(net_id_tb.Text) || String.IsNullOrEmpty(ip_tb.Text) || String.IsNullOrEmpty(model_tb.Text) || s_locID == 0 || String.IsNullOrEmpty(admin_name_tb.Text) || String.IsNullOrEmpty(admin_passwd_tb.Text))
             {
                 MessageBox.Show("Make sure all the fields are filled", "Failed", MessageBoxButton.OK, MessageBoxImage.Question);
             }
@@ -218,7 +217,6 @@ namespace ITdata
                 fill_printer_list();
                 clearFields();
             }
-
         }
 
         private void delete_btn_Click(object sender, RoutedEventArgs e)
@@ -250,8 +248,6 @@ namespace ITdata
         private void clear_btn_Click(object sender, RoutedEventArgs e)
         {
             clearFields();
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -296,7 +292,6 @@ namespace ITdata
                     }
                 }
             }
-
         }
 
         private void printer_lb_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -313,12 +308,7 @@ namespace ITdata
                 admin_passwd_tb.Text = d1["admin_passwd"].ToString();
                 idValue = (int)d1["id"];
             }
-
         }
-
-
-
-
 
         // _____________________________________________________________________________________________________________
         public Boolean CheckIPValid(String strIP)
@@ -357,7 +347,6 @@ namespace ITdata
             return true;
         }
 
-
         //REGEXES AND HANDLERS FOR INPUT IN TEXTBOXS
         private static readonly Regex _regex = new Regex("[^0-9.+/]"); //regex to allow only numbers and  dots
 
@@ -370,8 +359,5 @@ namespace ITdata
         {
             e.Handled = !IsTextAllowed(e.Text);
         }
-
-
-
     }
 }

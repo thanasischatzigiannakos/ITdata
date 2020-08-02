@@ -14,8 +14,8 @@ namespace ITdata
     public partial class PhoneWindow : Window
     {
         private int idValue = 0;
-        private int userID=0;
-        private int unmatchedphoneInt=0;
+        private int userID = 0;
+        private int unmatchedphoneInt = 0;
 
         public PhoneWindow()
         {
@@ -25,8 +25,7 @@ namespace ITdata
             match_phone_list();
         }
 
-
-        //WHEN A LISTBOX ITEM IS SELECTED PASS ITS VALUES IN THE TEXTBOXS 
+        //WHEN A LISTBOX ITEM IS SELECTED PASS ITS VALUES IN THE TEXTBOXS
         private void phone_listbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (phone_listbox.SelectedItem != null)
@@ -113,7 +112,6 @@ namespace ITdata
             }
         }
 
-
         private void user_list()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
         {
             String conString = Properties.dbSettings.Default.connectionString;
@@ -129,9 +127,8 @@ namespace ITdata
                     DataTable dt2 = new DataTable();
                     adp2.Fill(dt2);
                     user_listbox.ItemsSource = dt2.DefaultView;
-                   //DATABINDING -------SETTING VALUE MEMBER AND DISPLAY MEMBER--------------
+                    //DATABINDING -------SETTING VALUE MEMBER AND DISPLAY MEMBER--------------
                     user_listbox.SelectedValuePath = "id";
-                    
                 }
                 catch (Exception ex)
                 {
@@ -145,10 +142,6 @@ namespace ITdata
             }
         }
 
-
-
-
-
         //FUNCTION TO ENTER A NEW ROW IN THE DATABASE TABLE
         private void insert_new(String wb_user, String wb_passwd, String model, String serial, String ip, String mac, String int_num, String ext_num)
         {
@@ -159,7 +152,7 @@ namespace ITdata
             {
                 try
                 {
-                    CmdString = "INSERT INTO phones (web_user,web_passwd,model,serial_num,ip,mac_address,internal_num,external_num,port) VALUES ('" + wb_user + "','" + wb_passwd + "','" + model + "','" + serial + "','" + ip + "','" + mac + "','" + int_num + "','" + ext_num + "','"+port_tb.Text+"')";
+                    CmdString = "INSERT INTO phones (web_user,web_passwd,model,serial_num,ip,mac_address,internal_num,external_num,port) VALUES ('" + wb_user + "','" + wb_passwd + "','" + model + "','" + serial + "','" + ip + "','" + mac + "','" + int_num + "','" + ext_num + "','" + port_tb.Text + "')";
                     con.Open();
 
                     MySqlCommand cmd = new MySqlCommand(CmdString, con);
@@ -187,7 +180,7 @@ namespace ITdata
             {
                 try
                 {
-                    CmdString = "UPDATE phones SET web_user='" + wb_user + "',web_passwd ='" + wb_passwd + "' ,model = '" + model + "' ,serial_num ='" + serial + "' ,ip ='" + ip + "',mac_address='" + mac + "',internal_num ='" + int_num + "',external_num ='" + ext_num +"',port='"+port_tb.Text+"' WHERE id ='" + idValue + "'"; //UPDATE VALUE OF TABLE PROPERTY WITH ID = idValue
+                    CmdString = "UPDATE phones SET web_user='" + wb_user + "',web_passwd ='" + wb_passwd + "' ,model = '" + model + "' ,serial_num ='" + serial + "' ,ip ='" + ip + "',mac_address='" + mac + "',internal_num ='" + int_num + "',external_num ='" + ext_num + "',port='" + port_tb.Text + "' WHERE id ='" + idValue + "'"; //UPDATE VALUE OF TABLE PROPERTY WITH ID = idValue
                     con.Open();
                     MySqlCommand cmd = new MySqlCommand(CmdString, con);
                     cmd.ExecuteNonQuery();
@@ -206,8 +199,6 @@ namespace ITdata
             }
         }
 
-
-        
         private void delete()
         {
             String CmdString;
@@ -236,10 +227,9 @@ namespace ITdata
             }
         }//FUNCTION TO DELETE A ROW
 
-
         private void submit_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(web_psw_txt.Text) || String.IsNullOrWhiteSpace(web_usr_txt.Text) || String.IsNullOrWhiteSpace(model_num_txt.Text) || String.IsNullOrWhiteSpace(serial_numtxt.Text) || String.IsNullOrWhiteSpace(ip_txt.Text) || String.IsNullOrWhiteSpace(mac_txt.Text) || String.IsNullOrWhiteSpace(internal_num_txt.Text) || String.IsNullOrWhiteSpace(ext_num_txt.Text)|| String.IsNullOrWhiteSpace(port_tb.Text))
+            if (String.IsNullOrWhiteSpace(web_psw_txt.Text) || String.IsNullOrWhiteSpace(web_usr_txt.Text) || String.IsNullOrWhiteSpace(model_num_txt.Text) || String.IsNullOrWhiteSpace(serial_numtxt.Text) || String.IsNullOrWhiteSpace(ip_txt.Text) || String.IsNullOrWhiteSpace(mac_txt.Text) || String.IsNullOrWhiteSpace(internal_num_txt.Text) || String.IsNullOrWhiteSpace(ext_num_txt.Text) || String.IsNullOrWhiteSpace(port_tb.Text))
                 MessageBox.Show("Please fill all the required fields", "Error", MessageBoxButton.OK, MessageBoxImage.Question); //CHECK IF THE INPUT BOX IS EMPTY OR WHITESPACE
             else
             {
@@ -257,7 +247,7 @@ namespace ITdata
                 {
                     insert_new(web_usr_txt.Text, web_psw_txt.Text, model_num_txt.Text, serial_numtxt.Text, ip_txt.Text, mac_txt.Text, internal_num_txt.Text, ext_num_txt.Text);  //-----------------------IF IT IS CALL THE INSERT NEW FUNCTION--------------------------
                     fillList();
-                    
+
                     web_usr_txt.Clear();
                     web_psw_txt.Clear();
                     model_num_txt.Clear();
@@ -274,7 +264,7 @@ namespace ITdata
 
         private void update_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(web_psw_txt.Text) || String.IsNullOrWhiteSpace(web_usr_txt.Text) || String.IsNullOrWhiteSpace(model_num_txt.Text) || String.IsNullOrWhiteSpace(serial_numtxt.Text) || String.IsNullOrWhiteSpace(ip_txt.Text) || String.IsNullOrWhiteSpace(mac_txt.Text) || String.IsNullOrWhiteSpace(internal_num_txt.Text) || String.IsNullOrWhiteSpace(ext_num_txt.Text)|| String.IsNullOrWhiteSpace(port_tb.Text))
+            if (String.IsNullOrWhiteSpace(web_psw_txt.Text) || String.IsNullOrWhiteSpace(web_usr_txt.Text) || String.IsNullOrWhiteSpace(model_num_txt.Text) || String.IsNullOrWhiteSpace(serial_numtxt.Text) || String.IsNullOrWhiteSpace(ip_txt.Text) || String.IsNullOrWhiteSpace(mac_txt.Text) || String.IsNullOrWhiteSpace(internal_num_txt.Text) || String.IsNullOrWhiteSpace(ext_num_txt.Text) || String.IsNullOrWhiteSpace(port_tb.Text))
                 MessageBox.Show("Please fill all the necessary fields", "Error", MessageBoxButton.OK, MessageBoxImage.Stop); //CHECK IF THE INPUT BOX IS EMPTY OR WHITESPACE
             else
             {
@@ -306,7 +296,6 @@ namespace ITdata
                 }
             }
         }  //FUNCTION TO UPDATE A ROW IN THE TABLE
-
 
         //WHEN DELETE BUTTON CLICKED FUNCTION
         private void delete_Click(object sender, RoutedEventArgs e)
@@ -368,7 +357,6 @@ namespace ITdata
             return true;
         }
 
-
         //REGEXES AND HANDLERS FOR INPUT IN TEXTBOXS
         private static readonly Regex _regex = new Regex("[^0-9.+/]"); //regex to allow only numbers and  dots
 
@@ -395,7 +383,6 @@ namespace ITdata
         }
 
         //REGEXES AND HANDLERS FOR INPUT IN TEXTBOXS
-
 
         //WHEN A KEY IS PRESSED IN THE SEARCH TEXTBOX AUTOMATICALLY REFRESH THE LISTBOX WITH ITEMS MATCHING THE SEARCH TEXTBOXS INPUT
         private void search_PreviewKeyUp(object sender, KeyEventArgs e)
@@ -437,7 +424,6 @@ namespace ITdata
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-
             web_usr_txt.Clear();
             web_psw_txt.Clear();
             model_num_txt.Clear();
@@ -448,19 +434,16 @@ namespace ITdata
             ext_num_txt.Clear();
             port_tb.Clear();
             idValue = 0;
-
         }
 
         private void unmatched_phones_listbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             if (unmatched_phones_listbox.SelectedItem != null)
             {
                 DataRowView d3 = unmatched_phones_listbox.SelectedItem as DataRowView;
                 phone_selected_box.Text = d3["internal_num"].ToString();
                 unmatchedphoneInt = (int)d3["id"];
             }
-
         }
 
         private void user_listbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -468,23 +451,19 @@ namespace ITdata
             if (user_listbox.SelectedItem != null)
             {
                 DataRowView d2 = user_listbox.SelectedItem as DataRowView;
-                user_selected_box.Text = d2["first_name"].ToString() +" "+d2["last_name"].ToString();
+                user_selected_box.Text = d2["first_name"].ToString() + " " + d2["last_name"].ToString();
                 userID = (int)d2["id"];
             }
-
         }
 
         private void match_Click(object sender, RoutedEventArgs e)
         {
-
-            if (String.IsNullOrWhiteSpace(phone_selected_box.Text)|| String.IsNullOrWhiteSpace(user_selected_box.Text)) {
-
+            if (String.IsNullOrWhiteSpace(phone_selected_box.Text) || String.IsNullOrWhiteSpace(user_selected_box.Text))
+            {
                 MessageBox.Show("Please select a phone AND a user", "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-
             }
             else
             {
-
                 String CmdString;
                 String conString = Properties.dbSettings.Default.connectionString;
 
@@ -496,7 +475,6 @@ namespace ITdata
                         con.Open();
                         MySqlCommand cmd = new MySqlCommand(CmdString, con);
                         cmd.ExecuteNonQuery();
-                        
                     }
                     catch (Exception ex)
                     {
@@ -512,14 +490,9 @@ namespace ITdata
                         user_selected_box.Clear();
                         filter_phones.Clear();
                         filter_users.Clear();
-                        
                     }
                 }
-
-
-
             }
-
         }
 
         private void filter_phones_PreviewKeyUp(object sender, KeyEventArgs e)
@@ -557,7 +530,6 @@ namespace ITdata
                     }
                 }
             }
-
         }
 
         private void filter_users_PreviewKeyUp(object sender, KeyEventArgs e)
@@ -595,7 +567,6 @@ namespace ITdata
                     }
                 }
             }
-
         }
     }
 }

@@ -13,17 +13,12 @@ namespace ITdata
     public partial class CompanyWindow : Window
     {
         private int idValue = 0;
-        
 
         public CompanyWindow()
         {
             InitializeComponent();
             fillList();
         }
-
-
-
-
 
         private void fillList()   //----------FILL THE LISTBOX WITH VALUES FROM THE DATABASE-----------------
         {
