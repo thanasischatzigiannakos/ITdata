@@ -133,8 +133,8 @@ namespace ITdata
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainwind = new MainWindow();
-            mainwind.Show();
+            Window2 win2 = new Window2();
+            win2.Show();
             this.Close();
         }
 

@@ -135,8 +135,8 @@ namespace ITdata
 
         private void Button_Click(object sender, RoutedEventArgs e)  //----------------BACK BUTTON SENDS US TO THE MAINWINDOW-----------------
         {
-            MainWindow mainwind = new MainWindow();
-            mainwind.Show();
+            Window2 win2 = new Window2();
+            win2.Show();
             this.Close();
         }
 

@@ -523,6 +523,21 @@ namespace ITdata
             }
         }
 
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            Window2 win2 = new Window2();
+            win2.Show();
+            this.Close();
+
+        }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 win2 = new Window2();
+            win2.Show();
+            this.Close();
+        }
+
         private void s_departmentlist()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
         {
             String conString = Properties.dbSettings.Default.connectionString;

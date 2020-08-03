@@ -186,8 +186,8 @@ namespace ITdata
         //----------------------------------ON BACK CLICK OPEN THE MAIN WINDOW AND CLOSE THIS ONE------------------------------------
         private void Back_Click_1(object sender, RoutedEventArgs e)
         {
-            MainWindow mainwind = new MainWindow();
-            mainwind.Show();
+            Window2 win2 = new Window2();
+            win2.Show();
             this.Close();
         }
 

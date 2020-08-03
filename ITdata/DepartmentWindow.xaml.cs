@@ -135,8 +135,8 @@ namespace ITdata
 
         private void Button_Click(object sender, RoutedEventArgs e)  //ON BUTTON CLICK CLOSE THIS WINDOW AND HEAD BACK O THE MAIN WINDOW
         {
-            MainWindow mainwind = new MainWindow();
-            mainwind.Show();
+            Window2 win2 = new Window2();
+            win2.Show();
             this.Close();
         }
 

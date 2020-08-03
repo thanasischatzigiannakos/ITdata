@@ -1,0 +1,61 @@
+﻿<Window x:Class="ITdata.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITdata"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        Title="Window2" Height="450" Width="800">
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="user_btn" Content="{materialDesign:PackIcon Kind=User, Size=60}" Width="100" Height="70" ToolTip="User Window" MouseEnter="user_btn_MouseEnter_1" MouseLeave="user_btn_MouseLeave" Click="user_btn_Click" ></Button>
+        <Button Name="email_btn" Content="{materialDesign:PackIcon Kind=Email, Size=60}" Width="100" Height="70" Grid.Column="1" ToolTip="Email Window" MouseEnter="email_btn_MouseEnter" MouseLeave="email_btn_MouseLeave" Click="email_btn_Click" ></Button>
+        <Button Name="phone_btn" Content="{materialDesign:PackIcon Kind=Phone, Size=60}" Width="100" Height="70" Grid.Column="2" ToolTip="Phone Window" MouseEnter="phone_btn_MouseEnter" MouseLeave="phone_btn_MouseLeave" Click="phone_btn_Click" ></Button>
+        <Button Name="printer_btn" Content="{materialDesign:PackIcon Kind=Printer, Size=60}" Width="100" Height="70" Grid.Column="3" ToolTip="Printer Window" MouseEnter="printer_btn_MouseEnter" MouseLeave="printer_btn_MouseLeave" Click="printer_btn_Click" ></Button>
+        <Button Name="db_btn" Content="{materialDesign:PackIcon Kind=Database, Size=60}" Width="100" Height="70" Grid.Row="2" Grid.Column="0" ToolTip="Connection Test Window" MouseEnter="db_btn_MouseEnter" MouseLeave="db_btn_MouseLeave" Click="db_btn_Click" ></Button>
+        <Button Name="location_btn" Content="{materialDesign:PackIcon Kind=AddLocation, Size=60}" Width="100" Height="70" Grid.Row="2" Grid.Column="1" ToolTip="Location Window" MouseEnter="location_btn_MouseEnter" MouseLeave="location_btn_MouseLeave" Click="location_btn_Click" ></Button>
+        <Button Name="company_btn" Content="{materialDesign:PackIcon Kind=Company, Size=60}" Width="100" Height="70" Grid.Row="2" Grid.Column="2" ToolTip="Company Window" MouseEnter="company_btn_MouseEnter" MouseLeave="company_btn_MouseLeave" Click="company_btn_Click" ></Button>
+        <Button Name="department_btn" Content="{materialDesign:PackIcon Kind=UserGroup, Size=60}" Width="100" Height="70" Grid.Row="2" Grid.Column="3" ToolTip="Department Window" MouseEnter="department_btn_MouseEnter" MouseLeave="department_btn_MouseLeave" Click="department_btn_Click" ></Button>
+        <Button Name="exit_btn" Content="{materialDesign:PackIcon Kind=ExitToApp, Size=40}" Width="70" Height="50" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Right" ToolTip="Exit the Application" Click="exit_btn_Click"></Button>
+        <Label Name="user_lb" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <TextBlock>Opens the user Window<LineBreak></LineBreak> Functions : Add ,Edit or Delete Users</TextBlock>
+        </Label>
+        <Label Name="email_lb" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <TextBlock>Opens the Email Window<LineBreak></LineBreak>Funtions: Add,Edit,Delete Emails and match emails with Users</TextBlock>
+        </Label>
+        <Label Name="phone_lb" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <TextBlock>Opens the Phone Window<LineBreak></LineBreak>Functions: Add,Edit,Delete Phones and match Phones with Users</TextBlock>
+        </Label>
+        <Label Name="printer_lb"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <TextBlock>Opens the Printers Window<LineBreak></LineBreak>Functions: Add,Edit or Delete Printers</TextBlock>
+        </Label>
+        <Label Name="database_lb"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <TextBlock>Opens the Database Window ,<LineBreak></LineBreak>Functions: Test connection with the database and set default database</TextBlock>
+        </Label>
+        <Label Name="location_lb" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <TextBlock>Opens the Location Window<LineBreak></LineBreak>Functions: Add,Edit or Delete Locations</TextBlock>
+        </Label>
+        <Label Name="company_lb" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <TextBlock>Opens the Company Window<LineBreak></LineBreak>Functions:Add,Edit,Delete Companies</TextBlock>
+        </Label>
+        <Label Name="department_lb"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <TextBlock>Opens the Department Window<LineBreak></LineBreak>Functions: Add,Edit,Delete Departments</TextBlock>
+        </Label>
+    </Grid>
+</Window>

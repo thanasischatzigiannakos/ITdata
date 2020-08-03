@@ -252,8 +252,8 @@ namespace ITdata
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mnwin = new MainWindow();
-            mnwin.Show();
+            Window2 win2 = new Window2();
+            win2.Show();
             this.Close();
         }
 
