@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
        WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="700" Width="1280">
+        Title="Users" Height="700" Width="1280">
 
 	<Window.Resources>
 		<Style TargetType="TabItem">
