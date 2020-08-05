@@ -34,28 +34,28 @@
         <Button Name="company_btn" Content="{materialDesign:PackIcon Kind=Company, Size=60}" Width="100" Height="70" Grid.Row="2" Grid.Column="2" ToolTip="Company Window" MouseEnter="company_btn_MouseEnter" MouseLeave="company_btn_MouseLeave" Click="company_btn_Click" ></Button>
         <Button Name="department_btn" Content="{materialDesign:PackIcon Kind=UserGroup, Size=60}" Width="100" Height="70" Grid.Row="2" Grid.Column="3" ToolTip="Department Window" MouseEnter="department_btn_MouseEnter" MouseLeave="department_btn_MouseLeave" Click="department_btn_Click" ></Button>
         <Button Name="exit_btn" Content="{materialDesign:PackIcon Kind=ExitToApp, Size=40}" Width="70" Height="50" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Right" ToolTip="Exit the Application" Click="exit_btn_Click"></Button>
-        <Label Name="user_lb" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+        <Label Name="user_lb" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Background="{StaticResource PrimaryHueDarkBrush}">
             <TextBlock>Opens the user Window<LineBreak></LineBreak> Functions : Add ,Edit or Delete Users</TextBlock>
         </Label>
-        <Label Name="email_lb" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+        <Label Name="email_lb" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Background="{StaticResource PrimaryHueDarkBrush}">
             <TextBlock>Opens the Email Window<LineBreak></LineBreak>Funtions: Add,Edit,Delete Emails and match emails with Users</TextBlock>
         </Label>
-        <Label Name="phone_lb" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+        <Label Name="phone_lb" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Background="{StaticResource PrimaryHueDarkBrush}">
             <TextBlock>Opens the Phone Window<LineBreak></LineBreak>Functions: Add,Edit,Delete Phones and match Phones with Users</TextBlock>
         </Label>
-        <Label Name="printer_lb"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+        <Label Name="printer_lb"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Background="{StaticResource PrimaryHueDarkBrush}">
             <TextBlock>Opens the Printers Window<LineBreak></LineBreak>Functions: Add,Edit or Delete Printers</TextBlock>
         </Label>
-        <Label Name="database_lb"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+        <Label Name="database_lb"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Background="{StaticResource PrimaryHueDarkBrush}">
             <TextBlock>Opens the Database Window ,<LineBreak></LineBreak>Functions: Test connection with the database and set default database</TextBlock>
         </Label>
-        <Label Name="location_lb" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+        <Label Name="location_lb" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Background="{StaticResource PrimaryHueDarkBrush}">
             <TextBlock>Opens the Location Window<LineBreak></LineBreak>Functions: Add,Edit or Delete Locations</TextBlock>
         </Label>
-        <Label Name="company_lb" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+        <Label Name="company_lb" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Background="{StaticResource PrimaryHueDarkBrush}">
             <TextBlock>Opens the Company Window<LineBreak></LineBreak>Functions:Add,Edit,Delete Companies</TextBlock>
         </Label>
-        <Label Name="department_lb"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+        <Label Name="department_lb"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Background="{StaticResource PrimaryHueDarkBrush}">
             <TextBlock>Opens the Department Window<LineBreak></LineBreak>Functions: Add,Edit,Delete Departments</TextBlock>
         </Label>
     </Grid>

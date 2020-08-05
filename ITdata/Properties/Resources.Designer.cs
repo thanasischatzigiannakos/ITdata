@@ -61,7 +61,7 @@ namespace ITdata.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to anakonta++.
+        ///   Looks up a localized string similar to assass.
         /// </summary>
         public static string adminpasswd {
             get {

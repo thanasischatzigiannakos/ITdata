@@ -196,6 +196,43 @@
                     <Button Name="back_btn" Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Height="22" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3" Click="Button_Click" ToolTip="Close this window and head back to the main menu" Style="{StaticResource MaterialDesignFlatDarkBgButton}"></Button>
                 </Grid>
             </TabItem>
+            <TabItem Header="Unmatch" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+                <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="auto">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="auto">
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*">
+                    </RowDefinition>
+                    <RowDefinition Height="*">
+                    </RowDefinition>
+                    <RowDefinition Height="*">
+                    </RowDefinition>
+                    <RowDefinition Height="*">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                    <Label Content="Filter:" VerticalAlignment="Bottom" Margin="0,0,0,0"></Label>
+                    <TextBox Name="filter_matched_phones" Width="70" Height="20" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" PreviewTextInput="Port_PreviewTextInput" PreviewKeyUp="filter_matched_phones_PreviewKeyUp" Padding="-8"></TextBox>
+                    <ListBox Name="matched_phones" Grid.Row="1" Grid.RowSpan="3" VerticalAlignment="Top" Height="300" Width="110" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="2" Margin="5,0,0,0" SelectionChanged="matched_phones_SelectionChanged"></ListBox>
+                    <Label Content="The selected phone is matched to:" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Margin="70,20,0,0"></Label>
+                    <TextBox Name="matched_tb" Grid.Row="1" Grid.Column="1" Height="28" Width="150" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="90,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" IsReadOnly="True" Padding="-8" ></TextBox>
+                    <Button Name="unmatch_btn" Content="UNMATCH" Width="100" Grid.Column="1" Grid.Row="2" Margin="100,0,0,0" Click="unmatch_btn_Click"></Button>
+                    <Button Name="unmatch_back_btn" Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Height="22" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3" Click="Button_Click" ToolTip="Close this window and head back to the main menu" Style="{StaticResource MaterialDesignFlatDarkBgButton}"></Button>
+            </Grid>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

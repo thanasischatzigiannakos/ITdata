@@ -107,25 +107,25 @@
 						</ListBox.ItemTemplate>
 					</ListBox>
 
-					<Label Content="FIRST NAME" FontSize="10" Grid.Column="1" Margin="0,20,0,0"></Label>
+					<Label Content="*FIRST NAME" FontSize="10" Grid.Column="1" Margin="0,20,0,0"></Label>
 					<TextBox Name="s_f_name" Grid.Row="0" Grid.Column="1" Width="150" Height="25" FontSize="12" Margin="0,0,0,0" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
-					<Label Content="LAST NAME" FontSize="10" Grid.Column="2" Margin="10,20,0,0"></Label>
+					<Label Content="*LAST NAME" FontSize="10" Grid.Column="2" Margin="10,20,0,0"></Label>
 					<TextBox Name="s_l_name"  Grid.Row="0" Grid.Column="2" Width="150" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
-					<Label Content="FIRST NAME GREEK" FontSize="10" Grid.Column="3" Margin="0,20,0,0"></Label>
+					<Label Content="*FIRST NAME GREEK" FontSize="10" Grid.Column="3" Margin="0,20,0,0"></Label>
 					<TextBox Name="s_f_name_g" Grid.Row="0" Grid.Column="3" Width="150" Height="25" FontSize="12" Padding="-8" Margin="0,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
-					<Label Content="LAST NAME GREEK" FontSize="10" Grid.Column="4" Margin="10,20,0,0"></Label>
+					<Label Content="*LAST NAME GREEK" FontSize="10" Grid.Column="4" Margin="10,20,0,0"></Label>
 					<TextBox Name="s_l_name_g"  Grid.Row="0" Grid.Column="4" Width="150" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
 
-					<Label Content="COMPANY" FontSize="10" Grid.Column="1" Grid.Row="1" Margin="0,0,0,0" ></Label>
+					<Label Content="*COMPANY" FontSize="10" Grid.Column="1" Grid.Row="1" Margin="0,0,0,0" ></Label>
 					<ComboBox Name="s_company_combo" Text="Select a Company" Grid.Column="1" Grid.Row="1" Height="25" FontSize="12" Width="150" Margin="0,0,0,0" SelectionChanged="s_company_combo_SelectionChanged" Style="{StaticResource MaterialDesignComboBox}" ></ComboBox>
 
-					<Label Content="LOCATION" FontSize="10" Grid.Column="2" Grid.Row="1" Margin="10,0,0,0" ></Label>
+					<Label Content="*LOCATION" FontSize="10" Grid.Column="2" Grid.Row="1" Margin="10,0,0,0" ></Label>
 					<ComboBox Name="s_location_combo" Text="Select a Location" Grid.Row="1" Grid.Column="2" Height="25" FontSize="12" Width="150" Margin="10,0,0,0" SelectionChanged="s_location_combo_SelectionChanged" Style="{StaticResource MaterialDesignComboBox}"></ComboBox>
 
-					<Label Content="DEPARTMENT" FontSize="10" Grid.Column="3" Grid.Row="1" Margin="10,0,0,0" ></Label>
+					<Label Content="*DEPARTMENT" FontSize="10" Grid.Column="3" Grid.Row="1" Margin="10,0,0,0" ></Label>
 					<ComboBox Name="s_department_combo" Text="Select a Department" Grid.Row="1" Grid.Column="3" Height="25" FontSize="12" Width="150" Margin="10,0,0,0" SelectionChanged="s_department_combo_SelectionChanged" Style="{StaticResource MaterialDesignComboBox}"  ></ComboBox>
 
 					<Label Content="JOB DESCRIPTION" FontSize="10" Grid.Column="4" Grid.Row="1" Margin="10,0,0,0"></Label>
@@ -134,10 +134,10 @@
 					<Label Content="HOST NAME" FontSize="10" Grid.Column="1" Grid.Row="2" Margin="0,0,0,0"></Label>
 					<TextBox Name="s_h_name"  Grid.Row="2" Grid.Column="1" Width="150" Height="25" FontSize="12" Padding="-8" Margin="0,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
-					<Label Content="USERNAME" FontSize="10" Grid.Column="2" Grid.Row="2" Margin="10,0,0,0"></Label>
+					<Label Content="*USERNAME" FontSize="10" Grid.Column="2" Grid.Row="2" Margin="10,0,0,0"></Label>
 					<TextBox Name="s_username" Grid.Row="2" Grid.Column="2" Width="150" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
-					<Label Content="PASSWORD" FontSize="10" Grid.Column="3" Grid.Row="2" Margin="10,0,0,0"></Label>
+					<Label Content="*PASSWORD" FontSize="10" Grid.Column="3" Grid.Row="2" Margin="10,0,0,0"></Label>
 					<TextBox Name="s_passwd"  Grid.Row="2" Grid.Column="3" Width="150" Height="25" FontSize="12" Padding="-8" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
 					<Label Content="ADMIN PASSWORD" FontSize="10" Grid.Column="4" Grid.Row="2" Margin="10,0,0,0"></Label>
@@ -184,6 +184,7 @@
 					<Button Name="search_delete_btn" Content="DELETE" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="4" Height="25" Width="100" Padding="-4" HorizontalAlignment="Right" Click="search_delete_btn_Click" VerticalAlignment="Center"  Margin="0,0,350,0"></Button>
 					<Button Name="clear" Content="CLEAR" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="4" Height="25" Width="100" HorizontalAlignment="Right" Click="clear_Click" Margin="0,0,230,0"></Button>
 					 <Button Name="back" Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Height="22" Width="30" Grid.Row="7" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="back_Click" ToolTip="Close this window and head back to the Main Window"></Button>
+        <Label Content="The fields with * must be filled" Grid.Row="6" Grid.Column="6" VerticalAlignment="Bottom" FontStyle="Italic"></Label>
     </Grid>
 		
 </Window>

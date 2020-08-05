@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+﻿using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
 
 namespace ITdata
 {
@@ -375,6 +376,13 @@ namespace ITdata
                     }
                 }
             }
+        }
+
+        private void clear_fields_Click(object sender, RoutedEventArgs e)
+        {
+            email_tb.Clear();
+            passwd_tb.Clear();
+            idValue = 0;
         }
 
         private void user_list()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
