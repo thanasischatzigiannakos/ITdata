@@ -142,8 +142,8 @@
                         </RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <ListBox Name="unmatched_emails_listbox" Grid.Column="0" Grid.RowSpan="4" SelectionChanged="unmatched_emails_listbox_SelectionChanged" Width="140" Height="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1" Grid.ColumnSpan="2"></ListBox>
-                    <ListBox Name="user_listbox" Grid.RowSpan="4" Grid.Column="2" SelectionChanged="user_listbox_SelectionChanged" Width="200" Height="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1">
+                    <ListBox Name="unmatched_emails_listbox" Grid.Column="0" Grid.RowSpan="4" SelectionChanged="unmatched_emails_listbox_SelectionChanged" Width="300" Height="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1" Grid.ColumnSpan="2"></ListBox>
+                    <ListBox Name="user_listbox" Grid.RowSpan="4" Grid.Column="2" SelectionChanged="user_listbox_SelectionChanged" Width="200" Height="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,100,0,0" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
