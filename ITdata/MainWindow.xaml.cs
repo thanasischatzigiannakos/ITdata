@@ -132,7 +132,7 @@ namespace ITdata
                     con.Close();
                     con.Dispose();
                     user_listbox.SelectedIndex = 0;
-                    s_radmin_port.Text = "48990";
+                    
                 }
             }
             user_listbox.SelectedIndex = 0;
@@ -227,6 +227,7 @@ namespace ITdata
                 s_username.Text = d2["username"].ToString();
                 s_passwd.Text = d2["passwd"].ToString();
                 s_admin_passwd.Text = d2["admin_passwd"].ToString();
+                s_radmin_port.Text = d2["radmin_port"].ToString();
                 if ((int)d2["status"] == 1)
                 {
                     s_status.IsChecked = true;

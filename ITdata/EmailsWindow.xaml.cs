@@ -342,7 +342,7 @@ namespace ITdata
                     }
                 }
             }
-        }
+        }  //MATCHES THE USER WITH THE SELECTED EMAIL
 
         private void filter_emails_PreviewKeyUp(object sender, KeyEventArgs e)
         {
