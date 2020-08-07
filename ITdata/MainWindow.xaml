@@ -153,7 +153,7 @@
 					<TextBox Name="s_notes" FontSize="12" Grid.Row="3" Grid.Column="3" Grid.RowSpan="2" Grid.ColumnSpan="2" AcceptsReturn="True" Width="300" Height="100" Margin="10,0,0,20" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
 					<Label Content="Emails associated with user" Grid.Row="0" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"></Label>
-					<ListBox Name="user_mails_lb" Grid.Column="5" Grid.RowSpan="4" VerticalAlignment="Center" Height="250" Width="200" BorderThickness="2" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" Margin="10,80,0,20" SelectionChanged="user_mails_lb_SelectionChanged">
+					<ListBox Name="user_mails_lb" Grid.Column="5" Grid.RowSpan="4" VerticalAlignment="Center" Height="400" Width="400" BorderThickness="2" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" Margin="10,80,0,20" SelectionChanged="user_mails_lb_SelectionChanged">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
 								<Grid>
