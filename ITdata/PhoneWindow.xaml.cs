@@ -15,11 +15,9 @@ namespace ITdata
     public partial class PhoneWindow : Window
     {
         private int idValue = 0;
-        private int mID = 0;
-        private int m_user_ID = 0;
         private int userID = 0;
         private int unmatchedphoneInt = 0;
-        private string int_num;
+        
 
         public PhoneWindow()
         {
@@ -27,7 +25,7 @@ namespace ITdata
             fillList();
             user_list();
             match_phone_list();
-            matched_fill_list();
+       
         }
 
         //WHEN A LISTBOX ITEM IS SELECTED PASS ITS VALUES IN THE TEXTBOXS
@@ -83,6 +81,7 @@ namespace ITdata
                 {
                     con.Close();
                     con.Dispose();
+                    phone_listbox.SelectedIndex = 0;
                 }
             }
         }
@@ -98,7 +97,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds1 = new DataSet();
 
-                    MySqlDataAdapter adp1 = new MySqlDataAdapter("SELECT * FROM phones WHERE user_id IS NULL ORDER BY internal_num", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp1 = new MySqlDataAdapter("SELECT * FROM phones ORDER BY internal_num", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt1 = new DataTable();
                     adp1.Fill(dt1);
                     unmatched_phones_listbox.ItemsSource = dt1.DefaultView;
@@ -113,6 +112,7 @@ namespace ITdata
                 {
                     con.Close();
                     con.Dispose();
+                    unmatched_phones_listbox.SelectedIndex = 0;
                 }
             }
         }
@@ -143,6 +143,7 @@ namespace ITdata
                 {
                     con.Close();
                     con.Dispose();
+                    user_listbox.SelectedIndex = 0;
                 }
             }
         }
@@ -200,6 +201,7 @@ namespace ITdata
                     con.Close();
                     con.Dispose();
                     idValue = 0;
+
                 }
             }
         }
@@ -227,7 +229,7 @@ namespace ITdata
                     con.Close();    //---------------CLOSE AND DISPOSE THE CONNECTION AND REFRESH THE LISTBOX----------------
                     con.Dispose();
                     fillList();
-                    matched_fill_list();
+                
                     match_phone_list();
                     idValue = 0;
                 }
@@ -300,6 +302,8 @@ namespace ITdata
                     ext_num_txt.Clear();
                     port_tb.Clear();
                     idValue = 0;
+                    phone_listbox.UnselectAll();
+                    
                 }
             }
         }  //FUNCTION TO UPDATE A ROW IN THE TABLE
@@ -315,7 +319,7 @@ namespace ITdata
             {
                 delete();
                 fillList();
-                matched_fill_list();
+               
                 match_phone_list();
                 web_usr_txt.Clear();
                 web_psw_txt.Clear();
@@ -442,6 +446,7 @@ namespace ITdata
             ext_num_txt.Clear();
             port_tb.Clear();
             idValue = 0;
+            phone_listbox.UnselectAll();
         }
 
         private void unmatched_phones_listbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -479,7 +484,7 @@ namespace ITdata
                 {
                     try
                     {
-                        CmdString = "UPDATE phones SET user_id='" + userID + "' WHERE internal_num = '" + phone_selected_box.Text + "'"; //UPDATE VALUE OF TABLE PROPERTY WITH ID = idValue
+                        CmdString = "INSERT INTO user_phones VALUES (" + userID + "," + unmatchedphoneInt + ")"; //UPDATE VALUE OF TABLE PROPERTY WITH ID = idValue
                         con.Open();
                         MySqlCommand cmd = new MySqlCommand(CmdString, con);
                         cmd.ExecuteNonQuery();
@@ -494,15 +499,18 @@ namespace ITdata
                         con.Dispose();
                         userID = 0;
                         match_phone_list();
-                        matched_fill_list();
                         phone_selected_box.Clear();
                         user_selected_box.Clear();
-                        filter_phones.Clear();
-                        filter_users.Clear();
+                        unmatched_phones_listbox.UnselectAll();
+                        user_listbox.UnselectAll();
+
+
+
+
                     }
                 }
             }
-        }
+        } //MATCH PHONE WITH USER
 
         private void filter_phones_PreviewKeyUp(object sender, KeyEventArgs e)
         {
@@ -578,151 +586,23 @@ namespace ITdata
             }
         }
 
-        private void matched_fill_list()
+        private void clear_filter_Click(object sender, RoutedEventArgs e)
         {
-            String conString = Properties.dbSettings.Default.connectionString;
-
-            using (MySqlConnection con = new MySqlConnection(conString))
-            {
-                try
-                {
-                    con.Open();
-                    DataSet ds1 = new DataSet();
-
-                    MySqlDataAdapter adp1 = new MySqlDataAdapter("SELECT * FROM phones WHERE user_id IS NOT NULL ORDER BY internal_num", con);  //-----PASS ALL THE DATA IN A DATASET
-                    DataTable dt1 = new DataTable();
-                    adp1.Fill(dt1);
-                    matched_phones.ItemsSource = dt1.DefaultView;
-                    matched_phones.DisplayMemberPath = "internal_num"; //DATABINDING -------SETTING VALUE MEMBER AND DISPLAY MEMBER--------------
-                    matched_phones.SelectedValuePath = "id";
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                finally
-                {
-                    con.Close();
-                    con.Dispose();
-                }
-            }
+            search.Clear();
+            fillList();
 
         }
 
-        private void unmatch_btn_Click(object sender, RoutedEventArgs e)
+        private void clear_filter_phones_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(int_num))
-            {
-                MessageBox.Show("You must select a phone", "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else
-            {
-                String CmdString;
-                String conString = Properties.dbSettings.Default.connectionString;
-
-                using (MySqlConnection con = new MySqlConnection(conString))
-                {
-                    try
-                    {
-                        CmdString = "UPDATE phones SET user_id= NULL WHERE internal_num = '" + int_num + "'"; //UPDATE VALUE OF TABLE PROPERTY WITH ID = idValue
-                        con.Open();
-                        MySqlCommand cmd = new MySqlCommand(CmdString, con);
-                        cmd.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                    finally
-                    {
-                        con.Close();
-                        con.Dispose();
-                        mID = 0;
-                        matched_fill_list();
-                        match_phone_list();
-                        matched_tb.Clear();
-                        filter_matched_phones.Clear();
-                        int_num = "";
-                    }
-                }
-            }
-
-
+            filter_phones.Clear();
+            match_phone_list();
         }
 
-        private void filter_matched_phones_PreviewKeyUp(object sender, KeyEventArgs e)
+        private void clear_filter_users_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(filter_matched_phones.Text))
-            {
-                matched_fill_list();
-            }
-            else
-            {
-                String conString = Properties.dbSettings.Default.connectionString;
-
-                using (MySqlConnection con = new MySqlConnection(conString))
-                {
-                    try
-                    {
-                        con.Open();
-                        DataSet ds4 = new DataSet();
-
-                        MySqlDataAdapter adp4 = new MySqlDataAdapter("SELECT * FROM phones WHERE internal_num LIKE '" + filter_matched_phones.Text + "%' AND user_id IS NOT NULL ORDER BY internal_num", con);  //-----PASS ALL THE DATA IN A DATASET
-                        DataTable dt4 = new DataTable();
-                        adp4.Fill(dt4);
-                        matched_phones.ItemsSource = dt4.DefaultView;
-                        matched_phones.DisplayMemberPath = "internal_num"; //DATABINDING -------SETTING VALUE MEMBER AND DISPLAY MEMBER--------------
-                        matched_phones.SelectedValuePath = "id";
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                    finally
-                    {
-                        con.Close();
-                        con.Dispose();
-                    }
-                }
-            }
-
-        }
-
-        private void matched_phones_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (matched_phones.SelectedItem != null)
-            {
-                DataRowView d1 = matched_phones.SelectedItem as DataRowView;
-                int_num= d1["internal_num"].ToString();
-                mID = (int)d1["id"];
-                m_user_ID = (int)d1["user_id"];
-                String conString = Properties.dbSettings.Default.connectionString;
-
-                using (MySqlConnection con = new MySqlConnection(conString))
-                {
-                    try
-                    {
-                        con.Open();
-                        DataSet ds1 = new DataSet();
-                        
-                        MySqlDataAdapter adp1 = new MySqlDataAdapter("SELECT * FROM users WHERE id ='"+m_user_ID+"'", con);  //-----PASS ALL THE DATA IN A DATASET
-                      
-                        DataTable dt1 = new DataTable();
-                        adp1.Fill(dt1);
-                        matched_tb.Text = dt1.Rows[0]["first_name"].ToString() +" "+ dt1.Rows[0]["last_name"].ToString();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                    finally
-                    {
-                        con.Close();
-                        con.Dispose();
-                    }
-                }
-            }
-
+            filter_users.Clear();
+            user_list();
         }
     }
 }

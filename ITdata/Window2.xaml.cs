@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ITdata
 {
@@ -23,9 +14,6 @@ namespace ITdata
             InitializeComponent();
 
         }
-
-        
-       
 
         private void user_btn_MouseEnter_1(object sender, MouseEventArgs e)
         {
@@ -129,7 +117,7 @@ namespace ITdata
 
         private void email_btn_Click(object sender, RoutedEventArgs e)
         {
-            EmailsWindow mailwin =new EmailsWindow();
+            EmailsWindow mailwin = new EmailsWindow();
             mailwin.Show();
             this.Close();
 

@@ -8,7 +8,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="DepartmentWindow" Height="400" Width="340">
+        Title="DepartmentWindow" Height="400" Width="500">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*">
@@ -30,9 +30,9 @@
             </RowDefinition>
         </Grid.RowDefinitions>
 
-        <ListBox Name="departmentListBox" Grid.RowSpan="4" SelectionChanged="departmentListBox_SelectionChanged_1" Width="120" Style="{StaticResource MaterialDesignListBox}" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="2" Margin="0,5,0,5" ></ListBox>
+        <ListBox Name="departmentListBox" Grid.RowSpan="4" SelectionChanged="departmentListBox_SelectionChanged_1" Width="200" Style="{StaticResource MaterialDesignListBox}" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="2" Margin="0,5,0,5" ></ListBox>
 
-        <TextBox Name="inputbox" Grid.Column="1" Width="150" Height="30" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="5,0,5,0"></TextBox>
+        <TextBox Name="inputbox" Grid.Column="1" Width="180" Height="30" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="5,0,5,0"></TextBox>
         <Button Content="SAVE" Name="save_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" Click="save_button_Click" VerticalAlignment="Top" ToolTip="Update the name of the selected department" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
         <Button Content="DELETE" Name="delete_button" Width="100" Height="30" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,26,0,0" Click="delete_button_Click" ToolTip="Delete the selected department" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
         <Button Content="ADD NEW" Name="add_new_button" Width="100" Height="30" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Click="add_new_button_Click" ToolTip="Add a new department" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>

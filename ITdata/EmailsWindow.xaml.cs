@@ -96,7 +96,7 @@ namespace ITdata
                     con.Dispose();  //---------------AFTER TASK IS FINISHED CLOSE AND DISPOSE THE CONNECTION----------------------
                 }
             }
-        }
+        } //ADD NEW 
 
         private void update()
         {
@@ -124,7 +124,7 @@ namespace ITdata
                     idValue = 0;
                 }
             }
-        }
+        } //UPDATE
 
         private void delete()
         {
@@ -334,8 +334,11 @@ namespace ITdata
                         emails_match_list();
                         email_selected_box.Clear();
                         user_selected_box.Clear();
-                        filter_emails.Clear();
-                        filter_users.Clear();
+                        unmatched_emails_listbox.UnselectAll();
+                        user_listbox.UnselectAll();
+                        
+
+
                     }
                 }
             }
@@ -383,6 +386,27 @@ namespace ITdata
             email_tb.Clear();
             passwd_tb.Clear();
             idValue = 0;
+        }
+
+        private void clear_filter_Click(object sender, RoutedEventArgs e)
+        {
+            search.Clear();
+            fillList();
+
+        }
+
+        private void clear_filter_emails_Click(object sender, RoutedEventArgs e)
+        {
+            filter_emails.Clear();
+            emails_match_list();
+
+        }
+
+        private void clear_filter_users_Click(object sender, RoutedEventArgs e)
+        {
+            filter_users.Clear();
+            user_list();
+
         }
 
         private void user_list()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE

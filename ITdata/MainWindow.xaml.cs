@@ -21,65 +21,10 @@ namespace ITdata
             user_list();
             user_email();
             phone_list();
+          
         }
 
-        private int s_cmpID = 0, s_locID = 0, s_depID = 0, s_statusInt = 0, userID = 0;
-
-        //-------------------------ON CLICK OPEN WINDOW1 AND CLOSE THIS ONE-------------------------------------
-        private void EditItem_Click_1(object sender, RoutedEventArgs e)
-        {
-            Window1 wind1 = new Window1();
-            wind1.Show();
-            this.Close();
-        }
-
-        //---------------------------ON CLICK EXIT THE PROGRAM-----------------------------------------
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Company_Click(object sender, RoutedEventArgs e)
-        {
-            CompanyWindow cmpwin = new CompanyWindow();
-            cmpwin.Show();
-            this.Close();
-        }
-
-        private void Location_Click(object sender, RoutedEventArgs e)
-        {
-            LocationWindow lctwin = new LocationWindow();
-            lctwin.Show();
-            this.Close();
-        }
-
-        private void Dept_Click(object sender, RoutedEventArgs e)
-        {
-            DepartmentWindow dptwin = new DepartmentWindow();
-            dptwin.Show();
-            this.Close();
-        }
-
-        private void Phone_Click(object sender, RoutedEventArgs e)
-        {
-            PhoneWindow pnwin = new PhoneWindow();
-            pnwin.Show();
-            this.Close();
-        }
-
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-            EmailsWindow emwind = new EmailsWindow();
-            emwind.Show();
-            this.Close();
-        }
-
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
-        {
-            PrintersWindow prwin = new PrintersWindow();
-            prwin.Show();
-            this.Close();
-        }
+        private int s_cmpID = 0, s_locID = 0, s_depID = 0, s_statusInt = 0, userID = 0, phoneID = 0, mailID = 0;
 
         private void submit_Click(object sender, RoutedEventArgs e)
         {
@@ -89,8 +34,8 @@ namespace ITdata
             }
             else
             {
-                MessageBox.Show("New User Created", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
                 insertNew();
+                MessageBox.Show("New User Created", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
                 s_l_name.Clear();
                 s_f_name.Clear();
                 s_l_name_g.Clear();
@@ -187,6 +132,7 @@ namespace ITdata
                     con.Close();
                     con.Dispose();
                     user_listbox.SelectedIndex = 0;
+                    s_radmin_port.Text = "48990";
                 }
             }
             user_listbox.SelectedIndex = 0;
@@ -218,6 +164,7 @@ namespace ITdata
                 {
                     con.Close();
                     con.Dispose();
+                    user_mails_lb.SelectedIndex = 0;
                 }
             }
         }
@@ -233,7 +180,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds2 = new DataSet();
 
-                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM phones WHERE user_id ='" + userID + "'", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM phones a JOIN user_phones b ON a.id=b.phone_id JOIN users c ON b.user_id=c.id WHERE c.id ='" + userID + "'", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt2 = new DataTable();
                     adp2.Fill(dt2);
                     user_phones_lb.ItemsSource = dt2.DefaultView;
@@ -249,6 +196,7 @@ namespace ITdata
                 {
                     con.Close();
                     con.Dispose();
+                    user_phones_lb.SelectedIndex = 0;
                 }
             }
         }
@@ -258,6 +206,10 @@ namespace ITdata
             if (user_listbox.SelectedItem != null)
             {
                 DataRowView d2 = user_listbox.SelectedItem as DataRowView;
+                selected_phone.Content = "";
+                selected_label.Visibility = Visibility.Collapsed;
+                selected_phone.Content = "";
+                selected_label.Visibility = Visibility.Collapsed;
 
                 userID = (int)d2["id"];
                 s_f_name.Text = d2["first_name"].ToString();
@@ -403,7 +355,7 @@ namespace ITdata
             s_username.Clear();
             s_passwd.Clear();
             s_admin_passwd.Clear();
-            s_radmin_port.Clear();
+            s_radmin_port.Text = "48990";
             s_notes.Clear();
             s_status.IsChecked = false;
             userID = 0;
@@ -414,6 +366,10 @@ namespace ITdata
             s_company_combo.SelectedIndex = 0;
             s_location_combo.SelectedIndex = 0;
             s_department_combo.SelectedIndex = 0;
+            selected_phone.Content = "";
+            selected_label.Visibility = Visibility.Collapsed;
+            selected_email.Content = "";
+            email_label.Visibility = Visibility.Collapsed;
         }
 
         //*********************************UPDATE USER*******************************************************************
@@ -456,6 +412,7 @@ namespace ITdata
                     s_radmin_port.Clear();
                     s_notes.Clear();
                     user_list();
+                    
 
                     //---------------AFTER TASK IS FINISHED CLOSE AND DISPOSE THE CONNECTION----------------------
                 }
@@ -524,20 +481,132 @@ namespace ITdata
             }
         }
 
-        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
-        {
-            Window2 win2 = new Window2();
-            win2.Show();
-            this.Close();
-
-        }
-
         private void back_Click(object sender, RoutedEventArgs e)
         {
             Window2 win2 = new Window2();
             win2.Show();
             this.Close();
         }
+
+        private void user_phones_lb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (user_phones_lb.SelectedItem != null)
+            {
+                DataRowView d2 = user_phones_lb.SelectedItem as DataRowView;
+
+                phoneID = (int)d2["id"];
+                selected_phone.Content = d2["internal_num"];
+                selected_label.Visibility = Visibility.Visible;
+               
+                
+                
+            }
+
+
+        }
+
+        private void user_mails_lb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (user_mails_lb.SelectedItem != null)
+            {
+                DataRowView d2 = user_mails_lb.SelectedItem as DataRowView;
+
+                mailID = (int)d2["id"];
+                selected_email.Content = d2["email"];
+                email_label.Visibility = Visibility.Visible;
+
+
+
+            }
+        }
+
+        private void clear_filter_Click(object sender, RoutedEventArgs e)
+        {
+            filter_user_TB.Clear();
+            user_list();
+
+        }
+
+        private void unmatch_mail_Click(object sender, RoutedEventArgs e)
+        {
+            if (mailID == 0 || userID == 0)
+            {
+                MessageBox.Show("Please select a User and a Phone", "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                String CmdString;
+                String conString = Properties.dbSettings.Default.connectionString;
+
+                using (MySqlConnection con = new MySqlConnection(conString))
+                {
+                    try
+                    {
+                        CmdString = "DELETE FROM user_mail WHERE user_id = '" + userID + "' AND mail_id ='" + mailID + "'";  //find the row where the id matches the idvalue from the listbox item
+                        con.Open();
+                        MySqlCommand cmd = new MySqlCommand(CmdString, con);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    finally
+                    {
+                        con.Close();    //---------------CLOSE AND DISPOSE THE CONNECTION AND REFRESH THE LISTBOX----------------
+                        con.Dispose();
+                        user_email();
+                        phoneID = 0;
+                        user_mails_lb.UnselectAll();
+                        selected_email.Content = "";
+                        email_label.Visibility = Visibility.Collapsed;
+
+                    }
+                }
+            }
+
+            }  //UNMATCH MAIL WITH USER(DELETE FROM MIDDLE TABLE) 
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (phoneID == 0 || userID == 0)
+            {
+                MessageBox.Show("Please select a User and a Phone", "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                String CmdString;
+                String conString = Properties.dbSettings.Default.connectionString;
+
+                using (MySqlConnection con = new MySqlConnection(conString))
+                {
+                    try
+                    {
+                        CmdString = "DELETE FROM user_phones WHERE user_id = '" + userID + "' AND phone_id ='"+phoneID+"'";  //find the row where the id matches the idvalue from the listbox item
+                        con.Open();
+                        MySqlCommand cmd = new MySqlCommand(CmdString, con);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Connection Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    finally
+                    {
+                        con.Close();    //---------------CLOSE AND DISPOSE THE CONNECTION AND REFRESH THE LISTBOX----------------
+                        con.Dispose();
+                        phone_list();
+                        phoneID = 0;
+                        user_phones_lb.UnselectAll();
+                        selected_phone.Content = "";
+                        selected_label.Visibility = Visibility.Collapsed;
+
+                    }
+                }
+
+            }
+
+        }  //UNMATCH USER FROM PHONE
 
         private void s_departmentlist()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
         {

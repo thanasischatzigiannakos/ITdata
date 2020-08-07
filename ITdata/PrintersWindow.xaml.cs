@@ -122,7 +122,7 @@ namespace ITdata
                     con.Dispose();  //---------------AFTER TASK IS FINISHED CLOSE AND DISPOSE THE CONNECTION----------------------
                 }
             }
-        }
+        }  //CREATES NEW PRINTER 
 
         private void update_printer()
         {
@@ -150,7 +150,7 @@ namespace ITdata
                     idValue = 0;
                 }
             }
-        }
+        }  //UPDATES EXISTING PRINTER
 
         private void delete_printer()
         {
@@ -175,10 +175,11 @@ namespace ITdata
                     con.Close();    //---------------CLOSE AND DISPOSE THE CONNECTION AND REFRESH THE LISTBOX----------------
                     con.Dispose();
                     fill_printer_list();
+                    printer_lb.UnselectAll();
                     idValue = 0;
                 }
             }
-        }
+        }  //DELETES PRINTER
 
         private void add_new_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -196,7 +197,7 @@ namespace ITdata
                 fill_printer_list();
                 clearFields();
             }
-        }
+        }  //ON CLICK ADD_NEW_PRINTER
 
         private void update_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -217,8 +218,10 @@ namespace ITdata
                 update_printer();
                 fill_printer_list();
                 clearFields();
+                printer_lb.UnselectAll();
+
             }
-        }
+        }  //ON CLICK UPDATE
 
         private void delete_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -232,7 +235,7 @@ namespace ITdata
                 fill_printer_list();
                 clearFields();
             }
-        }
+        }   //ON CLICK DELETE
 
         private void clearFields()
         {
@@ -244,19 +247,22 @@ namespace ITdata
             admin_name_tb.Clear();
             admin_passwd_tb.Clear();
             idValue = 0;
-        }
+            printer_lb.UnselectAll();
+            
+
+        }   //CLEARS ALL THE FIELDS
 
         private void clear_btn_Click(object sender, RoutedEventArgs e)
         {
             clearFields();
-        }
+        }  //ON CLICK CLER AL THE FIELDS
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window2 win2 = new Window2();
             win2.Show();
             this.Close();
-        }
+        }  //ACK BUTTON 
 
         private void filter_tb_PreviewKeyUp(object sender, KeyEventArgs e)
         {
@@ -293,7 +299,7 @@ namespace ITdata
                     }
                 }
             }
-        }
+        }  //WHEN SOMETHING IS TYPED IN FILTER BOX UPDATE THE LISTBOX
 
         private void printer_lb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -309,7 +315,7 @@ namespace ITdata
                 admin_passwd_tb.Text = d1["admin_passwd"].ToString();
                 idValue = (int)d1["id"];
             }
-        }
+        }  //WHEN A LISTBOX ITEM IS SELECTED TRIGGER THIS EVENT
 
         // _____________________________________________________________________________________________________________
         public Boolean CheckIPValid(String strIP)
@@ -354,6 +360,12 @@ namespace ITdata
         private static bool IsTextAllowed(string text)
         {
             return !_regex.IsMatch(text);
+        }
+
+        private void clear_filter_Click(object sender, RoutedEventArgs e)
+        {
+            filter_tb.Clear();
+            fill_printer_list();
         }
 
         private void ServerAddress_PreviewTextInput(object sender, TextCompositionEventArgs e) //event handler to only allow input of IP format(numbers and dots)

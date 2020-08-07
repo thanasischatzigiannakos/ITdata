@@ -31,7 +31,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds = new DataSet();
 
-                    MySqlDataAdapter adp = new MySqlDataAdapter("SELECT * FROM companies", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp = new MySqlDataAdapter("SELECT * FROM companies ORDER BY company", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt = new DataTable();
                     adp.Fill(dt);
                     companyListBox.ItemsSource = dt.DefaultView;
@@ -105,7 +105,7 @@ namespace ITdata
             }
         }
 
-        private void deleteCompany(String cmpName)   //------FUNCTION TO DELETE A COMPANY FROM THE TABLE ---------------
+        private void deleteCompany()   //------FUNCTION TO DELETE A COMPANY FROM THE TABLE ---------------
         {
             String CmdString;
             String conString = Properties.dbSettings.Default.connectionString;
@@ -169,8 +169,8 @@ namespace ITdata
 
         private void delete_button_Click(object sender, RoutedEventArgs e) // ----------WHEN THE DELETE BUTTON IS PRESSED CALL THE DELETECOMPANY FUNCTION-----------
         {
-            String input = inputbox.Text;
-            deleteCompany(input);
+        
+            deleteCompany();
             fillList();
             inputbox.Clear();
             inputbox.Focus();

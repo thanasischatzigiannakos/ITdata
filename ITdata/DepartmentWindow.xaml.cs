@@ -31,7 +31,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds = new DataSet();
 
-                    MySqlDataAdapter adp = new MySqlDataAdapter("SELECT * FROM department", con);
+                    MySqlDataAdapter adp = new MySqlDataAdapter("SELECT * FROM department ORDER BY dept", con);
                     DataTable dt = new DataTable();
                     adp.Fill(dt);
                     departmentListBox.ItemsSource = dt.DefaultView;

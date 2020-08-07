@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen"
-        Title="PhoneWindow" Height="540" Width="500">
+        Title="PhoneWindow" Height="540" Width="750">
 
     <Window.Resources>
         <Style TargetType="TabItem">
@@ -89,34 +89,35 @@
                     <ListBox Name="phone_listbox" Grid.RowSpan="5" SelectionChanged="phone_listbox_SelectionChanged" Width="100" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="2"></ListBox>
 
                     <Label Content="Filter:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10"  ></Label>
-                    <TextBox Name="search" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="26" Padding="-6" PreviewKeyUp="search_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Margin="0,5,22,10" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
+                    <TextBox Name="search" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="22" Padding="-6" PreviewKeyUp="search_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Margin="0,5,22,10" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
+                    <Button Name="clear_filter" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" VerticalAlignment="Center" Margin="90,0,0,5" Click="clear_filter_Click"></Button>
 
                     <Label Content="Web UI Admin" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12"  ></Label>
-                    <TextBox Name="web_usr_txt" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Height="25" Width="150" FontSize="11" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
+                    <TextBox Name="web_usr_txt" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Height="25" Width="200" FontSize="11" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
 
                     <Label Content="Web UI Passwd" Grid.Row="0" Grid.Column="2"  VerticalAlignment="Center" FontSize="15" Margin="5,0,0,12" ></Label>
-                    <TextBox Name="web_psw_txt" Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom"  Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="5,0,0,0" ></TextBox>
+                    <TextBox Name="web_psw_txt" Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom"  Height="25" Width="200" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="5,0,0,0" ></TextBox>
 
                     <Label Content="Model Number" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12" ></Label>
-                    <TextBox Name="model_num_txt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom"  Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"  ></TextBox>
+                    <TextBox Name="model_num_txt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom"  Height="25" Width="200" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"  ></TextBox>
 
                     <Label Content="Serial Number" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"  FontSize="15" Margin="5,0,0,12" ></Label>
-                    <TextBox Name="serial_numtxt" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="Port_PreviewTextInput" Margin="5,0,0,0" ></TextBox>
+                    <TextBox Name="serial_numtxt" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Height="25" Width="200" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="Port_PreviewTextInput" Margin="5,0,0,0" ></TextBox>
 
                     <Label Content="IP" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"  FontSize="15" Margin="0,0,0,12" ></Label>
-                    <TextBox Name="ip_txt" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="25" Width="150" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontSize="12" PreviewTextInput="ServerAddress_PreviewTextInput" ></TextBox>
+                    <TextBox Name="ip_txt" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="25" Width="200" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontSize="12" PreviewTextInput="ServerAddress_PreviewTextInput" ></TextBox>
 
                     <Label Content="MAC Address" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" FontSize="15" Margin="5,0,0,12" ></Label>
-                    <TextBox Name="mac_txt" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="ServerAddress_PreviewTextInput" Margin="5,0,0,0"></TextBox>
+                    <TextBox Name="mac_txt" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" Height="25" Width="200" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="ServerAddress_PreviewTextInput" Margin="5,0,0,0"></TextBox>
 
                     <Label Content="Internal Number" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"  FontSize="15" Margin="0,0,0,12" ></Label>
-                    <TextBox Name="internal_num_txt" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom"  Height="25" Width="150" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontSize="12" PreviewTextInput="Port_PreviewTextInput" MaxLength="4"></TextBox>
+                    <TextBox Name="internal_num_txt" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom"  Height="25" Width="200" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontSize="12" PreviewTextInput="Port_PreviewTextInput" MaxLength="4"></TextBox>
 
                     <Label Content="External Number" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"  FontSize="15" Margin="5,0,0,12" ></Label>
-                    <TextBox Name="ext_num_txt" Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom"  Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="Port_PreviewTextInput" Margin="5,0,0,0" ></TextBox>
+                    <TextBox Name="ext_num_txt" Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom"  Height="25" Width="200" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="Port_PreviewTextInput" Margin="5,0,0,0" ></TextBox>
 
                     <Label Content="Port" Grid.Column="1" Grid.Row="4" FontSize="15" VerticalAlignment="Top" Margin="0,5,0,12"  ></Label>
-                    <TextBox Name="port_tb" Grid.Row="4" Grid.Column="1"  Height="25" Width="150" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="Port_PreviewTextInput" Margin="0,10,0,0" ></TextBox>
+                    <TextBox Name="port_tb" Grid.Row="4" Grid.Column="1"  Height="25" Width="200" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" PreviewTextInput="Port_PreviewTextInput" Margin="0,10,0,0" ></TextBox>
 
                     <Button Name="Submit" Content="ADD NEW" FontSize="15" FontWeight="Bold" Grid.Row="5" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Top" Click="submit_Click" Margin="0,25,0,0" ToolTip="Add a new phone(You must fill all the fields in the form)" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
                     <Button Name="Update" Content="SAVE" FontSize="15" FontWeight="Bold" Grid.Row="5" Grid.Column="1" Height="40" Width="110" VerticalAlignment="Bottom" Click="update_Click" Margin="0,8,0,0" ToolTip="Update the information of the selected phone" Style="{DynamicResource MaterialDesignRaisedButton}" ></Button>
@@ -155,8 +156,8 @@
                         </RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <ListBox Name="unmatched_phones_listbox" Grid.Column="0" Grid.RowSpan="4" SelectionChanged="unmatched_phones_listbox_SelectionChanged" Width="100" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1"></ListBox>
-                    <ListBox Name="user_listbox" Grid.RowSpan="4" Grid.Column="1" SelectionChanged="user_listbox_SelectionChanged" Width="140" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1">
+                    <ListBox Name="unmatched_phones_listbox" Grid.Column="0" Grid.RowSpan="4" SelectionChanged="unmatched_phones_listbox_SelectionChanged" Width="200" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1"></ListBox>
+                    <ListBox Name="user_listbox" Grid.RowSpan="4" Grid.Column="1" SelectionChanged="user_listbox_SelectionChanged" Width="200" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -180,59 +181,26 @@
                     </ListBox>
 
                     <Label Content="Selected User" Grid.Column="2" VerticalAlignment="Center" FontSize="15" Margin="0,10,0,0"></Label>
-                    <TextBox Name="user_selected_box" Grid.Row="0" Grid.Column="2" Height="25" VerticalAlignment="Bottom" Width="100"  IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-6"></TextBox>
+                    <TextBox Name="user_selected_box" Grid.Row="0" Grid.Column="2" Height="25" VerticalAlignment="Bottom" Width="180"  IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-6"></TextBox>
 
                     <Label Content="Selected Phone" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" FontSize="15" Margin="0,10,0,0"></Label>
-                    <TextBox Name="phone_selected_box"  Grid.Row="1" Grid.Column="2" Height="25" Width="100" Margin="0,0,0,0" IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-6"></TextBox>
+                    <TextBox Name="phone_selected_box"  Grid.Row="1" Grid.Column="2" Height="25" Width="180" Margin="0,0,0,0" IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-6"></TextBox>
 
                     <Label Content="Filter:" Grid.Row="0" VerticalAlignment="Center" Margin="0,10,0,5"></Label>
-                    <TextBox Name="filter_phones" Height="25" Width="65" Margin="5,10,15,10" PreviewKeyUp="filter_phones_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
-
+                    <TextBox Name="filter_phones" Height="25" Width="90" Margin="0,10,80,10" PreviewKeyUp="filter_phones_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
+                    <Button Name="clear_filter_phones" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" VerticalAlignment="Center" Margin="45,5,0,0" Click="clear_filter_phones_Click"></Button>
+                    
                     <Label Content="Filter:" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="0,10,0,5"></Label>
-                    <TextBox Name="filter_users" Height="25" Grid.Column="1" Width="65" Margin="-10,10,15,10" PreviewKeyUp="filter_users_PreviewKeyUp" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
-
+                    <TextBox Name="filter_users" Height="25" Grid.Column="1" Width="150" Margin="-10,10,0,10" HorizontalAlignment="Center" PreviewKeyUp="filter_users_PreviewKeyUp" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
+                    <Button Name="clear_filter_users" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,5,20,0" Click="clear_filter_users_Click"></Button>
+                    
+                    
                     <Button Name="match" Content="MATCH" FontWeight="Bold" Height="27" Width="90" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Click="match_Click" Margin="0,0,0,0" ToolTip="Match a phone with it's user" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
 
                     <Button Name="back_btn" Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Height="22" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3" Click="Button_Click" ToolTip="Close this window and head back to the main menu" Style="{StaticResource MaterialDesignFlatDarkBgButton}"></Button>
                 </Grid>
             </TabItem>
-            <TabItem Header="Unmatch" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        TextElement.FontWeight="Regular"
-        TextElement.FontSize="13"
-        TextOptions.TextFormattingMode="Ideal"
-        TextOptions.TextRenderingMode="Auto"
-        Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}">
-                <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto">
-                    </ColumnDefinition>
-                    <ColumnDefinition Width="auto">
-                    </ColumnDefinition>
-                    <ColumnDefinition Width="auto">
-                    </ColumnDefinition>
-                </Grid.ColumnDefinitions>
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*">
-                    </RowDefinition>
-                    <RowDefinition Height="*">
-                    </RowDefinition>
-                    <RowDefinition Height="*">
-                    </RowDefinition>
-                    <RowDefinition Height="*">
-                    </RowDefinition>
-                </Grid.RowDefinitions>
-                    <Label Content="Filter:" VerticalAlignment="Bottom" Margin="0,0,0,0"></Label>
-                    <TextBox Name="filter_matched_phones" Width="70" Height="20" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" PreviewTextInput="Port_PreviewTextInput" PreviewKeyUp="filter_matched_phones_PreviewKeyUp" Padding="-8"></TextBox>
-                    <ListBox Name="matched_phones" Grid.Row="1" Grid.RowSpan="3" VerticalAlignment="Top" Height="300" Width="110" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="2" Margin="5,0,0,0" SelectionChanged="matched_phones_SelectionChanged"></ListBox>
-                    <Label Content="The selected phone is matched to:" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Margin="70,20,0,0"></Label>
-                    <TextBox Name="matched_tb" Grid.Row="1" Grid.Column="1" Height="28" Width="150" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="90,0,0,0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" IsReadOnly="True" Padding="-8" ></TextBox>
-                    <Button Name="unmatch_btn" Content="UNMATCH" Width="100" Grid.Column="1" Grid.Row="2" Margin="100,0,0,0" Click="unmatch_btn_Click"></Button>
-                    <Button Name="unmatch_back_btn" Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Height="22" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3" Click="Button_Click" ToolTip="Close this window and head back to the main menu" Style="{StaticResource MaterialDesignFlatDarkBgButton}"></Button>
-            </Grid>
-            </TabItem>
+            
         </TabControl>
     </Grid>
 </Window>

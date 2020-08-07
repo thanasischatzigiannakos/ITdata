@@ -31,7 +31,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds = new DataSet();
 
-                    MySqlDataAdapter adp = new MySqlDataAdapter("SELECT * FROM location", con);
+                    MySqlDataAdapter adp = new MySqlDataAdapter("SELECT * FROM location ORDER BY location", con);
                     DataTable dt = new DataTable();
                     adp.Fill(dt);
                     locationListBox.ItemsSource = dt.DefaultView;

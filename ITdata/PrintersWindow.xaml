@@ -35,8 +35,9 @@
         </Grid.ColumnDefinitions>
 
         <Label Content="Filter:" Margin="0,10,0,0"></Label>
-        <TextBox Name="filter_tb" Grid.Column="0" HorizontalAlignment="Center" Height="25" Width="100" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8" Margin="30,10,0,10" PreviewKeyUp="filter_tb_PreviewKeyUp"></TextBox>
-        <ListBox Name="printer_lb" Grid.RowSpan="6" Grid.Row="1" Height="350" Width="150" Margin="0,0,10,0" VerticalAlignment="Center" BorderThickness="2" BorderBrush="{StaticResource PrimaryHueDarkBrush}" SelectionChanged="printer_lb_SelectionChanged"></ListBox>
+        <TextBox Name="filter_tb" Grid.Column="0" HorizontalAlignment="Center" Height="25" Width="130" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8" Margin="0,10,0,10" PreviewKeyUp="filter_tb_PreviewKeyUp"></TextBox>
+        <Button Name="clear_filter" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,0,10" Click="clear_filter_Click"></Button>
+        <ListBox Name="printer_lb" Grid.RowSpan="6" Grid.Row="1" Height="350" Width="200" Margin="0,0,10,0" VerticalAlignment="Center" BorderThickness="2" BorderBrush="{StaticResource PrimaryHueDarkBrush}" SelectionChanged="printer_lb_SelectionChanged"></ListBox>
 
         <Label Content="Name/Network ID" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" ></Label>
         <TextBox Name="net_id_tb" Grid.Row="1" Grid.Column="1" Width="150" Height="25" Padding="-8" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="0,2,0,2"></TextBox>
