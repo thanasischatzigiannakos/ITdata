@@ -26,11 +26,11 @@ namespace ITdata
         public PrintersWindow()
         {
             InitializeComponent();
-            s_company_list();
+            s_location_list();
             fill_printer_list();
         }
 
-        private void s_company_list()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
+        private void s_location_list()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE
         {
             String conString = Properties.dbSettings.Default.connectionString;
 
@@ -262,7 +262,7 @@ namespace ITdata
             Window2 win2 = new Window2();
             win2.Show();
             this.Close();
-        }  //ACK BUTTON 
+        }  //BACK BUTTON 
 
         private void filter_tb_PreviewKeyUp(object sender, KeyEventArgs e)
         {
