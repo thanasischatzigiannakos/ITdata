@@ -90,7 +90,7 @@
 
                     <Label Content="Filter:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10"  ></Label>
                     <TextBox Name="search" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="22" Padding="-6" PreviewKeyUp="search_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Margin="0,5,22,10" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
-                    <Button Name="clear_filter" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" VerticalAlignment="Center" Margin="90,0,0,5" Click="clear_filter_Click"></Button>
+                    <Button Name="clear_filter" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" VerticalAlignment="Center" Margin="90,0,0,2" Click="clear_filter_Click"></Button>
 
                     <Label Content="Web UI Admin" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12"  ></Label>
                     <TextBox Name="web_usr_txt" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Height="25" Width="200" FontSize="11" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
@@ -157,7 +157,7 @@
                     </Grid.RowDefinitions>
 
                     <ListBox Name="unmatched_phones_listbox" Grid.Column="0" Grid.RowSpan="4" SelectionChanged="unmatched_phones_listbox_SelectionChanged" Width="200" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1"></ListBox>
-                    <ListBox Name="user_listbox" Grid.RowSpan="4" Grid.Column="1" SelectionChanged="user_listbox_SelectionChanged" Width="200" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1">
+                    <ListBox Name="user_listbox" Grid.RowSpan="4" Grid.Column="1" SelectionChanged="user_listbox_SelectionChanged" Width="240" Height="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,50,50,0" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="1">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -186,21 +186,19 @@
                     <Label Content="Selected Phone" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" FontSize="15" Margin="0,10,0,0"></Label>
                     <TextBox Name="phone_selected_box"  Grid.Row="1" Grid.Column="2" Height="25" Width="180" Margin="0,0,0,0" IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-6"></TextBox>
 
-                    <Label Content="Filter:" Grid.Row="0" VerticalAlignment="Center" Margin="0,10,0,5"></Label>
-                    <TextBox Name="filter_phones" Height="25" Width="90" Margin="0,10,80,10" PreviewKeyUp="filter_phones_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
-                    <Button Name="clear_filter_phones" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" VerticalAlignment="Center" Margin="45,5,0,0" Click="clear_filter_phones_Click"></Button>
-                    
-                    <Label Content="Filter:" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="0,10,0,5"></Label>
-                    <TextBox Name="filter_users" Height="25" Grid.Column="1" Width="150" Margin="-10,10,0,10" HorizontalAlignment="Center" PreviewKeyUp="filter_users_PreviewKeyUp" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
-                    <Button Name="clear_filter_users" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,5,20,0" Click="clear_filter_users_Click"></Button>
-                    
-                    
+                    <Label Content="Filter:" Grid.Row="0" VerticalAlignment="Bottom" Margin="0,10,0,5"></Label>
+                    <TextBox Name="filter_phones" Height="25" Width="110" Margin="0,0,60,8" VerticalAlignment="Bottom"  PreviewKeyUp="filter_phones_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
+                    <Button Name="clear_filter_phones" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" VerticalAlignment="Bottom" Margin="85,0,0,8" Click="clear_filter_phones_Click"></Button>
+
+                    <Label Content="Filter:" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,10,0,5"></Label>
+                    <TextBox Name="filter_users" Height="25" Grid.Column="1" Width="150" Margin="0,10,55,8" HorizontalAlignment="Center" VerticalAlignment="Bottom" PreviewKeyUp="filter_users_PreviewKeyUp" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
+                    <Button Name="clear_filter_users" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,65,8" Click="clear_filter_users_Click"></Button>
+
                     <Button Name="match" Content="MATCH" FontWeight="Bold" Height="27" Width="90" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Click="match_Click" Margin="0,0,0,0" ToolTip="Match a phone with it's user" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
 
                     <Button Name="back_btn" Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Height="22" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3" Click="Button_Click" ToolTip="Close this window and head back to the main menu" Style="{StaticResource MaterialDesignFlatDarkBgButton}"></Button>
                 </Grid>
             </TabItem>
-            
         </TabControl>
     </Grid>
 </Window>

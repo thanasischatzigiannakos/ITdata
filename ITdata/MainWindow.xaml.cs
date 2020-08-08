@@ -6,7 +6,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-
 namespace ITdata
 {
     public partial class MainWindow : Window
@@ -21,7 +20,6 @@ namespace ITdata
             user_list();
             user_email();
             phone_list();
-          
         }
 
         private int s_cmpID = 0, s_locID = 0, s_depID = 0, s_statusInt = 0, userID = 0, phoneID = 0, mailID = 0;
@@ -132,7 +130,6 @@ namespace ITdata
                     con.Close();
                     con.Dispose();
                     user_listbox.SelectedIndex = 0;
-                    
                 }
             }
             user_listbox.SelectedIndex = 0;
@@ -367,6 +364,7 @@ namespace ITdata
             s_company_combo.SelectedIndex = 0;
             s_location_combo.SelectedIndex = 0;
             s_department_combo.SelectedIndex = 0;
+            user_listbox.UnselectAll();
             selected_phone.Content = "";
             selected_label.Visibility = Visibility.Collapsed;
             selected_email.Content = "";
@@ -413,7 +411,6 @@ namespace ITdata
                     s_radmin_port.Clear();
                     s_notes.Clear();
                     user_list();
-                    
 
                     //---------------AFTER TASK IS FINISHED CLOSE AND DISPOSE THE CONNECTION----------------------
                 }
@@ -498,12 +495,7 @@ namespace ITdata
                 phoneID = (int)d2["id"];
                 selected_phone.Content = d2["internal_num"];
                 selected_label.Visibility = Visibility.Visible;
-               
-                
-                
             }
-
-
         }
 
         private void user_mails_lb_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -515,9 +507,6 @@ namespace ITdata
                 mailID = (int)d2["id"];
                 selected_email.Content = d2["email"];
                 email_label.Visibility = Visibility.Visible;
-
-
-
             }
         }
 
@@ -525,7 +514,6 @@ namespace ITdata
         {
             filter_user_TB.Clear();
             user_list();
-
         }
 
         private void unmatch_mail_Click(object sender, RoutedEventArgs e)
@@ -561,12 +549,10 @@ namespace ITdata
                         user_mails_lb.UnselectAll();
                         selected_email.Content = "";
                         email_label.Visibility = Visibility.Collapsed;
-
                     }
                 }
             }
-
-            }  //UNMATCH MAIL WITH USER(DELETE FROM MIDDLE TABLE) 
+        }  //UNMATCH MAIL WITH USER(DELETE FROM MIDDLE TABLE)
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -583,7 +569,7 @@ namespace ITdata
                 {
                     try
                     {
-                        CmdString = "DELETE FROM user_phones WHERE user_id = '" + userID + "' AND phone_id ='"+phoneID+"'";  //find the row where the id matches the idvalue from the listbox item
+                        CmdString = "DELETE FROM user_phones WHERE user_id = '" + userID + "' AND phone_id ='" + phoneID + "'";  //find the row where the id matches the idvalue from the listbox item
                         con.Open();
                         MySqlCommand cmd = new MySqlCommand(CmdString, con);
                         cmd.ExecuteNonQuery();
@@ -601,12 +587,9 @@ namespace ITdata
                         user_phones_lb.UnselectAll();
                         selected_phone.Content = "";
                         selected_label.Visibility = Visibility.Collapsed;
-
                     }
                 }
-
             }
-
         }  //UNMATCH USER FROM PHONE
 
         private void s_departmentlist()   //FILL THE LISTBOX WITH VALUES FROM THE DATABASE

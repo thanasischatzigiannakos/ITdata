@@ -96,7 +96,7 @@
 
                     <ListBox Name="email_listbox" Grid.RowSpan="5" Grid.Row="1" Grid.ColumnSpan="2" SelectionChanged="email_listbox_SelectionChanged" Width="400" Height="400"  VerticalAlignment="Center" BorderBrush="{StaticResource PrimaryHueDarkBrush}" BorderThickness="2" Margin="0,0,0,30"></ListBox>
                     <Label Content="Filter:" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="17" ></Label>
-                    <TextBox Name="search" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Height="22" Padding="-8" PreviewKeyUp="search_PreviewKeyUp"   Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="60,0,0,0"></TextBox>
+                    <TextBox Name="search" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="190" Height="22" Padding="-8" PreviewKeyUp="search_PreviewKeyUp"   Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="60,0,0,0"></TextBox>
                     <Button Name="clear_filter" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Center" Margin="0,5,25,0" Click="clear_filter_Click"></Button>
 
                     <Label Content="Email:" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0" ></Label>
@@ -169,18 +169,18 @@
                     </ListBox>
 
                     <Label Content="Selected User" Grid.Column="3" VerticalAlignment="Top" FontSize="15" Margin="5,75,0,0"></Label>
-                    <TextBox Name="user_selected_box" Grid.Row="0" Grid.Column="3" Height="25" VerticalAlignment="Top" Width="200"  IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8" Margin="5,100,0,0" Grid.RowSpan="2"></TextBox>
+                    <TextBox Name="user_selected_box" Grid.Row="0" Grid.Column="3" Height="25" VerticalAlignment="Top" Width="220"  IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8" Margin="5,100,0,0" Grid.RowSpan="2"></TextBox>
 
                     <Label Content="Selected Email" Grid.Column="3" Grid.Row="1" VerticalAlignment="Top" FontSize="15" Margin="0,20,0,0"></Label>
-                    <TextBox Name="email_selected_box"  Grid.Row="1" Grid.Column="3" Height="25" Width="200" Margin="5,40,0,44" IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
+                    <TextBox Name="email_selected_box"  Grid.Row="1" Grid.Column="3" Height="25" Width="220" Margin="5,40,0,44" IsReadOnly="True" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8"></TextBox>
 
                     <Label Content="Filter:" Grid.Row="0" VerticalAlignment="Center" Margin="0,50,0,0" Grid.ColumnSpan="2"></Label>
                     <TextBox Name="filter_emails" Height="22" Width="220" Margin="0,50,0,0" PreviewKeyUp="filter_emails_PreviewKeyUp" VerticalAlignment="Center"  Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8" Grid.Column="0"></TextBox>
-                    <Button Name="clear_filter_emails" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" VerticalAlignment="Center" Margin="0,50,5,0" HorizontalAlignment="Right" Click="clear_filter_emails_Click"></Button>
+                    <Button Name="clear_filter_emails" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" VerticalAlignment="Center" Margin="0,55,5,0" HorizontalAlignment="Right" Click="clear_filter_emails_Click"></Button>
 
                     <Label Content="Filter:" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="0,50,0,0"></Label>
                     <TextBox Name="filter_users" Height="22" Grid.Column="2" Width="130" Margin="40,50,75,0" PreviewKeyUp="filter_users_PreviewKeyUp" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Padding="-8" VerticalAlignment="Center"></TextBox>
-                    <Button Name="clear_filter_users" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Grid.Column="2" Padding="-8" Height="22" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="130,50,0,0" Click="clear_filter_users_Click"></Button>
+                    <Button Name="clear_filter_users" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Grid.Column="2" Padding="-8" Height="22" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="135,55,0,0" Click="clear_filter_users_Click"></Button>
 
                     <Button Name="match" Content="MATCH" FontWeight="Bold" Height="27" Width="90" Grid.Column="3" Grid.Row="1" VerticalAlignment="Top" Click="match_Click" Margin="55,112,55,0" ToolTip="Match an email with it's user" Style="{DynamicResource MaterialDesignRaisedButton}" Grid.RowSpan="2"></Button>
 

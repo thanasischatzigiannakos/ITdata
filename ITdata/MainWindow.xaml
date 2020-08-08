@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-
+        WindowStartupLocation="CenterScreen"
         Title="Users" Height="750" Width="1600">
 
     <Window.Resources>
