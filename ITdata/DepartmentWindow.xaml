@@ -8,7 +8,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="DepartmentWindow" Height="600" Width="650">
+        Title="DepartmentWindow" Height="600" Width="620">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto">
