@@ -1,6 +1,8 @@
-﻿using MySqlConnector;
+﻿using MaterialDesignThemes.Wpf;
+using MySqlConnector;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
@@ -227,10 +229,12 @@ namespace ITdata
                 s_radmin_port.Text = d2["radmin_port"].ToString();
                 if ((int)d2["status"] == 1)
                 {
-                    s_status.IsChecked = true;
+                    s_status.IsChecked = true; ;
                 }
                 else
+                {
                     s_status.IsChecked = false;
+                }
 
                 s_radmin_port.Text = d2["radmin_port"].ToString();
                 s_notes.Text = d2["notes"].ToString();
