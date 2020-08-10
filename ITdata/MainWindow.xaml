@@ -180,7 +180,7 @@
         </ListBox>
 
         <Label Name="selected_label" Content="Selected phone" Grid.Column="6" Grid.Row="5" Height="24" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Visibility="Collapsed"></Label>
-        <Label Name="selected_phone" Grid.Column="6" Grid.Row="5" Height="20" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,0,0,20" Padding="-1"></Label>
+        <Label Name="selected_phone" Grid.Column="6" Grid.Row="5" Height="20" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,0,20" Padding="-1"></Label>
         <Button Content="UNMATCH" Grid.Column="6" Grid.Row="5" Width="100" VerticalAlignment="Bottom" Click="Button_Click"></Button>
 
         <Label Name="email_label" Content="Selected Email" Grid.Column="5" Grid.Row="5" Height="24" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Visibility="Collapsed"></Label>
