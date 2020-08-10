@@ -227,10 +227,67 @@ namespace ITdata
                 s_radmin_port.Text = d2["radmin_port"].ToString();
                 if ((int)d2["status"] == 1)
                 {
-                    s_status.IsChecked = true;
+                    s_status.IsChecked = true; ;
+                    s_f_name.Background =System.Windows.Media.Brushes.DarkGray;
+                    s_f_name.IsReadOnly = false;
+                    s_l_name.Background = System.Windows.Media.Brushes.Black;
+                    s_l_name.IsReadOnly = false;
+                    s_f_name_g.Background = System.Windows.Media.Brushes.Black;
+                    s_f_name_g.IsReadOnly = false;
+                    s_l_name_g.Background = System.Windows.Media.Brushes.Black;
+                    s_l_name_g.IsReadOnly = false;
+                    s_company_combo.Background = System.Windows.Media.Brushes.Black;
+                    s_company_combo.IsReadOnly = false;
+                    s_location_combo.Background = System.Windows.Media.Brushes.Black;
+                    s_location_combo.IsReadOnly = false;
+                    s_department_combo.Background = System.Windows.Media.Brushes.Black;
+                    s_department_combo.IsReadOnly = false;
+                    s_j_desc.Background = System.Windows.Media.Brushes.Black;
+                    s_j_desc.IsReadOnly = false;
+                    s_h_name.Background = System.Windows.Media.Brushes.Black;
+                    s_h_name.IsReadOnly = false;
+                    s_username.Background = System.Windows.Media.Brushes.Black;
+                    s_username.IsReadOnly = false;
+                    s_passwd.Background = System.Windows.Media.Brushes.Black;
+                    s_passwd.IsReadOnly = false;
+                    s_admin_passwd.Background = System.Windows.Media.Brushes.Black;
+                    s_admin_passwd.IsReadOnly = false;
+                    s_radmin_port.Background = System.Windows.Media.Brushes.Black;
+                    s_radmin_port.IsReadOnly = false;
                 }
                 else
+                {
                     s_status.IsChecked = false;
+                    s_f_name.Background = System.Windows.Media.Brushes.Gray;
+                    s_f_name.IsReadOnly = true;
+                    s_l_name.Background = System.Windows.Media.Brushes.Gray;
+                    s_l_name.IsReadOnly = true;
+                    s_f_name_g.Background = System.Windows.Media.Brushes.Gray;
+                    s_f_name_g.IsReadOnly = true;
+                    s_l_name_g.Background = System.Windows.Media.Brushes.Gray;
+                    s_l_name_g.IsReadOnly = true;
+                    s_company_combo.Background = System.Windows.Media.Brushes.Gray;
+                    s_company_combo.IsReadOnly = true;
+                    s_location_combo.Background = System.Windows.Media.Brushes.Gray;
+                    s_location_combo.IsReadOnly = true;
+                    s_department_combo.Background = System.Windows.Media.Brushes.Gray;
+                    s_department_combo.IsReadOnly = true;
+                    s_j_desc.Background = System.Windows.Media.Brushes.Gray;
+                    s_j_desc.IsReadOnly = true;
+                    s_h_name.Background = System.Windows.Media.Brushes.Gray;
+                    s_h_name.IsReadOnly = true;
+                    s_username.Background = System.Windows.Media.Brushes.Gray;
+                    s_username.IsReadOnly = true;
+                    s_passwd.Background = System.Windows.Media.Brushes.Gray;
+                    s_passwd.IsReadOnly = true;
+                    s_admin_passwd.Background = System.Windows.Media.Brushes.Gray;
+                    s_admin_passwd.IsReadOnly = true;
+                    s_radmin_port.Background = System.Windows.Media.Brushes.Gray;
+                    s_radmin_port.IsReadOnly = true;
+
+                }
+
+                   
 
                 s_radmin_port.Text = d2["radmin_port"].ToString();
                 s_notes.Text = d2["notes"].ToString();
