@@ -90,7 +90,7 @@
 
                     <Label Content="Filter:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10"  ></Label>
                     <TextBox Name="search" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="22" Padding="-6" PreviewKeyUp="search_PreviewKeyUp" PreviewTextInput="Port_PreviewTextInput" Margin="0,5,22,10" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"></TextBox>
-                    <Button Name="clear_filter" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" VerticalAlignment="Center" Margin="90,0,0,2" Click="clear_filter_Click"></Button>
+                    <Button Name="clear_filter" Content="{materialDesign:PackIcon Kind=Delete, Size=20}" Padding="-8" Height="22" Width="30" VerticalAlignment="Center" Margin="90,0,5,2" Click="clear_filter_Click"></Button>
 
                     <Label Content="Web UI Admin" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" FontSize="15" Margin="0,0,0,12"  ></Label>
                     <TextBox Name="web_usr_txt" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Height="25" Width="200" FontSize="11" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" ></TextBox>
