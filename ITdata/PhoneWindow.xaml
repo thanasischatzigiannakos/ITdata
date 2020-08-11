@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen"
-        Title="PhoneWindow" Height="540" Width="750">
+        Title="Phones" Height="540" Width="750" Icon="/data-servers_icon-icons.com_52838.png">
 
     <Window.Resources>
         <Style TargetType="TabItem">

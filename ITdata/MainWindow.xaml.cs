@@ -114,7 +114,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds2 = new DataSet();
 
-                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM users", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM users ORDER BY first_name", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt2 = new DataTable();
                     adp2.Fill(dt2);
                     user_listbox.ItemsSource = dt2.DefaultView;
@@ -146,7 +146,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds2 = new DataSet();
 
-                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM mail a JOIN user_mail b ON a.id=b.mail_id JOIN users c ON b.user_id=c.id WHERE c.id ='" + userID + "'", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM mail a JOIN user_mail b ON a.id=b.mail_id JOIN users c ON b.user_id=c.id WHERE c.id ='" + userID + "' ORDER BY email", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt2 = new DataTable();
                     adp2.Fill(dt2);
                     user_mails_lb.ItemsSource = dt2.DefaultView;
@@ -177,7 +177,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds2 = new DataSet();
 
-                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM phones a JOIN user_phones b ON a.id=b.phone_id JOIN users c ON b.user_id=c.id WHERE c.id ='" + userID + "'", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM phones a JOIN user_phones b ON a.id=b.phone_id JOIN users c ON b.user_id=c.id WHERE c.id ='" + userID + "' ORDER BY internal_num", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt2 = new DataTable();
                     adp2.Fill(dt2);
                     user_phones_lb.ItemsSource = dt2.DefaultView;
@@ -227,63 +227,15 @@ namespace ITdata
                 s_radmin_port.Text = d2["radmin_port"].ToString();
                 if ((int)d2["status"] == 1)
                 {
-                    s_status.IsChecked = true; ;
-                    s_f_name.Background =System.Windows.Media.Brushes.DarkGray;
-                    s_f_name.IsReadOnly = false;
-                    s_l_name.Background = System.Windows.Media.Brushes.Black;
-                    s_l_name.IsReadOnly = false;
-                    s_f_name_g.Background = System.Windows.Media.Brushes.Black;
-                    s_f_name_g.IsReadOnly = false;
-                    s_l_name_g.Background = System.Windows.Media.Brushes.Black;
-                    s_l_name_g.IsReadOnly = false;
-                    s_company_combo.Background = System.Windows.Media.Brushes.Black;
-                    s_company_combo.IsReadOnly = false;
-                    s_location_combo.Background = System.Windows.Media.Brushes.Black;
-                    s_location_combo.IsReadOnly = false;
-                    s_department_combo.Background = System.Windows.Media.Brushes.Black;
-                    s_department_combo.IsReadOnly = false;
-                    s_j_desc.Background = System.Windows.Media.Brushes.Black;
-                    s_j_desc.IsReadOnly = false;
-                    s_h_name.Background = System.Windows.Media.Brushes.Black;
-                    s_h_name.IsReadOnly = false;
-                    s_username.Background = System.Windows.Media.Brushes.Black;
-                    s_username.IsReadOnly = false;
-                    s_passwd.Background = System.Windows.Media.Brushes.Black;
-                    s_passwd.IsReadOnly = false;
-                    s_admin_passwd.Background = System.Windows.Media.Brushes.Black;
-                    s_admin_passwd.IsReadOnly = false;
-                    s_radmin_port.Background = System.Windows.Media.Brushes.Black;
-                    s_radmin_port.IsReadOnly = false;
+                    s_status.IsChecked = true;
+                    users_status_lb.Visibility = Visibility.Collapsed;
+
                 }
                 else
                 {
                     s_status.IsChecked = false;
-                    s_f_name.Background = System.Windows.Media.Brushes.Gray;
-                    s_f_name.IsReadOnly = true;
-                    s_l_name.Background = System.Windows.Media.Brushes.Gray;
-                    s_l_name.IsReadOnly = true;
-                    s_f_name_g.Background = System.Windows.Media.Brushes.Gray;
-                    s_f_name_g.IsReadOnly = true;
-                    s_l_name_g.Background = System.Windows.Media.Brushes.Gray;
-                    s_l_name_g.IsReadOnly = true;
-                    s_company_combo.Background = System.Windows.Media.Brushes.Gray;
-                    s_company_combo.IsReadOnly = true;
-                    s_location_combo.Background = System.Windows.Media.Brushes.Gray;
-                    s_location_combo.IsReadOnly = true;
-                    s_department_combo.Background = System.Windows.Media.Brushes.Gray;
-                    s_department_combo.IsReadOnly = true;
-                    s_j_desc.Background = System.Windows.Media.Brushes.Gray;
-                    s_j_desc.IsReadOnly = true;
-                    s_h_name.Background = System.Windows.Media.Brushes.Gray;
-                    s_h_name.IsReadOnly = true;
-                    s_username.Background = System.Windows.Media.Brushes.Gray;
-                    s_username.IsReadOnly = true;
-                    s_passwd.Background = System.Windows.Media.Brushes.Gray;
-                    s_passwd.IsReadOnly = true;
-                    s_admin_passwd.Background = System.Windows.Media.Brushes.Gray;
-                    s_admin_passwd.IsReadOnly = true;
-                    s_radmin_port.Background = System.Windows.Media.Brushes.Gray;
-                    s_radmin_port.IsReadOnly = true;
+                    users_status_lb.Visibility = Visibility.Visible;  
+                
 
                 }
 
@@ -426,6 +378,7 @@ namespace ITdata
             selected_label.Visibility = Visibility.Collapsed;
             selected_email.Content = "";
             email_label.Visibility = Visibility.Collapsed;
+            users_status_lb.Visibility = Visibility.Collapsed;
         }
 
         //*********************************UPDATE USER*******************************************************************
@@ -436,6 +389,9 @@ namespace ITdata
             if (s_status.IsChecked == true)
             {
                 s_statusInt = 1;
+            }else
+            {
+                s_statusInt = 0;
             }
 
             using (MySqlConnection con = new MySqlConnection(conString))  //CONNECT TO THE DATABASE AND INSERT NEW VALUE IN THE TABLE
@@ -467,6 +423,7 @@ namespace ITdata
                     s_admin_passwd.Clear();
                     s_radmin_port.Clear();
                     s_notes.Clear();
+                  
                     user_list();
 
                     //---------------AFTER TASK IS FINISHED CLOSE AND DISPOSE THE CONNECTION----------------------
@@ -485,7 +442,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds1 = new DataSet();
 
-                    MySqlDataAdapter adp1 = new MySqlDataAdapter("SELECT * FROM companies", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp1 = new MySqlDataAdapter("SELECT * FROM companies ORDER BY company", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt1 = new DataTable();
                     adp1.Fill(dt1);
                     s_company_combo.ItemsSource = dt1.DefaultView;
@@ -516,7 +473,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds2 = new DataSet();
 
-                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM location", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM location ORDER BY location", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt2 = new DataTable();
                     adp2.Fill(dt2);
                     s_location_combo.ItemsSource = dt2.DefaultView;
@@ -571,6 +528,11 @@ namespace ITdata
         {
             filter_user_TB.Clear();
             user_list();
+        }
+
+        private void users_status_lb_ColorChanged(object sender, RoutedPropertyChangedEventArgs<System.Windows.Media.Color> e)
+        {
+
         }
 
         private void unmatch_mail_Click(object sender, RoutedEventArgs e)
@@ -660,7 +622,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds3 = new DataSet();
 
-                    MySqlDataAdapter adp3 = new MySqlDataAdapter("SELECT * FROM department", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp3 = new MySqlDataAdapter("SELECT * FROM department ORDER BY dept", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt3 = new DataTable();
                     adp3.Fill(dt3);
                     s_department_combo.ItemsSource = dt3.DefaultView;

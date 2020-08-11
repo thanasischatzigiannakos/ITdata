@@ -106,7 +106,7 @@ namespace ITdata
             }
         }
 
-        private void deleteDepartment(String dptName)  //DELETE A VALUE FROM THE DATABASE
+        private void deleteDepartment()  //DELETE A VALUE FROM THE DATABASE
         {
             String CmdString;
             String conString = Properties.dbSettings.Default.connectionString;
@@ -152,6 +152,8 @@ namespace ITdata
                 fillList();
                 inputbox.Clear();
                 inputbox.Focus();
+                idValue = 0;
+                departmentListBox.UnselectAll();
             }
         }
 
@@ -165,16 +167,27 @@ namespace ITdata
                 fillList();
                 inputbox.Clear();
                 inputbox.Focus();
+                idValue = 0;
+                departmentListBox.UnselectAll();
+
             }
         }
 
         private void delete_button_Click(object sender, RoutedEventArgs e) //WHEN THE DELETE BUTTON IS CLICKED CALL THE DELETE FUNCTION
         {
-            String input = inputbox.Text;
-            deleteDepartment(input);
-            fillList();
-            inputbox.Clear();
-            inputbox.Focus();
+            if (idValue == 0)
+            {
+                MessageBox.Show("Please select the item you wish to delete", "Error", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
+            else
+            {
+                deleteDepartment();
+                fillList();
+                inputbox.Clear();
+                inputbox.Focus();
+                idValue = 0;
+                departmentListBox.UnselectAll();
+            }
         }
 
         private void departmentListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e) //WHEN A LISTBOX ITEM IS SELECTED GET ITS VALUES AND SHOW THE DISPLAY MEMBER IN THE TEXTBOX
@@ -185,6 +198,14 @@ namespace ITdata
                 inputbox.Text = d1["dept"].ToString();
                 idValue = (int)d1["id"];
             }
+        }
+
+        private void clear_btn_Click(object sender, RoutedEventArgs e)
+        {
+            inputbox.Clear();
+            idValue = 0;
+            departmentListBox.UnselectAll();
+
         }
     }
 }

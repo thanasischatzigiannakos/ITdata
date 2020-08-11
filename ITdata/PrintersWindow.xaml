@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen"
-        Title="PrintersWindow" Height="500" Width="550">
+        Title="Printers" Height="500" Width="550" Icon="/data-servers_icon-icons.com_52838.png">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>

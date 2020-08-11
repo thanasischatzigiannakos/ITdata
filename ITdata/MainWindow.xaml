@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen"
-        Title="Users" Height="750" Width="1600">
+        Title="Users" Height="750" Width="1600" Icon="/data-servers_icon-icons.com_52838.png">
 
     <Window.Resources>
         <Style TargetType="TabItem">
@@ -175,6 +175,8 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
+        <Label  Name="users_status_lb" Background="DarkRed" Grid.Column="1" Grid.Row="4" VerticalContentAlignment="Center" Visibility="Collapsed" FontSize="14"  Height="50" Width="150" >
+            <TextBlock FontWeight="Bold">This user is no longer <LineBreak></LineBreak>ACTIVE</TextBlock></Label>
         <Label Content="Phones associated with user" Grid.Row="0" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,60,0,0"></Label>
         <ListBox Name="user_phones_lb" Grid.Column="6" Grid.RowSpan="4" VerticalAlignment="Center" Height="400" Width="100" BorderThickness="2" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" Margin="10,85,0,5" SelectionChanged="user_phones_lb_SelectionChanged">
         </ListBox>
