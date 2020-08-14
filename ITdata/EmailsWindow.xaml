@@ -184,7 +184,7 @@
 
                     <Button Name="match" Content="MATCH" FontWeight="Bold" Height="27" Width="90" Grid.Column="3" Grid.Row="1" VerticalAlignment="Top" Click="match_Click" Margin="55,112,55,0" ToolTip="Match an email with it's user" Style="{DynamicResource MaterialDesignRaisedButton}" Grid.RowSpan="2"></Button>
 
-                    <Button Name="back_btn"  Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Height="22" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3" Click="Button_Click" ToolTip="Close this window and head back to the main menu" Grid.ColumnSpan="2" />
+                    <Button Name="back_btn"  Content="{materialDesign:PackIcon Kind=ArrowBack, Size=30}" Padding="-10" Height="22" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3" Click="Button_Click" ToolTip="Close this window and head back to the main menu" Grid.ColumnSpan="2" Style="{StaticResource MaterialDesignFlatDarkBgButton}" />
                 </Grid>
             </TabItem>
         </TabControl>

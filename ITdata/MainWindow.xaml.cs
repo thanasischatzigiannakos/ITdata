@@ -535,6 +535,25 @@ namespace ITdata
 
         }
 
+        private void email_copy_menu_Click(object sender, RoutedEventArgs e)
+        {
+            if (user_mails_lb.SelectedItem != null)
+            {
+                DataRowView d2 = user_mails_lb.SelectedItem as DataRowView;
+                Clipboard.SetText(d2["email"].ToString());
+            }
+        }
+
+        private void passwd_copy_menu_Click(object sender, RoutedEventArgs e)
+        {
+            if (user_mails_lb.SelectedItem != null)
+            {
+                DataRowView d2 = user_mails_lb.SelectedItem as DataRowView;
+                Clipboard.SetText(d2["passwd"].ToString());
+               
+            }
+        }
+
         private void unmatch_mail_Click(object sender, RoutedEventArgs e)
         {
             if (mailID == 0 || userID == 0)
