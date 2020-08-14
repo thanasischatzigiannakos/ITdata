@@ -52,7 +52,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds = new DataSet();
 
-                    MySqlDataAdapter adp = new MySqlDataAdapter("SELECT * FROM mail", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp = new MySqlDataAdapter("SELECT * FROM mail ORDER BY email", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt = new DataTable();
                     adp.Fill(dt);
                     email_listbox.ItemsSource = dt.DefaultView;
@@ -263,7 +263,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds = new DataSet();
 
-                    MySqlDataAdapter adp = new MySqlDataAdapter("SELECT * FROM mail", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp = new MySqlDataAdapter("SELECT * FROM mail ORDER BY email", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt = new DataTable();
                     adp.Fill(dt);
                     unmatched_emails_listbox.ItemsSource = dt.DefaultView;
@@ -420,7 +420,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds2 = new DataSet();
 
-                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM users", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM users ORDER BY first_name", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt2 = new DataTable();
                     adp2.Fill(dt2);
                     user_listbox.ItemsSource = dt2.DefaultView;

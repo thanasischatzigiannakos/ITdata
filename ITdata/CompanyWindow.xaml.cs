@@ -151,6 +151,8 @@ namespace ITdata
                 fillList();
                 inputbox.Clear();
                 inputbox.Focus();
+                idValue = 0;
+                companyListBox.UnselectAll();
             }
         }
 
@@ -164,16 +166,26 @@ namespace ITdata
                 fillList();
                 inputbox.Clear();
                 inputbox.Focus();
+                idValue = 0;
+                companyListBox.UnselectAll();
             }
         }
 
         private void delete_button_Click(object sender, RoutedEventArgs e) // ----------WHEN THE DELETE BUTTON IS PRESSED CALL THE DELETECOMPANY FUNCTION-----------
         {
-        
-            deleteCompany();
-            fillList();
-            inputbox.Clear();
-            inputbox.Focus();
+            if (idValue == 0)
+            {
+                MessageBox.Show("Please select the item you wish to delete", "Error", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
+            else
+            {
+                deleteCompany();
+                fillList();
+                inputbox.Clear();
+                inputbox.Focus();
+                idValue = 0;
+                companyListBox.UnselectAll();
+            }
         }
 
         private void companyListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e) //WHEN A LISTBOX ITEM IS CLICKED SHOW ITS DISPLAY MEMBER IN THE TEXTBOX
@@ -184,6 +196,13 @@ namespace ITdata
                 inputbox.Text = d1["company"].ToString();
                 idValue = (int)d1["id"];    //---------------AND ASIGN ITS VALUE TO THE idValue VARIABLE--------------------
             }
+        }
+
+        private void clear_btn_Click(object sender, RoutedEventArgs e)
+        {
+            inputbox.Clear();
+            companyListBox.UnselectAll();
+            idValue = 0;
         }
     }
 }

@@ -41,7 +41,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds1 = new DataSet();
 
-                    MySqlDataAdapter adp1 = new MySqlDataAdapter("SELECT * FROM location", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp1 = new MySqlDataAdapter("SELECT * FROM location ORDER BY location", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt1 = new DataTable();
                     adp1.Fill(dt1);
                     s_location_combo.ItemsSource = dt1.DefaultView;
@@ -78,7 +78,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds1 = new DataSet();
 
-                    MySqlDataAdapter adp1 = new MySqlDataAdapter("SELECT * FROM printers", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp1 = new MySqlDataAdapter("SELECT * FROM printers ORDER BY network_id", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt1 = new DataTable();
                     adp1.Fill(dt1);
                     printer_lb.ItemsSource = dt1.DefaultView;

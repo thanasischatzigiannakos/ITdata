@@ -1,8 +1,6 @@
-﻿using MaterialDesignThemes.Wpf;
-using MySqlConnector;
+﻿using MySqlConnector;
 using System;
 using System.Data;
-using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
@@ -116,7 +114,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds2 = new DataSet();
 
-                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM users", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM users ORDER BY first_name", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt2 = new DataTable();
                     adp2.Fill(dt2);
                     user_listbox.ItemsSource = dt2.DefaultView;
@@ -148,7 +146,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds2 = new DataSet();
 
-                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM mail a JOIN user_mail b ON a.id=b.mail_id JOIN users c ON b.user_id=c.id WHERE c.id ='" + userID + "'", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM mail a JOIN user_mail b ON a.id=b.mail_id JOIN users c ON b.user_id=c.id WHERE c.id ='" + userID + "' ORDER BY email", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt2 = new DataTable();
                     adp2.Fill(dt2);
                     user_mails_lb.ItemsSource = dt2.DefaultView;
@@ -179,7 +177,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds2 = new DataSet();
 
-                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM phones a JOIN user_phones b ON a.id=b.phone_id JOIN users c ON b.user_id=c.id WHERE c.id ='" + userID + "'", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM phones a JOIN user_phones b ON a.id=b.phone_id JOIN users c ON b.user_id=c.id WHERE c.id ='" + userID + "' ORDER BY internal_num", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt2 = new DataTable();
                     adp2.Fill(dt2);
                     user_phones_lb.ItemsSource = dt2.DefaultView;
@@ -229,12 +227,19 @@ namespace ITdata
                 s_radmin_port.Text = d2["radmin_port"].ToString();
                 if ((int)d2["status"] == 1)
                 {
-                    s_status.IsChecked = true; ;
+                    s_status.IsChecked = true;
+                    users_status_lb.Visibility = Visibility.Collapsed;
+
                 }
                 else
                 {
                     s_status.IsChecked = false;
+                    users_status_lb.Visibility = Visibility.Visible;  
+                
+
                 }
+
+                   
 
                 s_radmin_port.Text = d2["radmin_port"].ToString();
                 s_notes.Text = d2["notes"].ToString();
@@ -373,6 +378,7 @@ namespace ITdata
             selected_label.Visibility = Visibility.Collapsed;
             selected_email.Content = "";
             email_label.Visibility = Visibility.Collapsed;
+            users_status_lb.Visibility = Visibility.Collapsed;
         }
 
         //*********************************UPDATE USER*******************************************************************
@@ -383,6 +389,9 @@ namespace ITdata
             if (s_status.IsChecked == true)
             {
                 s_statusInt = 1;
+            }else
+            {
+                s_statusInt = 0;
             }
 
             using (MySqlConnection con = new MySqlConnection(conString))  //CONNECT TO THE DATABASE AND INSERT NEW VALUE IN THE TABLE
@@ -414,6 +423,7 @@ namespace ITdata
                     s_admin_passwd.Clear();
                     s_radmin_port.Clear();
                     s_notes.Clear();
+                  
                     user_list();
 
                     //---------------AFTER TASK IS FINISHED CLOSE AND DISPOSE THE CONNECTION----------------------
@@ -432,7 +442,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds1 = new DataSet();
 
-                    MySqlDataAdapter adp1 = new MySqlDataAdapter("SELECT * FROM companies", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp1 = new MySqlDataAdapter("SELECT * FROM companies ORDER BY company", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt1 = new DataTable();
                     adp1.Fill(dt1);
                     s_company_combo.ItemsSource = dt1.DefaultView;
@@ -463,7 +473,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds2 = new DataSet();
 
-                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM location", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp2 = new MySqlDataAdapter("SELECT * FROM location ORDER BY location", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt2 = new DataTable();
                     adp2.Fill(dt2);
                     s_location_combo.ItemsSource = dt2.DefaultView;
@@ -518,6 +528,30 @@ namespace ITdata
         {
             filter_user_TB.Clear();
             user_list();
+        }
+
+        private void users_status_lb_ColorChanged(object sender, RoutedPropertyChangedEventArgs<System.Windows.Media.Color> e)
+        {
+
+        }
+
+        private void email_copy_menu_Click(object sender, RoutedEventArgs e)
+        {
+            if (user_mails_lb.SelectedItem != null)
+            {
+                DataRowView d2 = user_mails_lb.SelectedItem as DataRowView;
+                Clipboard.SetText(d2["email"].ToString());
+            }
+        }
+
+        private void passwd_copy_menu_Click(object sender, RoutedEventArgs e)
+        {
+            if (user_mails_lb.SelectedItem != null)
+            {
+                DataRowView d2 = user_mails_lb.SelectedItem as DataRowView;
+                Clipboard.SetText(d2["passwd"].ToString());
+               
+            }
         }
 
         private void unmatch_mail_Click(object sender, RoutedEventArgs e)
@@ -607,7 +641,7 @@ namespace ITdata
                     con.Open();
                     DataSet ds3 = new DataSet();
 
-                    MySqlDataAdapter adp3 = new MySqlDataAdapter("SELECT * FROM department", con);  //-----PASS ALL THE DATA IN A DATASET
+                    MySqlDataAdapter adp3 = new MySqlDataAdapter("SELECT * FROM department ORDER BY dept", con);  //-----PASS ALL THE DATA IN A DATASET
                     DataTable dt3 = new DataTable();
                     adp3.Fill(dt3);
                     s_department_combo.ItemsSource = dt3.DefaultView;

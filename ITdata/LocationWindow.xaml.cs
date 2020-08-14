@@ -104,7 +104,7 @@ namespace ITdata
             }
         }
 
-        private void deleteLocation(String lctName) //DELETE A VALUE FROM THE TABLE
+        private void deleteLocation() //DELETE A VALUE FROM THE TABLE
         {
             String CmdString;
             String conString = Properties.dbSettings.Default.connectionString;
@@ -150,6 +150,8 @@ namespace ITdata
                 fillList();
                 inputbox.Clear();
                 inputbox.Focus();
+                idValue = 0;
+                locationListBox.UnselectAll();
             }
         }
 
@@ -163,17 +165,26 @@ namespace ITdata
                 fillList();
                 inputbox.Clear();
                 inputbox.Focus();
+                locationListBox.UnselectAll();
                 idValue = 0;
             }
         }
 
         private void delete_button_Click(object sender, RoutedEventArgs e) //ON CLICK CALL THE DELETE FUNCTION FOR THE SELECTED LISTBOX ITEM
         {
-            String input = inputbox.Text;
-            deleteLocation(input);
-            fillList();
-            inputbox.Clear();
-            inputbox.Focus();
+            if (idValue == 0)
+            {
+                MessageBox.Show("Please select the item you wish to delete", "Error", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
+            else
+            {
+                deleteLocation();
+                fillList();
+                inputbox.Clear();
+                inputbox.Focus();
+                idValue = 0;
+                locationListBox.UnselectAll();
+            }
         }
 
         private void locationListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e) //WHEN A LISTBOX ITEM IS CLICKED GET ITS DISPLAY AND VALUE MEMBERS AND SHOW THE DISPLAY MEMBER IN THE TEXTBOX
@@ -184,6 +195,13 @@ namespace ITdata
                 inputbox.Text = d1["location"].ToString();
                 idValue = (int)d1["id"];
             }
+        }
+
+        private void clear_btn_Click(object sender, RoutedEventArgs e)
+        {
+            inputbox.Clear();
+            idValue = 0;
+            locationListBox.UnselectAll();
         }
     }
 }

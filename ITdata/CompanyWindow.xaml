@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen"
-        Title="CompanyWindow" Height="600" Width="620">
+        Title="Companies" Height="600" Width="620" Icon="/data-servers_icon-icons.com_52838.png">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -43,6 +43,8 @@
         </ListBox>
 
         <TextBox Name="inputbox" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Width="300" Height="30" FontSize="12" Padding="-6" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="5,0,5,0" HorizontalContentAlignment="Center" HorizontalAlignment="Center"></TextBox>
+        <Button Name="clear_btn" Content="{materialDesign:PackIcon Kind=Broom, Size=30}" Padding="-8" Height="30" Width="40" Grid.Column="3" Grid.Row="1" Margin="0,0,45,0" Click="clear_btn_Click" ToolTip="Clear the company field."></Button>
+        
         <Button Content="SAVE" Name="save_button" Width="100" Height="30" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0" Click="save_button_Click" ToolTip="Update the name of the selected company" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
         <Button Content="DELETE" Name="delete_button" Width="100" Height="30" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,20,0,0" Click="delete_button_Click" ToolTip="Delete the selected company" Style="{DynamicResource MaterialDesignRaisedButton}"></Button>
         <Button Content="ADD NEW" Name="add_new_button" Width="100" Height="30" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="add_new_button_Click" ToolTip="Add a new company" Style="{DynamicResource MaterialDesignRaisedButton}" Margin="0,20,0,0"></Button>

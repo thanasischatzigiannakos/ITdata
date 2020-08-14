@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen"
-        Title="Users" Height="750" Width="1600">
+        Title="Users" Height="750" Width="1600" Icon="/data-servers_icon-icons.com_52838.png">
 
     <Window.Resources>
         <Style TargetType="TabItem">
@@ -173,8 +173,20 @@
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="email_copy_menu" Header="Copy Email" Icon="{materialDesign:PackIcon Kind=Email}" Click="email_copy_menu_Click">
+                        
+                    </MenuItem>
+                    <MenuItem Name="passwd_copy_menu" Header="Copy Password" Icon="{materialDesign:PackIcon Kind=Onepassword}" Click="passwd_copy_menu_Click">
+
+                    </MenuItem>
+                </ContextMenu>
+            </ListBox.ContextMenu>
         </ListBox>
 
+        <Label  Name="users_status_lb" Background="DarkRed" Grid.Column="1" Grid.Row="4" VerticalContentAlignment="Center" Visibility="Collapsed" FontSize="14"  Height="50" Width="150" >
+            <TextBlock FontWeight="Bold">This user is no longer <LineBreak></LineBreak>ACTIVE</TextBlock></Label>
         <Label Content="Phones associated with user" Grid.Row="0" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,60,0,0"></Label>
         <ListBox Name="user_phones_lb" Grid.Column="6" Grid.RowSpan="4" VerticalAlignment="Center" Height="400" Width="100" BorderThickness="2" Grid.IsSharedSizeScope="True" BorderBrush="{StaticResource PrimaryHueDarkBrush}" Margin="10,85,0,5" SelectionChanged="user_phones_lb_SelectionChanged">
         </ListBox>
@@ -183,8 +195,8 @@
         <Label Name="selected_phone" Grid.Column="6" Grid.Row="5" Height="20" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,0,20" Padding="-1"></Label>
         <Button Content="UNMATCH" Grid.Column="6" Grid.Row="5" Width="100" VerticalAlignment="Bottom" Click="Button_Click"></Button>
 
-        <Label Name="email_label" Content="Selected Email" Grid.Column="5" Grid.Row="5" Height="24" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Visibility="Collapsed"></Label>
-        <Label Name="selected_email" Grid.Column="5" Grid.Row="5" Height="20" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="-2" Margin="70,0,0,15"></Label>
+        <Label Name="email_label" Content="Selected Email" Grid.Column="5" Grid.Row="5" Height="24" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Visibility="Collapsed"></Label>
+        <Label Name="selected_email" Grid.Column="5" Grid.Row="5" Height="20" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="-2" Margin="0,0,0,15"></Label>
         <Button Name="unmatch_mail" Content="UNMATCH" Grid.Column="5" Grid.Row="5" Width="100" VerticalAlignment="Bottom" Click="unmatch_mail_Click" ></Button>
 
         <Button Name="submit" Content="ADD NEW"   Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="4" Height="25" Width="100" Margin="0,0,0,0" Click="submit_Click" ToolTip="Add a new user" HorizontalAlignment="Left" VerticalAlignment="Center"></Button>
